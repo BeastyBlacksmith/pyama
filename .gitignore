@@ -20,5 +20,7 @@ __pycache__/
 out/
 res/
 temp/
-test_*
+
+# IDEs
+.vscode/
 
