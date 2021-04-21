@@ -8,7 +8,7 @@ setup(name='PyAMA',
       author_email='daniel.woschee@physik.lmu.de',
       license='MIT',
       package_dir={"": "src"},
-      packages=setuptools.find_packages(where="src"),
+      packages=setuptools.find_packages(where="pyama"),
       classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
