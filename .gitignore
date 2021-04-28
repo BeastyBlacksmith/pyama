@@ -24,6 +24,8 @@ temp/
 .tox/
 *.egg-info/
 
+doc/_build
+
 # IDEs
 .vscode/
 
