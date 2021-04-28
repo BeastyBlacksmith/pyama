@@ -6,3 +6,8 @@ PyAMA Overview
     :members:
     :undoc-members:
     :show-inheritance:
+
+.. automodule:: pyama.stack.base
+    :members:
+    :undoc-members:
+    :show-inheritance:

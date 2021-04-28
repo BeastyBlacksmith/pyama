@@ -36,6 +36,7 @@ class BaseStack:
             - 'id': ID of the calling stack
             - 'old': an OrderedDict of the previous shape
             - 'new': an OrderedDict of the newly established shape
+            
         * Event 'const.EVT_CLOSE' with 'message' containing these fields:
             - 'event': const.EVT_CLOSE
             - 'id': ID of the calling stack
