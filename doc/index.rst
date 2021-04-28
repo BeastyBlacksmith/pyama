@@ -10,7 +10,7 @@ PyAMA's documentation
    :maxdepth: 2
    :caption: Contents:
 
-   api
+   overview
 
 
 Indices and tables

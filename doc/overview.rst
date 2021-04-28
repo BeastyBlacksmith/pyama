@@ -1,8 +1,8 @@
 ***************
-PyAMA API
+PyAMA Overview
 ***************
 
-.. automodule:: pyama
+.. automodule:: pyama.listener
     :members:
     :undoc-members:
     :show-inheritance:

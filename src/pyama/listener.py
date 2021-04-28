@@ -2,8 +2,8 @@ import random
 import string
 import threading
 
-from .session.events import Event
-from .util import make_uid
+# from .session.events import Event
+# from .util import make_uid
 
 
 class Listeners:
