@@ -226,14 +226,14 @@ class MetaStack(RoiStack):
 
     def get_frame_tk(self, *, channel, frame, convert_fcn=None):
         """
-        Get a frame of the stack as :py:class:`tkinter.PhotoImage`.
+        Get a frame of the stack as <!-- :py:class: -->`tkinter.PhotoImage`.
 
-        :param channel: The channel of the requested stack position
-        :type channel: int
-        :param frame: The frame of the requested stack position
-        :type frame: int
-        :param convert_fcn: Custom conversion function
-        :type convert_fcn: None or function
+        \param channel The channel of the requested stack position
+        <!-- :type channel: --> int
+        \param frame The frame of the requested stack position
+        <!-- :type frame: --> int
+        \param convert_fcn Custom conversion function
+        <!-- :type convert_fcn: --> None or function
 
         If a custom conversion function is given, the function must take
         one argument, which is a (n_rows, n_columns)-shaped numpy array
@@ -241,8 +241,8 @@ class MetaStack(RoiStack):
         image (typically 8 or 16 bit per pixel), and must return
         a (n_rows, n_columns)-shaped numpy array of ``uint8`` type.
 
-        :return: the image at the requested stack position
-        :rtype: :py:class:`tkinter.PhotoImage`
+        \return  the image at the requested stack position
+        <!-- :rtype: --> <!-- :py:class: -->`tkinter.PhotoImage`
         """
         #TODO
         with self.image_lock:

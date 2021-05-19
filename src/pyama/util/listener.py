@@ -9,12 +9,12 @@ from . import make_uid
 class Listeners:
     """Listener notification class
 
-    :param kinds: different event categories offered by this Listeners instance
-    :type kinds: None, str or iterable of str
-    :param require_queue: Force listeners to pass a queue at registering
-    :type require_queue: bool
-    :param debug:
-    :type debug: bool
+    \param kinds different event categories offered by this Listeners instance
+    <!-- :type kinds: --> None, str or iterable of str
+    \param require_queue Force listeners to pass a queue at registering
+    <!-- :type require_queue: --> bool
+    \param debug
+    <!-- :type debug: --> bool
     """
     def __init__(self, kinds=None, require_queue=False, debug=False):
         if kinds is None:
@@ -55,15 +55,15 @@ class Listeners:
 
         Note that if ``fun`` raises an exception, the corresponding listener will not be called anymore.
 
-        :param fun: The function to be called on change, will be called without parameters
-        :type fun: function handle
-        :param kind: The kind of events when the function will be called
-        :type kind: None, str or iterable containing strings
-        :param queue: Queue object to feed an event as notification
-        :type queue: None or Queue
+        \param fun The function to be called on change, will be called without parameters
+        <!-- :type fun: --> function handle
+        \param kind The kind of events when the function will be called
+        <!-- :type kind: --> None, str or iterable containing strings
+        \param queue Queue object to feed an event as notification
+        <!-- :type queue: --> None or Queue
 
-        :return: a listener ID or None
-        :rtype: str or None
+        \return  a listener ID or None
+        <!-- :rtype: --> str or None
         """
         if self.__kinds is not None:
             # Convert kind to valid format

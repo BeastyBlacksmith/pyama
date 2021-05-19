@@ -29,15 +29,15 @@ def _load_module(name, path):
     """
     Load and register a given module.
 
-    :param name: the name of the module
-    :type name: str
-    :param path: the path to the module file
-    :type path: str
+    \param name the name of the module
+    <!-- :type name: --> str
+    \param path the path to the module file
+    <!-- :type path: --> str
 
     For loading a package, give the path of the package’s
     ``__init__.py`` file as path.
 
-    :return: Metadata of the module, or ``None`` if module couldn’t be loaded. If ``return_init_ret`` is ``True``, a tuple of module metadata and ``register`` return value is returned.
+    \return  Metadata of the module, or ``None`` if module couldn’t be loaded. If ``return_init_ret`` is ``True``, a tuple of module metadata and ``register`` return value is returned.
     """
     RETURN_BAD = ((),())
 
@@ -176,12 +176,12 @@ def _parse_version(ver, isComparison=False):
     The version is returned as a tuple of strings, as an empty tuple
     for an unspecified version or as ``None`` for an invalid argument.
 
-    :param ver: the version string
-    :type ver: str
-    :param isComparison: boolean flag whether ver is a comparison
-    :type isComparison: bool
+    \param ver the version string
+    <!-- :type ver: --> str
+    \param isComparison boolean flag whether ver is a comparison
+    <!-- :type isComparison: --> bool
 
-    :return: A tuple of subversion strings, obtained by splitting
+    \return  A tuple of subversion strings, obtained by splitting
         the version string at dots.
 
         If ``isComparison`` is ``True``, the comparison mode is returned
@@ -229,11 +229,11 @@ def _check_versions(version_present, comp_mode, version_required):
     TODO: possibly wrong results for subversionstrings
     with different lengths
 
-    :param version_present: The version of the plugin to be evaluated
-    :param comp_mode: The comparison mode
-    :param version_required: The required version
+    \param version_present The version of the plugin to be evaluated
+    \param comp_mode The comparison mode
+    \param version_required The required version
 
-    :return: ``True`` if version fulfills requirement, else ``False``.
+    \return  ``True`` if version fulfills requirement, else ``False``.
     """
     # TODO: correct for strings with different lengths
     # TODO: add optional dependency ('?')
@@ -300,8 +300,8 @@ def _parse_dep(dep):
     """
     Parse the dependency data inserted by the plugin.
     
-    :param dep: The dependency data provided by the plugin
-    :return: A (possibly empty) tuple of dependencies,
+    \param dep The dependency data provided by the plugin
+    \return  A (possibly empty) tuple of dependencies,
         or ``None`` if dependency data is invalid
 
     The expected dependency data is::
@@ -364,10 +364,10 @@ def _parse_dep(dep):
 def is_global_name(name):
     """Check if a given name belongs to the global namespace.
 
-    :param name: the name to check
-    :type name: str
-    :return: `True` if `name` is global, else `False`
-    :rtype: bool
+    \param name the name to check
+    <!-- :type name: --> str
+    \return  `True` if `name` is global, else `False`
+    <!-- :rtype: --> bool
     """
     return not name.startswith('_')
 
@@ -375,10 +375,10 @@ def is_global_name(name):
 def filter_global_names(names):
     """Return a set containing only global names.
 
-    :param names: names from which non-global names shall be removed
-    :type names: iterable
-    :return: global names (possibly empty set)
-    :rtype: set
+    \param names names from which non-global names shall be removed
+    <!-- :type names: --> iterable
+    \return  global names (possibly empty set)
+    <!-- :rtype: --> set
     """
     return {n for n in names if is_global_name(n)}
 
@@ -387,10 +387,10 @@ def _print_exception_string(exc, first=0):
     """
     Obtain and print a stacktrace and exception info.
 
-    :param exc: The exception that has been raised
-    :type exc: :py:class:`Exception`
-    :param first: The first index of the exception traceback to show
-    :type first: uint
+    \param exc The exception that has been raised
+    <!-- :type exc: --> <!-- :py:class: -->`Exception`
+    \param first The first index of the exception traceback to show
+    <!-- :type first: --> uint
     """
     stack = traceback.extract_tb(exc.__traceback__)[first:]
     stack_formatted = traceback.format_list(stack)
@@ -406,8 +406,8 @@ class ModuleManager:
     Plugins are searched in the given path by the constructor.
     By default, also the builtin modules are imported.
 
-    :param plugins_path: The directory in which plugins are searched
-    :param register_builtins: Boolean flag whether to import builtin modules
+    \param plugins_path The directory in which plugins are searched
+    \param register_builtins Boolean flag whether to import builtin modules
     """
 
     def __init__(self, plugins_path=None, register_builtins=True):
@@ -504,8 +504,8 @@ class ModuleManager:
 
         TODO: Check for version conflicts
 
-        :param idx: index of the module for which to check dependencies
-        :type idx: int or tuple of int
+        \param idx index of the module for which to check dependencies
+        <!-- :type idx: --> int or tuple of int
         """
         if type(idx) == int:
             idx = (idx,)
@@ -657,8 +657,8 @@ class ModuleManager:
 
         This method is thread-safe.
         
-        :param index: Index of item to be removed.
-        :type index: int or list of int
+        \param index Index of item to be removed.
+        <!-- :type index: --> int or list of int
         """
         with self.order_lock:
             # Remove plugin from module order
@@ -798,11 +798,11 @@ class ModuleManager:
 
         This method is thread-safe.
 
-        :param mod_id: The id of the plugin to be executed
-        :type mod_id: str
-        :param kind: Indicator what dependency is needed; one of: "conf", "run", "loop_first", "loop_next", "loop_end".
-        :type kind: str
-        :return:
+        \param mod_id The id of the plugin to be executed
+        <!-- :type mod_id: --> str
+        \param kind Indicator what dependency is needed; one of: "conf", "run", "loop_first", "loop_next", "loop_end".
+        <!-- :type kind: --> str
+        \return 
             * Dictionary {DP: {DN: DV}}, where:
 
                 * the keys DP are the identifiers of the plugins whose return values are required,
@@ -866,14 +866,14 @@ class ModuleManager:
 
         This method is thread-safe with respect to module order.
 
-        :param mod_id: The ID of the module to be called
-        :type mod_id: str
-        :param kind: The kind of function to be called; eiter "conf" or "run", "loop_first", "loop_next", "loop_end".
-        :type kind: str
-        :param isNewLoop: Indicator whether a new loop is initialized; ignored if ``kind`` is not ``"run"``.
-        :type isNewLoop: bool
-        :param isOptional: Indicator whether to raise an error (False, default) if function of ``kind`` is not found or to silently return (True)
-        :type isOptional: bool
+        \param mod_id The ID of the module to be called
+        <!-- :type mod_id: --> str
+        \param kind The kind of function to be called; eiter "conf" or "run", "loop_first", "loop_next", "loop_end".
+        <!-- :type kind: --> str
+        \param isNewLoop Indicator whether a new loop is initialized; ignored if ``kind`` is not ``"run"``.
+        <!-- :type isNewLoop: --> bool
+        \param isOptional Indicator whether to raise an error (False, default) if function of ``kind`` is not found or to silently return (True)
+        <!-- :type isOptional: --> bool
         """
         # Check if function kind is legal
         if kind not in PERFORM_KINDS:
@@ -921,10 +921,10 @@ class ModuleManager:
         considered global data and are added both to the plugin’s data
         namespace and to the global data namespace.
 
-        :param d_id: The id of the plugin providing the data
-        :param name: The name of the data
-        :param value: The value of the data
-        :param index: The index of `self.data` to which to write the data
+        \param d_id The id of the plugin providing the data
+        \param name The name of the data
+        \param value The value of the data
+        \param index The index of `self.data` to which to write the data
         """
         with self.data_lock:
             # Add data to plugin’s data namespace
@@ -946,8 +946,8 @@ class ModuleManager:
         :meth:`register_builtin_data` can be used to add data as built-in
         data. They will be available using an empty string as id.
 
-        :param name: The name of the data
-        :param value: The value of the data
+        \param name The name of the data
+        \param value The value of the data
 
         The `name` of built-in data should conventionally have a leading
         and a trailing pair of underscores (e.g. `__name__`).
@@ -968,10 +968,10 @@ class ModuleManager:
         """
         Register a listener that will be notified on changes.
 
-        :param fun: The function to be called on change, will be called without parameters
-        :type fun: function handle
-        :param kind: The kind of events when the function will be called
-        :type kind: None, str or iterable containing strings
+        \param fun The function to be called on change, will be called without parameters
+        <!-- :type fun: --> function handle
+        \param kind The kind of events when the function will be called
+        <!-- :type kind: --> None, str or iterable containing strings
 
         The possible kinds are: "order".
         When kind is None, fun will be called by all of these events.
@@ -981,8 +981,8 @@ class ModuleManager:
 
         Note that if ``fun`` raises an exception, it will not be called anymore.
 
-        :return: a listener ID or None
-        :rtype: str or None
+        \return  a listener ID or None
+        <!-- :rtype: --> str or None
         """
         self._listeners.register(fun, kind)
 
@@ -997,12 +997,12 @@ class ModuleMetadata:
     """
     Defines the metadata of a module.
 
-    :param module: The corresponding module. May be ``None``.
-    :type module: None or python module
+    \param module The corresponding module. May be ``None``.
+    <!-- :type module: --> None or python module
 
     Each builtin module consists of metadata including name, version,
     dependencies and functionality of the module.
-    These metadata are stored in the class :py:class:`ModuleMetadata`.
+    These metadata are stored in the class <!-- :py:class: -->`ModuleMetadata`.
 
     The metadata have to be set when writing an own plugin module.
 
@@ -1362,8 +1362,8 @@ class ModuleOrder:
 
     Supports loops.
 
-    :param modules: the metadata of all available modules
-    :type modules: dict[str]: :py:class:`ModuleMetadata`
+    \param modules the metadata of all available modules
+    <!-- :type modules: --> dict[str]: <!-- :py:class: -->`ModuleMetadata`
     """
     def __init__(self, modules, order=None, lock=None):
         self._len_cache = None
@@ -1552,10 +1552,10 @@ class ModuleOrder:
         This method is not thread-safe and must only be called from
         thread-safe functions.
 
-        :param ins: the module order to be inserted
-        :type ins: { [list of] } str
-        :param isFirst: flag indicating whether this is the first module in a new level in the module order (important for loop checking)
-        :type isFirst: bool
+        \param ins the module order to be inserted
+        <!-- :type ins: --> { [list of] } str
+        \param isFirst flag indicating whether this is the first module in a new level in the module order (important for loop checking)
+        <!-- :type isFirst: --> bool
         """
         # If `ins` is a string, return it
         if type(ins) == str:
@@ -1614,10 +1614,10 @@ class ModuleOrder:
         """
         Return index of next module, or None if there is no more module.
 
-        :param idx: the current module, the next module of which is sought, or None for getting the index of the first module
-        :type idx: int, list of int or None
-        :return: index of next module or None
-        :rtype: list of int or None
+        \param idx the current module, the next module of which is sought, or None for getting the index of the first module
+        <!-- :type idx: --> int, list of int or None
+        \return  index of next module or None
+        <!-- :rtype: --> list of int or None
         """
         if not self.order:
             return None

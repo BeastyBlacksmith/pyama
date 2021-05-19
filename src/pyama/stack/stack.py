@@ -21,8 +21,8 @@ SUPPORTED_DTYPES = ('bool', 'uint8', 'uint16', 'uint32', 'uint64', 'float16', 'f
 class Stack(RoiStack):
     """Represents an image stack.
 
-    :param path: (optional) path to a file holding a TIFF stack
-    :type path: str
+    \param path (optional) path to a file holding a TIFF stack
+    <!-- :type path: --> str
     """
 
     def __init__(self, path=None, arr=None, width=None, height=None, n_frames=None, n_channels=None, dtype=None, status=None, channels=None):
@@ -484,14 +484,14 @@ class Stack(RoiStack):
 
     def get_frame_tk(self, channel, frame, convert_fcn=None):
         """
-        Get a frame of the stack as :py:class:`tkinter.PhotoImage`.
+        Get a frame of the stack as <! -- :py:class: -->`tkinter.PhotoImage`.
 
-        :param channel: The channel of the requested stack position
-        :type channel: int
-        :param frame: The frame of the requested stack position
-        :type frame: int
-        :param convert_fcn: Custom conversion function
-        :type convert_fcn: None or function
+        \param channel The channel of the requested stack position
+        <!-- :type channel: --> int
+        \param frame The frame of the requested stack position
+        <!-- :type frame: --> int
+        \param convert_fcn Custom conversion function
+        <!-- :type convert_fcn: --> None or function
 
         If a custom conversion function is given, the function must take
         one argument, which is a (n_rows, n_columns)-shaped numpy array
@@ -499,8 +499,8 @@ class Stack(RoiStack):
         image (typically 8 or 16 bit per pixel), and must return
         a (n_rows, n_columns)-shaped numpy array of ``uint8`` type.
 
-        :return: the image at the requested stack position
-        :rtype: :py:class:`tkinter.PhotoImage`
+        \return  the image at the requested stack position
+        <!-- :rtype: --> <!-- :py:class: -->`tkinter.PhotoImage`
         """
         with self.image_lock:
             a0 = self.get_image(channel=channel, frame=frame)

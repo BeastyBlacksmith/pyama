@@ -42,53 +42,53 @@ class StackViewer:
     """
     Provides a GUI for displaying a TIFF stack.
 
-    :param root: The frame in which to create the :py:class:`StackViewer`.
-    :type root: None or :py:class:`tkinter.Toplevel`
-    :param image_file: Path of a TIFF file to open
-    :type image_file: None or str
+    \param root The frame in which to create the <!-- :py:class: -->`StackViewer`.
+    <!-- :type root: --> None or <!-- :py:class: -->`tkinter.Toplevel`
+    \param image_file Path of a TIFF file to open
+    <!-- :type image_file: --> None or str
 
-    The :py:class:`StackViewer` is the TIFF stack display tool in PyAMA.
+    The <!-- :py:class: -->`StackViewer` is the TIFF stack display tool in PyAMA.
 
-    It provides a :py:class:`ContrastAdjuster`, a utility for adjusting
+    It provides a <!-- :py:class: -->`ContrastAdjuster`, a utility for adjusting
     the displayed color map.
     Changing the displayed color map only affects display, not the
-    color values in the underlying :py:class:`Stack`.
+    color values in the underlying <!-- :py:class: -->`Stack`.
 
-    The :py:class:`StackViewer` is thread-safe and can display concurrent
+    The <!-- :py:class: -->`StackViewer` is thread-safe and can display concurrent
     changes of the stack or of the ROIs via listeners.
 
-    Moreover, the :py:class:`StackViewer` implements a set of functions
+    Moreover, the <!-- :py:class: -->`StackViewer` implements a set of functions
     for interacting with a ROI adjuster:
 
-    * :py:meth:`StackViewer.start_roi_adjustment` creates, if necessary,
+    * <!-- :py:meth: -->`StackViewer.start_roi_adjustment` creates, if necessary,
       a new ROI adjuster instance and invokes the ``start_adjustment``
       method of the ROI adjuster to start the ROI adjustment process.
 
       The ROI adjuster should now start ROI adjustment.
 
-    * :py:meth:`StackViewer.stop_roi_adjustment` aborts the ROI adjustment
+    * <!-- :py:meth: -->`StackViewer.stop_roi_adjustment` aborts the ROI adjustment
       process by calling the ``stop_adjustment`` method of the ROI adjuster.
 
       The ROI adjuster should now abort ROI adjustment and call
-      :py:meth:`StackViewer.notify_roi_adjustment_finished`.
+      <!-- :py:meth: -->`StackViewer.notify_roi_adjustment_finished`.
 
       The ROI adjuster should leave the Stack, the StackViewer and the
       canvas in a clean state.
 
-    * :py:meth:`StackViewer.notify_roi_adjustment_finished` notifies the
-      :py:class:`StackViewer` that ROI adjustment has finished.
+    * <!-- :py:meth: -->`StackViewer.notify_roi_adjustment_finished` notifies the
+      <!-- :py:class: -->`StackViewer` that ROI adjustment has finished.
 
       The ROI adjuster should call this method when ROI adjustment is
       finished.
 
-    * :py:meth:`StackViewer.forget_roi_adjuster` aborts ROI adjustment
-      by calling :py:meth:`StackViewer.stop_roi_adjustment` if the
+    * <!-- :py:meth: -->`StackViewer.forget_roi_adjuster` aborts ROI adjustment
+      by calling <!-- :py:meth: -->`StackViewer.stop_roi_adjustment` if the
       adjustment is not finished yet.
 
       Then it calls the ``close`` method of the ROI adjuster, if present,
       which preferably causes the ROI adjuster to close its window.
 
-      Finally, the internal reference of the :py:class:`StackViewer`
+      Finally, the internal reference of the <!-- :py:class: -->`StackViewer`
       to the ROI adjuster is cleared.
 
     For optimal compliance with these functions, a ROI adjuster should
@@ -306,7 +306,7 @@ class StackViewer:
         Feed new job into queue.
 
         This function can be used to change the GUI from another thread.
-        See also :py:meth:`schedule_and_wait`.
+        See also <!-- :py:meth: -->`schedule_and_wait`.
         """
         Event.fire(self._update_queue, func, *args, **kwargs)
 
@@ -316,7 +316,7 @@ class StackViewer:
         Feed new job into queue and wait until it is finished.
 
         This function can be used to change the GUI from another thread.
-        See also :py:meth:`schedule`.
+        See also <!-- :py:meth: -->`schedule`.
         """
         cv = Condition()
         with cv:
@@ -353,10 +353,10 @@ class StackViewer:
 
     def open_stack(self, fn=None):
         """
-        Open a :py:class:`Stack` and display it.
+        Open a <! -- :py:class: -->`Stack` and display it.
 
-        :param fn: The path to the stack to be opened.
-        :type fn: str or None.
+        \param fn The path to the stack to be opened.
+        <!-- :type fn: --> str or None.
 
             If ``None``, show a file selection dialog.
         """
@@ -496,9 +496,9 @@ class StackViewer:
         """
         Change the shown image.
 
-        :param i_channel: channel to be shown, integer in [0,n_channels)
-        :param i_frame: frame to be shown, integer in [0,n_frames)
-        :param force: if `True`, redraw image even without change
+        \param i_channel channel to be shown, integer in [0,n_channels)
+        \param i_frame frame to be shown, integer in [0,n_frames)
+        \param force if `True`, redraw image even without change
 
         If i_channel or i_frame is None, it is not changed.
         """
@@ -649,8 +649,8 @@ class StackViewer:
         """
         Get bounding box size of image in canvas.
 
-        :return: Canvas height and canvas width, in pixels
-        :rtype: tuple ``(width, height)``"""
+        \return  Canvas height and canvas width, in pixels
+        <!-- :rtype: --> tuple ``(width, height)``"""
         cbb = self.canvas.bbox(TAG_IMAGE)
         if cbb is None:
             return 0, 0

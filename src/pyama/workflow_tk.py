@@ -411,7 +411,7 @@ class ModuleListFrame:
     def __init__(self, parent):
         """Create a new dialog.
 
-        :param parent: the parent ``WorkflowGUI`` instance
+        \param parent the parent ``WorkflowGUI`` instance
         """
         # Basic setup of dialog window
         self.parent = parent
