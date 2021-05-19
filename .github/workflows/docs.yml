@@ -22,6 +22,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/_build
-      - name: clean up
-        run: rm -rf ./docs/_build
+          publish_dir: ./docs/_build/html
