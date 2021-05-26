@@ -30,11 +30,11 @@ class RoiStack:
     def set_rois(self, rois, name=Ellipsis, frame=Ellipsis, replace=False):
         """Set the ROI set of the stack.
 
-        \param rois The ROIs to be set
+        @param rois The ROIs to be set
         <!-- :type rois: --> iterable of Roi
-        \param name The name of the RoiCollection as displayed (use Ellipsis as default)
+        @param name The name of the RoiCollection as displayed (use Ellipsis as default)
         <!-- :type name: --> str
-        \param frame index of the frame to which the ROI belongs.
+        @param frame index of the frame to which the ROI belongs.
             Use ``Ellipsis`` to specify ROIs valid in all frames.
         <!-- :type frame: --> int or Ellipsis
 
@@ -65,9 +65,9 @@ class RoiStack:
     def get_rois(self, name=Ellipsis, frame=None):
         """Get ROIs, optionally at a specified position.
 
-        \param name RoiCollection display name
+        @param name RoiCollection display name
         <!-- :type name: --> tuple (len 2) of str
-        \param frame frame identifier
+        @param frame frame identifier
         \return  ROI set
         """
         with self.roi_lock:

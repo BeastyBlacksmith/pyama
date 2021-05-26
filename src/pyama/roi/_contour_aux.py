@@ -26,13 +26,13 @@ class CornerFinder:
         """
         Return the coordinates of the contours.
 
-        \param contour The coordinates of the contour
+        @param contour The coordinates of the contour
         <!-- :type contour: --> (2,N)-shaped numpy array with x-values in column 1 and y-values in column 0
-        \param metric The distance metric to be used for neighbor search; may be "manhattan" (default) or "euclidean"
+        @param metric The distance metric to be used for neighbor search; may be "manhattan" (default) or "euclidean"
         <!-- :type metric: --> str
-        \param indices Flag wheter to return the coordinates themself or an index array for indexing the rows in ``contour``.
+        @param indices Flag wheter to return the coordinates themself or an index array for indexing the rows in ``contour``.
         <!-- :type indices: --> bool
-        \param simplify Flag whether to omit unnecessary (non-corner) coordinates from the output (default: True)
+        @param simplify Flag whether to omit unnecessary (non-corner) coordinates from the output (default: True)
         <!-- :type simplify: --> bool
 
         \return  corner coordinates or index array, depending on setting of ``indices``
@@ -81,10 +81,10 @@ class CornerFinder:
         * None: find nearest node, regardless of number of neighbors
         If no neighbor is found for the search mode, ``None`` is returned.
 
-        \param i The node whose neighbors are sought
+        @param i The node whose neighbors are sought
         <!-- :type i: --> int
-        \param mode The search mode
-        \param allow Iterable of indices to be allowed
+        @param mode The search mode
+        @param allow Iterable of indices to be allowed
         \return  The index of the nearest neighbor node of ``i``, or ``None`` if there is no neighbor for this search mode
         """
         # Process mode
@@ -121,7 +121,7 @@ class CornerFinder:
         """
         Construct the chain of coordinates in correct order.
 
-        \param i0 The index of the coordinate at which to start
+        @param i0 The index of the coordinate at which to start
         <!-- :type i0: --> int
         """
         self.chain = np.full(self.nNodes, -1, dtype=[('prev', np.intp), ('next', np.intp)])
@@ -152,7 +152,7 @@ class CornerFinder:
 
             # Proceed to nearest node
             i = j
-            
+
         # Integrate nodes not visited yet into path
         for i, neighbors in enumerate(self.chain):
             neighbors = neighbors[np.newaxis].view(np.intp)
@@ -192,9 +192,9 @@ class CornerFinder:
         """
         Return the sorted indices of the coordinates.
 
-        \param j0 The index of the coordinate to start at
+        @param j0 The index of the coordinate to start at
         <!-- :type j0: --> int
-        \param simplify Flag wheter to omit redundant coordinates (default: True)
+        @param simplify Flag wheter to omit redundant coordinates (default: True)
         <!-- :type simplify: --> bool
 
         \return  A sorted array of indices

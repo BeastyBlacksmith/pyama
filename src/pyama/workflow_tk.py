@@ -110,7 +110,7 @@ class WorkflowGUI:
     def _update(self):
         """
         Execute jobs in queue.
-        
+
         Call this method only from whithin the Tkinter main thread.
         """
         while True:
@@ -125,7 +125,7 @@ class WorkflowGUI:
     def schedule(self, func, *args, **kwargs):
         """
         Feed new job into queue.
-        
+
         Use this function to change the GUI from another thread.
         """
         self._update_queue.put((func, args, kwargs))
@@ -275,7 +275,7 @@ class WorkflowGUI:
     def get_module(self, iid=None, mod_id=None):
         """
         Get a reference to the module instance.
-        
+
         Specify either iid (module ID of ``self.mod_tree``)
         or module ID.
         When specifying both, iid overrides module ID.
@@ -411,7 +411,7 @@ class ModuleListFrame:
     def __init__(self, parent):
         """Create a new dialog.
 
-        \param parent the parent ``WorkflowGUI`` instance
+        @param parent the parent ``WorkflowGUI`` instance
         """
         # Basic setup of dialog window
         self.parent = parent

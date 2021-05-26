@@ -228,11 +228,11 @@ class MetaStack(RoiStack):
         """
         Get a frame of the stack as <!-- :py:class: -->`tkinter.PhotoImage`.
 
-        \param channel The channel of the requested stack position
+        @param channel The channel of the requested stack position
         <!-- :type channel: --> int
-        \param frame The frame of the requested stack position
+        @param frame The frame of the requested stack position
         <!-- :type frame: --> int
-        \param convert_fcn Custom conversion function
+        @param convert_fcn Custom conversion function
         <!-- :type convert_fcn: --> None or function
 
         If a custom conversion function is given, the function must take

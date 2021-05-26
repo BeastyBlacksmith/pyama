@@ -6,7 +6,7 @@ class ContrastAdjuster:
     def __init__(self, sv):
         """Constructor of ContrastAdjuster frame.
 
-        \param sv StackViewer to which the ContrastAdjuster belongs
+        @param sv StackViewer to which the ContrastAdjuster belongs
         <!-- <!-- :type sv: --> <!-- :py:class: --> -->`StackViewer`
         """
         # Initialize attributes
@@ -166,9 +166,9 @@ class ContrastAdjuster:
         If the height of the histogram canvas has already been retrieved,
         if can be given as additional argument to reduce computational load.
 
-        \param y Mouse position on canvas
+        @param y Mouse position on canvas
         <!-- :type y: --> scalar numerical
-        \param height Height of histogram canvas (optional)
+        @param height Height of histogram canvas (optional)
         <!-- :type height: --> int
         \return  The determined movement action
         <!-- :rtype: --> str
@@ -274,13 +274,13 @@ class ContrastAdjuster:
 
     def _set_limits(self, new_min=None, new_max=None):
         """Set limits of the colormap
-        
+
         Limits can be given as parameters.
         Otherwise, they will be determined automatically.
-        
-        \param new_min requested minimum (optional)
+
+        @param new_min requested minimum (optional)
         <!-- :type new_min: --> integer >=0
-        \param new_max requested maximum (optional)
+        @param new_max requested maximum (optional)
         <!-- :type new_max: --> integer >=1
         """
         if new_min is not None or new_max is not None:
@@ -342,7 +342,7 @@ class ContrastAdjuster:
         img_between = img[mask_between]
 
         return pmin, pmax, img_between, (mask_min, mask_max, mask_between)
-        
+
 
     def update_limit_line(self):
         self.limit_line = None
@@ -367,10 +367,10 @@ class ContrastAdjuster:
 
         The image is scaled depending on the settings of control variables
         of this ContrastAdjuster instance.
-        
-        \param img The image to be scaled
+
+        @param img The image to be scaled
         <!-- :type img: --> 2-dim numpy array
-        
+
         \return  The converted image
         <!-- :rtype: --> 2-dim numpy array with dtype uint8
         """
@@ -391,7 +391,7 @@ class ContrastAdjuster:
             img8[mask_between] = np.rint(255 * a * np.log(img[mask_between] - pmin + 1)).astype(np.uint8)
         else:
             img8[mask_between] = np.round((img[mask_between] - pmin) / (pmax / 255))
-        
+
         return img8
 
 
@@ -466,7 +466,7 @@ class ContrastAdjuster:
         The action is one of "move the maximum", "move the minimum" and
         "move both maximum and minimum/move limits".
 
-        \param evt The mouse event causing this call
+        @param evt The mouse event causing this call
         """
         pmin, pmax = self._get_limits()
 
