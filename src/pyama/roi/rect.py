@@ -7,11 +7,11 @@ __version__ = "0.1"
 class RectRoi(Roi):
     """Holds information of a ROI.
 
-    \param polygon corner coordinates (in pixels) of the ROI
+    @param polygon corner coordinates (in pixels) of the ROI
     <!-- :type polygon: --> 4-by-2 <!-- :py:class: -->`numpy.array`, where ``coords[i,0]`` is the x-coordinate and ``coords[i,1]`` the y-coordinate of corner ``i``
-    \param props parameters for spanning the grid
+    @param props parameters for spanning the grid
     <!-- :type props: --> dict
-    \param inverted flag whether the columns of ``polygon`` are interchanged, so that ``coords[i,0]`` is the y-coordinate and ``coords[i,1]`` the x-coordinate of corner ``i``
+    @param inverted flag whether the columns of ``polygon`` are interchanged, so that ``coords[i,0]`` is the y-coordinate and ``coords[i,1]`` the x-coordinate of corner ``i``
     <!-- :type inverted: --> bool
 
     The following properties are exposed:

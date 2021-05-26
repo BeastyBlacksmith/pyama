@@ -21,7 +21,7 @@ SUPPORTED_DTYPES = ('bool', 'uint8', 'uint16', 'uint32', 'uint64', 'float16', 'f
 class Stack(RoiStack):
     """Represents an image stack.
 
-    \param path (optional) path to a file holding a TIFF stack
+    @param path (optional) path to a file holding a TIFF stack
     <!-- :type path: --> str
     """
 

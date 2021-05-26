@@ -45,9 +45,9 @@ class StackViewer:
     """
     Provides a GUI for displaying a TIFF stack.
 
-    \param root The frame in which to create the <!-- :py:class: -->`StackViewer`.
+    @param root The frame in which to create the <!-- :py:class: -->`StackViewer`.
     <!-- :type root: --> None or <!-- :py:class: -->`tkinter.Toplevel`
-    \param image_file Path of a TIFF file to open
+    @param image_file Path of a TIFF file to open
     <!-- :type image_file: --> None or str
 
     The <!-- :py:class: -->`StackViewer` is the TIFF stack display tool in PyAMA.
@@ -363,7 +363,7 @@ class StackViewer:
         """
         Open a <! -- :py:class: -->`Stack` and display it.
 
-        \param fn The path to the stack to be opened.
+        @param fn The path to the stack to be opened.
         <!-- :type fn: --> str or None.
 
             If ``None``, show a file selection dialog.
@@ -523,9 +523,9 @@ class StackViewer:
         """
         Change the shown image.
 
-        \param i_channel channel to be shown, integer in [0,n_channels)
-        \param i_frame frame to be shown, integer in [0,n_frames)
-        \param force if `True`, redraw image even without change
+        @param i_channel channel to be shown, integer in [0,n_channels)
+        @param i_frame frame to be shown, integer in [0,n_frames)
+        @param force if `True`, redraw image even without change
 
         If i_channel or i_frame is None, it is not changed.
         """
