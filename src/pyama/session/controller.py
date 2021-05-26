@@ -131,7 +131,7 @@ This method must be called from the control thread.
     def get_stack_ids(self, *exclude_sessions):
         """Get stack IDs of all open sessions.
 
-Sessions whose session ID is in 'exclude_sessions' are ignored.
+Sessions whose session ID is in `exclude_sessions` are ignored.
 This method must be called from the control thread.
         """
         stack_ids = set()

@@ -107,15 +107,15 @@ param path (optional) path to a file holding a TIFF stack
     def load(self, path, loader=None, status=None, channels=None, h5_key=None):
         """Load a stack from a path.
 
-path` -- path to a stack file
-loader` -- str, name of a stack loader.
+`path` -- path to a stack file
+`loader` -- str, name of a stack loader.
 supported loaders: tiff, npy, hdf5
 not given, loader is determined from file extension.
-status` -- Status instance for displaying progress
-channels` -- index of channels to be loaded. Default is to load all channels.
+`status` -- Status instance for displaying progress
+`channels` -- index of channels to be loaded. Default is to load all channels.
 value for indexing into a dimension of a numpy array
 be given.
-h5_key` -- str, key of the dataset in a HDF5 file.
+`h5_key` -- str, key of the dataset in a HDF5 file.
 , only HDF5 files created by Ilastik are supported.
 be omitted if file contains only one dataset.
         """

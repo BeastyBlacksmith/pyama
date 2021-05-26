@@ -1334,7 +1334,7 @@ Write string or tuple of strings in return data dict.
 The result will always be an empty tuple or a
 tuple of strings. In case of invalid `x`, a
 warning is emitted and the value is not changed.
-'None' always clears the value to an empty tuple.
+`None` always clears the value to an empty tuple.
 
 `names` is a list of keys for recursively indexing
 into `self.__vals`.

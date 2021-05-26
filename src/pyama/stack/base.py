@@ -124,11 +124,11 @@ new shape must be passed as a dict-like object with preserved order.
 reshaping is finished, listeners of the event const.EVT_RESHAPE are
 with the keyword argument `message` holding a namedtuple with fields:
 
-event`: const.EVT_RESHAPE
+`event`: const.EVT_RESHAPE
 
-old`: OrderedDict of shape before reshape
+`old`: OrderedDict of shape before reshape
 
-new`: OrderedDict of shape after reshape
+`new`: OrderedDict of shape after reshape
         """
         new_shape = OrderedDict()
         n_img = 1

@@ -273,7 +273,7 @@ The created Roi object is returned.
         """Load multiple Roi objects.
 
 `fn` is a path name of a file holding Roi information.
-'.roi' and '.zip' files are allowed.
+`.roi` and `.zip` files are allowed.
 If `fn` is a file-like object, only opened ZIP files are allowed.
 If `as_dict` is false (default), a list of the
 loaded Roi objects is returned.

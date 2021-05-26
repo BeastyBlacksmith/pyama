@@ -8,7 +8,7 @@ class ChannelEditDialog(tk.Toplevel):
     """Dialog to change channel properties.
 
 This class is intended to be used only through the
-classmethod 'run'.
+classmethod `run`.
 
 Currently, editing the channel description is not supported.
     """

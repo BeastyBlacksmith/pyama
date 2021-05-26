@@ -8,8 +8,8 @@ Scrollbars are automatically added to a scrollable widget.
 This widget can be embedded like a Frame.
 
 Note that this class requires `widget` to be scrollable,
-i.e. `widget` must provide the methods '{x,y}view' and the
-widget options '{x,y}scrollcommand'.
+i.e. `widget` must provide the methods `{x,y}view` and the
+widget options `{x,y}scrollcommand`.
 For non-scrollable widgets, use ScrolledFrame instead.
 
 This class is inspired by:
@@ -91,13 +91,13 @@ class ScrolledFrame(ScrolledWidget):
     """Frame with automatic scrollbars.
 
 This class provides a frame with automatic scrollbars.
-Add items to the 'viewport' attribute, which is a frame
+Add items to the `viewport` attribute, which is a frame
 that can be scrolled.
 
 This class is based on:
 https://gist.github.com/mp035/9f2027c3ef9172264532fcd6262f3b01
 
-For possible constructor arguments, see 'ScrolledWidget'.
+For possible constructor arguments, see `ScrolledWidget`.
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

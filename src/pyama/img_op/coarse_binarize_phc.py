@@ -17,11 +17,11 @@ def generic_filter(img, fun, size=3, reflect=False):
     """Apply filter to image.
 
 img -- the image to be filtered
-fun -- the filter function to be applied, must accept subimage of 'img' as only argument and return a scalar
+fun -- the filter function to be applied, must accept subimage of `img` as only argument and return a scalar
 size -- the size (side length) of the mask; must be an odd integer
-reflect -- switch for border mode: True for 'reflect', False for 'mirror'
+reflect -- switch for border mode: True for `reflect`, False for `mirror`
 
-Returns a np.float64 array with same shape as 'img'.
+Returns a np.float64 array with same shape as `img`.
 
 This function is intended to be a numba-capable replacement of scipy.ndimage.generic_filter.
     """
