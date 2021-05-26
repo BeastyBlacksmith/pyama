@@ -5,6 +5,9 @@ import queue
 import sys
 from threading import Condition
 import tkinter as tk
+import PIL.ImageTk as piltk
+import PIL.Image as pilimg
+import skimage.transform as skt
 import tkinter.filedialog as tkfdlg
 import tkinter.ttk as ttk
 import warnings
@@ -139,6 +142,7 @@ class StackViewer:
         self.i_frame = None
         self.img = None
         self.img_shape = None
+        self.imscale = 1.0
         self.scale = None
 
         self.i_channel_var = tk.IntVar()
@@ -207,6 +211,10 @@ class StackViewer:
                            xscrollcommand=self.scroll_canvas_horiz.set,
                            yscrollcommand=self.scroll_canvas_vert.set)
         self.canvas.bind("<Configure>", self.update_scrollbars)
+        self.canvas.bind('<MouseWheel>', self._do_zoom)  # with Windows and MacOS, but not Linux
+        self.canvas.bind('<Button-5>',   self._do_zoom)  # only with Linux, wheel scroll down
+        self.canvas.bind('<Button-4>',   self._do_zoom)  # only with Linux, wheel scroll up
+
 
         # Channel control elements
         self.scale_channel = tk.Scale(
@@ -398,16 +406,18 @@ class StackViewer:
                     lambda: self.schedule(self.draw_rois), 'roi')
 
     def _show_img(self):
+        if self.stack is None:
+            return
         """Update the image shown."""
         if self.contrast_adjuster is None:
             convert_fcn = None
+            self.img = self.stack.get_image(channel=self.i_channel, frame=self.i_frame)
         else:
             convert_fcn = self.contrast_adjuster.convert
+            self.img = convert_fcn(self.stack.get_image(channel=self.i_channel, frame=self.i_frame))
+        self.img = skt.rescale(self.img, self.imscale, order=0, multichannel=False, preserve_range=True).astype(np.uint8)
+        new_shape = np.array(self.img.shape)
 
-        self.img = self.stack.get_frame_tk(channel=self.i_channel,
-                                           frame=self.i_frame,
-                                           convert_fcn=convert_fcn)
-        new_shape = np.array(((self.img.height(), self.img.width()),))
         if self.img_shape is None or \
                 not (self.img_shape == new_shape).all():
             self.img_shape = new_shape
@@ -420,6 +430,7 @@ class StackViewer:
         else:
             self.scale = None
 
+        self.img = piltk.PhotoImage(pilimg.fromarray(self.img, mode='L'))
         self.canvas.delete(TAG_IMAGE)
         self.canvas.create_image(0, 0, anchor=tk.NW,
                                  image=self.img, tags=(TAG_IMAGE,))
@@ -429,6 +440,22 @@ class StackViewer:
         if is_scaled:
             self.update_scrollbars()
 
+    def _do_zoom(self, event, factor = 1.3):
+        ''' Zoom with mouse wheel '''
+        x = self.canvas.canvasx(event.x)
+        y = self.canvas.canvasy(event.y)
+        scale = 1.0
+        # Respond to Linux (event.num) or Windows (event.delta) wheel event
+        if event.num == 5 or event.delta == -120:  # scroll down
+            self.imscale /= factor
+            scale        /= factor
+        if event.num == 4 or event.delta == 120:  # scroll up
+            i = min(self.canvas.winfo_width(), self.canvas.winfo_height())
+            if i < self.imscale: return  # 1 pixel is bigger than the visible area
+            self.imscale *= factor
+            scale        *= factor
+        self.canvas.scale('all', x, y, scale, scale)  # rescale all objects
+        self._show_img()
 
     def _update_stack_properties(self):
         """Read stack dimensions and adjust GUI."""
