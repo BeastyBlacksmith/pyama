@@ -350,20 +350,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Change highlight state of one or more traces. </p>
-<pre class="fragment">    `trace` must be valid keys to `self.session.traces`.
-    `val` specifies whether to highlight (True) the
-    traces or not (False) or to toggle (None) highlighting.
-    If `update_select` is True, a non-selected cell is
-    selected before highlighting it; else, highlighting
-    is ignored.
+<p><code>trace</code> must be valid keys to <code>self.session.traces</code>. <code>val</code> specifies whether to highlight (True) the traces or not (False) or to toggle (None) highlighting. If <code>update_select</code> is True, a non-selected cell is selected before highlighting it; else, highlighting is ignored.</p>
+<p>This method does not update display. To update display, call <code>self.update_highlight</code>.</p>
+<p>If <code>update_select</code> is True, a return value of True indicates that a cell selection has changed. In this case, the user is responsible to call <code>self.update_selection</code>. </p>
 
-    This method does not update display.
-    To update display, call `self.update_highlight`.
-
-    If `update_select` is True, a return value of True
-    indicates that a cell selection has changed. In this case,
-    the user is responsible to call `self.update_selection`.
-</pre> 
 </div>
 </div>
 <a id="af267175e3dc10d8be7ba074e922de973"></a>
@@ -383,8 +373,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Run the GUI mainloop. </p>
-<pre class="fragment">    This method must be implemented by subclasses.
-</pre> 
+<p>This method must be implemented by subclasses. </p>
+
 <p>Reimplemented from <a class="el" href="classpyama_1_1session_1_1view_1_1SessionView.html#ae0bc79dfce9ce8f51eed80783cf34ddd">pyama.session.view.SessionView</a>.</p>
 
 </div>
@@ -422,9 +412,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Factory function for display rendering function. </p>
-<pre class="fragment">    stack -- metastack of session instance
-    render_segmentation -- function for rendering binary segmentation image
-</pre> 
+<p>stack &ndash; metastack of session instance render_segmentation &ndash; function for rendering binary segmentation image </p>
+
 </div>
 </div>
 <a id="a7f318408a4f286499ff695a0216c99d7"></a>
@@ -466,15 +455,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Change selection state of one or more traces. </p>
-<pre class="fragment">    `trace` must be valid keys to `self.traces`.
-    `val` specifies whether to select (True),
-    deselect (False) or toggle (None) the selection.
-    `update_highlight` specifies whether to remove
-    highlighting (True) when a cell is deselected.
+<p><code>trace</code> must be valid keys to <code>self.traces</code>. <code>val</code> specifies whether to select (True), deselect (False) or toggle (None) the selection. <code>update_highlight</code> specifies whether to remove highlighting (True) when a cell is deselected.</p>
+<p>This method does not update display. To update display, call <code>self.update_selection</code>. </p>
 
-    This method does not update display.
-    To update display, call `self.update_selection`.
-</pre> 
 </div>
 </div>
 <a id="a6fd010e9d565735712f47b62f3c92f25"></a>
@@ -494,10 +477,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Redraw relevant display portions after highlight changes. </p>
-<pre class="fragment">    Note: All tasks performed by `update_highlight` are also
-    included in `update_selection`. Running both methods at
-    the same time is not necessary.
-</pre> 
+<p>Note: All tasks performed by <code>update_highlight</code> are also included in <code>update_selection</code>. Running both methods at the same time is not necessary. </p>
+
 </div>
 </div>
 <a id="a0c4c5803ffe8ab540edd9d176465697c"></a>
@@ -527,8 +508,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Update all ROIs. </p>
-<pre class="fragment">    This method updates all display properties of all ROIs.
-</pre> 
+<p>This method updates all display properties of all ROIs. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

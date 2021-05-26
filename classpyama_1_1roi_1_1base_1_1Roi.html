@@ -253,8 +253,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>X</b> = 1</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for ROIs. </p>
-<pre class="fragment">ROI types must inherit from this class and implement at least `key`.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<p>ROI types must inherit from this class and implement at least <code>key</code>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae91176e135f53b00a0015e5bf04493db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae91176e135f53b00a0015e5bf04493db">&#9670;&nbsp;</a></span>corners()</h2>
 
@@ -272,13 +272,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>X</b> = 1</td></tr>
 </div><div class="memdoc">
 
 <p>Return the coordinates of the ROI corners. </p>
-<pre class="fragment">    The returned coordinates correspond to the pixel centers
-    of the corner pixels of the ROI. Connecting the coordinates
-    in the returned order with straight lines gives the
-    outermost pixels of the ROI.
+<p>The returned coordinates correspond to the pixel centers of the corner pixels of the ROI. Connecting the coordinates in the returned order with straight lines gives the outermost pixels of the ROI.</p>
+<p>See also: <a class="el" href="classpyama_1_1roi_1_1base_1_1Roi.html#a3b4cafb889159ba3142ceec6a0592afb" title="Return the surrounding polygon.">Roi.perimeter</a> </p>
 
-    See also: Roi.perimeter
-</pre> 
 <p>Reimplemented in <a class="el" href="classpyama_1_1roi_1_1rect_1_1RectRoi.html#aeabc2b00471590510abc1442ce282b52">pyama.roi.rect.RectRoi</a>.</p>
 
 </div>
@@ -300,16 +296,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>X</b> = 1</td></tr>
 </div><div class="memdoc">
 
 <p>Return the surrounding polygon. </p>
-<pre class="fragment">    The returned coordinates correspond to the vertices of a polygon
-    surrounding the ROI like a rubberband, i.e. the coordinates do
-    not correspond to pixel centers, but to the edges between pixels.
+<p>The returned coordinates correspond to the vertices of a polygon surrounding the ROI like a rubberband, i.e. the coordinates do not correspond to pixel centers, but to the edges between pixels.</p>
+<p>These values can be used to reconstruct the ROI coordinates with the function skimage.draw.polygon, and to export the ROI in the format required by ImageJ.</p>
+<p>See also: <a class="el" href="classpyama_1_1roi_1_1base_1_1Roi.html#ae91176e135f53b00a0015e5bf04493db" title="Return the coordinates of the ROI corners.">Roi.corners</a> </p>
 
-    These values can be used to reconstruct the ROI coordinates with
-    the function skimage.draw.polygon, and to export the ROI in the
-    format required by ImageJ.
-
-    See also: Roi.corners
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

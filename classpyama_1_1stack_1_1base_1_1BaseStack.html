@@ -191,27 +191,17 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for stacks. </p>
-<p>This class provides basic stack functionality that may be used by subclasses. This class not intended for direct instantiation, but only for subclassing.</p>
-<p>Implementing classes should provide this API:</p><ul>
-<li>A numpy array of one frame can be obtained by the <code>get_image</code> method.</li>
-<li>If the shape of the stack may be changed, the <code>reshape</code> method should be used. Upon reshape, the listeners should be notified. Else, <code>reshape</code> should throw a NotImplementedError.</li>
-<li>If the stack corresponds to a file, the path should be accessible under <code>_path</code>.</li>
-<li>If the stack is a virtual stack (frames are calculated just in time when <code>get_image</code> is called), the constructor of this class should be called with <code>virtual=True</code>.</li>
-<li>If an implementing class has special requirements for listeners (e.g. require queue, enforce other Listeners implementaiton), an existing Listeners instance should be passed via the <code>listeners</code> keyword or Listeners options should be passed via the <code>listeners_opt</code> keyword of the constructor. The Listeners must at least have the kinds <code>reshape</code> and <code>close</code>. If only more listener kinds are required, the additional kinds can be passed via the <code>listeners_kinds</code> keyword argument.</li>
-</ul>
-<p>This class fires these event kinds with a dict as keyword argument <code>message</code>:</p><ul>
-<li>Event <code>const.EVT_RESHAPE</code> with <code>message</code> containing these fields:<ul>
+<p>class provides basic stack functionality that may be used by subclasses. class not intended for direct instantiation, but only for subclassing.</p>
+<p>classes should provide this API: A numpy array of one frame can be obtained by the <code>get_image</code> method. If the shape of the stack may be changed, the <code>reshape</code> method should be used. Upon reshape, the listeners should be notified. Else, <code>reshape</code> should throw a NotImplementedError. If the stack corresponds to a file, the path should be accessible under <code>_path</code>. If the stack is a virtual stack (frames are calculated just in time when <code>get_image</code> is called), the constructor of this class should be called with <code>virtual=True</code>. If an implementing class has special requirements for listeners (e.g. require queue, enforce other Listeners implementaiton), an existing Listeners instance should be passed via the <code>listeners</code> keyword or Listeners options should be passed via the <code>listeners_opt</code> keyword of the constructor. The Listeners must at least have the kinds <code>reshape</code> and <code>close</code>. If only more listener kinds are required, the additional kinds can be passed via the <code>listeners_kinds</code> keyword argument.</p>
+<p>class fires these event kinds with a dict as keyword argument <code>message</code>:</p><ul>
+<li>Event <code>const.EVT_RESHAPE</code> with <code>message</code> containing these fields:</li>
 <li><code>event</code>: const.EVT_RESHAPE</li>
 <li><code>id</code>: ID of the calling stack</li>
 <li><code>old</code>: an OrderedDict of the previous shape</li>
 <li><code>new</code>: an OrderedDict of the newly established shape</li>
-</ul>
-</li>
-<li>Event <code>const.EVT_CLOSE</code> with <code>message</code> containing these fields:<ul>
+<li>Event <code>const.EVT_CLOSE</code> with <code>message</code> containing these fields:</li>
 <li><code>event</code>: const.EVT_CLOSE</li>
-<li><code>id</code>: ID of the calling stack A stack emitting this event is being closed and should not send any events after this event has been sent. Listeners may/should clean up references to the stack upon this event. Additionally, all events contain the keyword argument <code>stack_id</code> holding the ID of this stack, which can also be retrieved with the <code>id</code> property. </li>
-</ul>
-</li>
+<li><code>id</code>: ID of the calling stack A stack emitting this event is being closed and should not send any events after this event has been sent. Listeners may/should clean up references to the stack upon this event. , all events contain the keyword argument <code>stack_id</code> holding the of this stack, which can also be retrieved with the <code>id</code> property. </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a987d285bceaed6b3e61692cd54327ff7"></a>
@@ -231,7 +221,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close the TIFF file. </p>
-<p>This method may be implemented/overwritten by a subclass. Closing a stack should always fire a <code>const.EVT_CLOSE</code> event to its listeners to allow for cleanup. </p>
+<p>method may be implemented/overwritten by a subclass. a stack should always fire a <code>const.EVT_CLOSE</code> event its listeners to allow for cleanup. </p>
 
 <p>Reimplemented in <a class="el" href="classpyama_1_1stack_1_1tiffstack_1_1TiffStack.html#a446d26da6e5437b8e107d71d4ad11b85">pyama.stack.tiffstack.TiffStack</a>.</p>
 
@@ -276,7 +266,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get index of an image in a linear sequence of images. </p>
-<p>Indices are zero-based. All indices of existing dimensions are required. Slicing is not supported. </p>
+<p>are zero-based. indices of existing dimensions are required. is not supported. </p>
 
 </div>
 </div>
@@ -307,8 +297,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reshape the stack. </p>
-<p>The new shape must be passed as a dict-like object with preserved order.</p>
-<p>When reshaping is finished, listeners of the event const.EVT_RESHAPE are notified with the keyword argument <code>message</code> holding a namedtuple with fields:</p>
+<p>new shape must be passed as a dict-like object with preserved order.</p>
+<p>reshaping is finished, listeners of the event const.EVT_RESHAPE are with the keyword argument <code>message</code> holding a namedtuple with fields:</p>
 <p><code>event</code>: const.EVT_RESHAPE</p>
 <p><code>old</code>: OrderedDict of shape before reshape</p>
 <p><code>new</code>: OrderedDict of shape after reshape </p>

@@ -234,82 +234,13 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Session info container. </p>
-<pre class="fragment">The following structured fields are present:
-
-self.channel_selection
-    list of dict
-    The list items correspond to the channels of
-    `self.display_stack` with the same index. The dict
-    holds information of the selection widgets:
-    'type'      str of the channel type; one of those in:
-                `const.CH_CAT_LIST`
-    'val'       boolean; indicates whether this channel is
-                currently displayed (True) or not (False).
-    'button'    tk.Button instance for displaying the channel
-
-self.channel_order
-    list of int
-    The list values are indices to `self.channel_selection`.
-    The order of the values is the order in which to display
-    the channel selection buttons.
-
-self.traces
-    dict of dict
-    The keys of the outer dict are the trace names (as str),
-    each trace corresponding to one tracked cell.
-    The inner dict holds information of the trace:
-    'roi'       list with frame index as index and corresponding
-                ROI name as value. The ContourRoi instance can
-                be retrieved from `self.rois` using the frame
-                index and the ROI name.
-    'select'    boolean; if True, cell trace is read and displayed.
-    'highlight' boolean; if True, cell/trace is highlighted in
-                stackviewer and in plot. Only meaningful if
-                the 'select' option is True.
-    'val'       dict of values read for the cell. The dict keys are
-                the name of the quantity, the dict values are the
-                corresponding values of the quantity. For most quantities
-                (currently for all), the values are 1-dim numpy arrays
-                with each element being to the value in the
-                corresponding frame. Cell size is automatically present
-                with the key 'Area'. Integrated fluorescence intensities
-                are read for each fluorescence channel.
-    'plot'      dict of plot objects (e.g. Line2D instance). The dict keys
-                are the plotted quantities (as in 'val'), the values
-                are the plot objects. Useful for plot manipulations
-                like highlighting traces.
-
-self.trace_info
-    dict of dict
-    Holds information about the present data.
-    The keys of the outer dict are names of the quantities
-    ('Area' predefined), the inner dict contains:
-    'label'     (optional) str with additional information
-                about the trace, e.g. 'Fluorescence 1'
-    'channel'   int, index of the corresponding channel
-                in `self.stack`. May be None.
-    'unit'      str, unit of the quantity. Used for proper
-                axes labels in the plot, in later versions
-                possibly also for unit conversions.
-                Default: 'a.u.'
-    'factor'    float, factor to multiply values to yield 'unit'. Default: None
-    'type'      str, one of the contents of `const.DT_CAT_LIST`.
-                Indicates the type of quantity of the trace.
-    'order'     int, indicates in which order to display the plots.
-    'button'    tk.Button, the button instance for controlling 'plot'
-    'var'       tk.BooleanVar associated with 'button'
-    'plot'      boolean, indicates whether to plot the quantity or not.
-    'quantity'  str, name of the value used in plot for y-label
-    The outer dict should only be changed using the methods
-    `self.add_trace_info` or `self.clear_trace_info`.
-
-self.rois
-    list of dict
-    The list indices are the frame indices of the stack,
-    the dict keys are the labels (as in the labeled image)
-    of the ROIs in the frame (saved as string) and the
-    dict values are the corresponding ContourRoi instances.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<p>The following structured fields are present:</p>
+<p>self.channel_selection list of dict The list items correspond to the channels of <code>self.display_stack</code> with the same index. The dict holds information of the selection widgets: <code>type</code> str of the channel type; one of those in: <code>const.CH_CAT_LIST</code> <code>val</code> boolean; indicates whether this channel is currently displayed (True) or not (False). <code>button</code> tk.Button instance for displaying the channel</p>
+<p>self.channel_order list of int The list values are indices to <code>self.channel_selection</code>. The order of the values is the order in which to display the channel selection buttons.</p>
+<p>self.traces dict of dict The keys of the outer dict are the trace names (as str), each trace corresponding to one tracked cell. The inner dict holds information of the trace: <code>roi</code> list with frame index as index and corresponding ROI name as value. The ContourRoi instance can be retrieved from <code>self.rois</code> using the frame index and the ROI name. <code>select</code> boolean; if True, cell trace is read and displayed. <code>highlight</code> boolean; if True, cell/trace is highlighted in stackviewer and in plot. Only meaningful if the <code>select</code> option is True. <code>val</code> dict of values read for the cell. The dict keys are the name of the quantity, the dict values are the corresponding values of the quantity. For most quantities (currently for all), the values are 1-dim numpy arrays with each element being to the value in the corresponding frame. Cell size is automatically present with the key <code>Area</code>. Integrated fluorescence intensities are read for each fluorescence channel. <code>plot</code> dict of plot objects (e.g. Line2D instance). The dict keys are the plotted quantities (as in <code>val</code>), the values are the plot objects. Useful for plot manipulations like highlighting traces.</p>
+<p>self.trace_info dict of dict Holds information about the present data. The keys of the outer dict are names of the quantities (<code>Area</code> predefined), the inner dict contains: <code>label</code> (optional) str with additional information about the trace, e.g. <code>Fluorescence 1</code> <code>channel</code> int, index of the corresponding channel in <code>self.stack</code>. May be None. <code>unit</code> str, unit of the quantity. Used for proper axes labels in the plot, in later versions possibly also for unit conversions. Default: <code>a.u.</code> <code>factor</code> float, factor to multiply values to yield <code>unit</code>. Default: None <code>type</code> str, one of the contents of <code>const.DT_CAT_LIST</code>. Indicates the type of quantity of the trace. <code>order</code> int, indicates in which order to display the plots. <code>button</code> tk.Button, the button instance for controlling <code>plot</code> <code>var</code> tk.BooleanVar associated with <code>button</code> <code>plot</code> boolean, indicates whether to plot the quantity or not. <code>quantity</code> str, name of the value used in plot for y-label The outer dict should only be changed using the methods <code>self.add_trace_info</code> or <code>self.clear_trace_info</code>.</p>
+<p>self.rois list of dict The list indices are the frame indices of the stack, the dict keys are the labels (as in the labeled image) of the ROIs in the frame (saved as string) and the dict values are the corresponding ContourRoi instances. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afad0eb8c7cb3e60ed8e10864873e5bc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afad0eb8c7cb3e60ed8e10864873e5bc9">&#9670;&nbsp;</a></span>config()</h2>
 
@@ -355,19 +286,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Configure the session for display. </p>
-<pre class="fragment">    'chan_info' is a list holding dictionaries with these fields, defining the channels to be displayed:
-        stack_id -- stack ID, key of `SessionModel.stacks` #DEBUG: Attention, changed behaviour
-        name -- str, name of the stack
-        dir -- str, directory where the stack file is saved
-        i_channel -- int, index of stack to be used
-        label -- str, optional user-defined description
-        type -- str, stack type (phasecontrast, fluorescence, binary)
-    'render_factory' is a factory function for the display_stack rendering function
-    'status' is a Status instance for updating the status display.
-    'do_track' is a flag whether to perform tracking or not.
+<p><code>chan_info</code> is a list holding dictionaries with these fields, defining the channels to be displayed: stack_id &ndash; stack ID, key of <code>SessionModel.stacks</code> #DEBUG: Attention, changed behaviour name &ndash; str, name of the stack dir &ndash; str, directory where the stack file is saved i_channel &ndash; int, index of stack to be used label &ndash; str, optional user-defined description type &ndash; str, stack type (phasecontrast, fluorescence, binary) <code>render_factory</code> is a factory function for the display_stack rendering function <code>status</code> is a Status instance for updating the status display. <code>do_track</code> is a flag whether to perform tracking or not.</p>
+<p>Returns True in case of success, else False. </p>
 
-    Returns True in case of success, else False.
-</pre> 
 </div>
 </div>
 <a id="a472716d94d8c05c45104466a9629d0a1"></a>
@@ -403,12 +324,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Load session content from StackdataIO instance. </p>
-<pre class="fragment">    Arguments:
-        fn -- str, filename of the saved session
-        status -- Status object for displaying progress
+<p>Arguments: fn &ndash; str, filename of the saved session status &ndash; Status object for displaying progress</p>
+<p>Returns a new <a class="el" href="classpyama_1_1session_1_1model_1_1SessionModel.html" title="Session info container.">SessionModel</a> instance. </p>
 
-    Returns a new SessionModel instance.
-</pre> 
 </div>
 </div>
 <a id="a605f22c1d8044d95410d5ebd096c7da7"></a>
@@ -438,12 +356,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Get a stack. </p>
-<pre class="fragment">    If 'stack_id' is None, return the whole stack dictionary.
-    Else, return the stack info for the given stack ID.
-    Returns None for non-existent stack ID.
+<p>If <code>stack_id</code> is None, return the whole stack dictionary. Else, return the stack info for the given stack ID. Returns None for non-existent stack ID.</p>
+<p>This method is thread-safe. The returned object must not be altered. </p>
 
-    This method is thread-safe. The returned object must not be altered.
-</pre> 
 </div>
 </div>
 <a id="aafdb48abe90b040dd7ac4d36e458e81e"></a>
@@ -473,12 +388,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Get a stack info dict. </p>
-<pre class="fragment">    If 'stack_id' is None, return the whole 'stacks' dictionary.
-    Else, return the stack info dict for the given stack ID.
-    Returns None for non-existent stack ID.
+<p>If <code>stack_id</code> is None, return the whole <code>stacks</code> dictionary. Else, return the stack info dict for the given stack ID. Returns None for non-existent stack ID.</p>
+<p>This method is thread-safe. The returned object must not be altered. </p>
 
-    This method is thread-safe. The returned object must not be altered.
-</pre> 
 </div>
 </div>
 <a id="af6bff9d61dc8f1a3de8bec5f8d902096"></a>
@@ -514,12 +426,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Open a stack and save it in SessionModel.stacks. </p>
-<pre class="fragment">    Arguments:
-        fn -- str, filename of the stack
-        status -- Status instance for progress display
+<p>Arguments: fn &ndash; str, filename of the stack status &ndash; Status instance for progress display</p>
+<p>Returns the stack_id (key to the SessionModel.stacks dictionary). </p>
 
-    Returns the stack_id (key to the SessionModel.stacks dictionary).
-</pre> 
 </div>
 </div>
 <a id="a51179010f9d11285d1b880eb2e8d6239"></a>
@@ -567,10 +476,8 @@ self.rois
 </div><div class="memdoc">
 
 <p>Plots the traces. </p>
-<pre class="fragment">    fig -- the Figure instance to plot to
-    is_interactive -- special formatting for interactive plot
-    frame_indicator_list -- list to which to add frame indicators
-</pre> 
+<p>fig &ndash; the Figure instance to plot to is_interactive &ndash; special formatting for interactive plot frame_indicator_list &ndash; list to which to add frame indicators </p>
+
 </div>
 </div>
 <a id="a374064abdce4d0a001e0b178f5412484"></a>
@@ -624,15 +531,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Dynamically draw segmentation image from ROIs. </p>
-<pre class="fragment">    This method is to be called by `MetaStack.get_image`.
+<p>This method is to be called by <code>MetaStack.get_image</code>.</p>
+<p>Arguments: meta &ndash; the calling <code>MetaStack</code> instance; ignored frame &ndash; the index of the selected frame scale &ndash; scaling information; ignored rois &ndash; iterable of ROIs to show; if None, show all ROIs in frame binary &ndash; if True, returned array is boolean, else uint8 </p>
 
-    Arguments:
-        meta -- the calling `MetaStack` instance; ignored
-        frame -- the index of the selected frame
-        scale -- scaling information; ignored
-        rois -- iterable of ROIs to show; if None, show all ROIs in frame
-        binary -- if True, returned array is boolean, else uint8
-</pre> 
 </div>
 </div>
 <a id="add7292c829c2bd6da360dc94204268e0"></a>
@@ -668,9 +569,8 @@ self.rois
 </div><div class="memdoc">
 
 <p>Save the session. </p>
-<pre class="fragment">    Arguments:
-        save_dir -- str indicating path of directory to which to save
-</pre> 
+<p>Arguments: save_dir &ndash; str indicating path of directory to which to save </p>
+
 </div>
 </div>
 <a id="a0958fab0d695ef16fd628ad135bb8782"></a>
@@ -700,14 +600,9 @@ self.rois
 </div><div class="memdoc">
 
 <p>Preprocessing function for smoothening segmentation. </p>
-<pre class="fragment">    Smoothens 2D image `img` using morphological operations.
-    `img` must have values from 0 to 1, indicating the probability
-    that the corresponding pixel belongs to a cell.
-    Returns a binary (boolean) image with same shape as `img`.
+<p>Smoothens 2D image <code>img</code> using morphological operations. <code>img</code> must have values from 0 to 1, indicating the probability that the corresponding pixel belongs to a cell. Returns a binary (boolean) image with same shape as <code>img</code>.</p>
+<p>This function is designed for preparing the Probability obtained from Ilastik for tracking, using the .label.Tracker.preprocessing attribute. </p>
 
-    This function is designed for preparing the Probability obtained
-    from Ilastik for tracking, using the .label.Tracker.preprocessing attribute.
-</pre> 
 </div>
 </div>
 <a id="a26bbaa74bbeb4d209d7909d31af05c31"></a>
@@ -749,11 +644,8 @@ self.rois
 </div><div class="memdoc">
 
 <p>Set a microscope. </p>
-<pre class="fragment">    Arguments:
-        name -- str, human-readable microscope/objective name
-        resolution -- float, image resolution in [µm/px]
-        status -- Status, passed on to `SessionModel.read_traces`
-</pre> 
+<p>Arguments: name &ndash; str, human-readable microscope/objective name resolution &ndash; float, image resolution in [µm/px] status &ndash; Status, passed on to <code><a class="el" href="classpyama_1_1session_1_1model_1_1SessionModel.html#a24b323e0bd2e2583b09ee474d729178d" title="Read out cell traces.">SessionModel.read_traces</a></code> </p>
+
 </div>
 </div>
 <a id="ac0c9e832056b21499024bae63a1ddd90"></a>
@@ -783,8 +675,8 @@ self.rois
 </div><div class="memdoc">
 
 <p>Return a list of traces sorted by position. </p>
-<pre class="fragment">    fr -- the frame number
-</pre> 
+<p>fr &ndash; the frame number </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

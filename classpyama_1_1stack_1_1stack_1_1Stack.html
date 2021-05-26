@@ -133,7 +133,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:aea9e316b3e61abe2c47c6bfc5f44804e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crop image with specified margins. <br /></td></tr>
 <tr class="separator:aea9e316b3e61abe2c47c6bfc5f44804e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adabea587e80d0c6f62a6e52c3a2c80b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyama_1_1stack_1_1stack_1_1Stack.html#adabea587e80d0c6f62a6e52c3a2c80b1">convert_position</a> (self, channel=None, frame=None, image=None)</td></tr>
-<tr class="memdesc:adabea587e80d0c6f62a6e52c3a2c80b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert stack position between (channel, frame) and image.  <a href="classpyama_1_1stack_1_1stack_1_1Stack.html#adabea587e80d0c6f62a6e52c3a2c80b1">More...</a><br /></td></tr>
+<tr class="memdesc:adabea587e80d0c6f62a6e52c3a2c80b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack position between (channel, frame) and image.  <a href="classpyama_1_1stack_1_1stack_1_1Stack.html#adabea587e80d0c6f62a6e52c3a2c80b1">More...</a><br /></td></tr>
 <tr class="separator:adabea587e80d0c6f62a6e52c3a2c80b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0daca1d86539f5d7cad26502155a4ee3"><td class="memItemLeft" align="right" valign="top"><a id="a0daca1d86539f5d7cad26502155a4ee3"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyama_1_1stack_1_1stack_1_1Stack.html#a0daca1d86539f5d7cad26502155a4ee3">get_image</a> (self, channel, frame)</td></tr>
@@ -242,12 +242,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an image stack. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>(optional) path to a file holding a TIFF stack str </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>param path (optional) path to a file holding a TIFF stack :type path: --&gt; str </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adabea587e80d0c6f62a6e52c3a2c80b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adabea587e80d0c6f62a6e52c3a2c80b1">&#9670;&nbsp;</a></span>convert_position()</h2>
@@ -287,8 +282,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Convert stack position between (channel, frame) and image. </p>
-<p>Either give "channel" and "frame" to obtain the corresponding image index, or give "image" to obtain the corresponding indices of channel and frame as tuple. All other combinations will return None. </p>
+<p>stack position between (channel, frame) and image. </p>
+<p>give "channel" and "frame" to obtain the corresponding index, or give "image" to obtain the corresponding indices channel and frame as tuple. other combinations will return None. </p>
 
 </div>
 </div>
@@ -343,7 +338,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Load a stack from a path. </p>
-<p><code>path</code> &ndash; path to a stack file <code>loader</code> &ndash; str, name of a stack loader. Currently supported loaders: tiff, npy, hdf5 If not given, loader is determined from file extension. <code>status</code> &ndash; Status instance for displaying progress <code>channels</code> &ndash; index of channels to be loaded. Default is to load all channels. Any value for indexing into a dimension of a numpy array may be given. <code>h5_key</code> &ndash; str, key of the dataset in a HDF5 file. Currently, only HDF5 files created by Ilastik are supported. May be omitted if file contains only one dataset. </p>
+<p><code>path</code> &ndash; path to a stack file <code>loader</code> &ndash; str, name of a stack loader. supported loaders: tiff, npy, hdf5 not given, loader is determined from file extension. <code>status</code> &ndash; Status instance for displaying progress <code>channels</code> &ndash; index of channels to be loaded. Default is to load all channels. value for indexing into a dimension of a numpy array be given. <code>h5_key</code> &ndash; str, key of the dataset in a HDF5 file. , only HDF5 files created by Ilastik are supported. be omitted if file contains only one dataset. </p>
 
 </div>
 </div>

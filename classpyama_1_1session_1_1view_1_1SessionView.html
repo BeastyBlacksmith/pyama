@@ -133,10 +133,8 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, ti
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpyama_1_1session_1_1view_1_1SessionView.html" title="SessionView base class.">SessionView</a> base class. </p>
-<pre class="fragment">This class defines an API for session views.
-Session views should be created by subclassing this class
-and implementing the necessary methods.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<p>This class defines an API for session views. Session views should be created by subclassing this class and implementing the necessary methods. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afc4e626a54a78fe208a6fc586ee367c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc4e626a54a78fe208a6fc586ee367c5">&#9670;&nbsp;</a></span>create()</h2>
 
@@ -170,15 +168,9 @@ and implementing the necessary methods.
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="classpyama_1_1session_1_1view_1_1SessionView.html" title="SessionView base class.">SessionView</a> instance and return it. </p>
-<pre class="fragment">    This method is the preferred way to instantiate a session view.
-    It calls the (optional) 'prepare' method to perform all
-    necessary preparation that must be run in the
-    GUI thread before creating the SessionView.
-    Then, the class is instantiated, and the new instance is returned.
+<p>This method is the preferred way to instantiate a session view. It calls the (optional) <code>prepare</code> method to perform all necessary preparation that must be run in the GUI thread before creating the <a class="el" href="classpyama_1_1session_1_1view_1_1SessionView.html" title="SessionView base class.">SessionView</a>. Then, the class is instantiated, and the new instance is returned.</p>
+<p>The arguments (args, kwargs) are provided to both the <code>prepare</code> and <code>__init__</code> method. </p>
 
-    The arguments (args, kwargs) are provided to both the
-    'prepare' and '__init__' method.
-</pre> 
 </div>
 </div>
 <a id="ae0bc79dfce9ce8f51eed80783cf34ddd"></a>
@@ -198,8 +190,8 @@ and implementing the necessary methods.
 </div><div class="memdoc">
 
 <p>Run the GUI mainloop. </p>
-<pre class="fragment">    This method must be implemented by subclasses.
-</pre> 
+<p>This method must be implemented by subclasses. </p>
+
 <p>Reimplemented in <a class="el" href="classpyama_1_1session_1_1view__tk_1_1SessionView__Tk.html#af267175e3dc10d8be7ba074e922de973">pyama.session.view_tk.SessionView_Tk</a>.</p>
 
 </div>
@@ -237,8 +229,8 @@ and implementing the necessary methods.
 </div><div class="memdoc">
 
 <p>Run all preparation tasks. </p>
-<pre class="fragment">    For details, see the 'create' method.
-</pre> 
+<p>For details, see the <code>create</code> method. </p>
+
 </div>
 </div>
 <a id="a1dc40e4fdefd79280a5755fa7c4b2134"></a>
@@ -280,9 +272,8 @@ and implementing the necessary methods.
 </div><div class="memdoc">
 
 <p>Callback for updating the status message. </p>
-<pre class="fragment">    This method must be run from the GUI thread.
-    This method must be implemented by subclasses.
-</pre> 
+<p>This method must be run from the GUI thread. This method must be implemented by subclasses. </p>
+
 <p>Reimplemented in <a class="el" href="classpyama_1_1session_1_1view__tk_1_1SessionView__Tk.html#a206e1da1ed51b8db809856d24a54b1fb">pyama.session.view_tk.SessionView_Tk</a>.</p>
 
 </div>

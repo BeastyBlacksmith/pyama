@@ -197,7 +197,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>TYPE_FREEHAND</b> = 7<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Read and write ImageJ <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> files. </p>
-<p>For file syntax, see: <a href="https://github.com/imagej/imagej1/blob/master/ij/io/RoiDecoder.java">https://github.com/imagej/imagej1/blob/master/ij/io/RoiDecoder.java</a> </p>
+<p>file syntax, see: ://github.com/imagej/imagej1/blob/master/ij/io/RoiDecoder.java </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a69b0c090f792a69f96911caf3d6a5283"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69b0c090f792a69f96911caf3d6a5283">&#9670;&nbsp;</a></span>decode_str()</h2>
@@ -226,13 +226,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>TYPE_FREEHAND</b> = 7<
 </div><div class="memdoc">
 
 <p>Extract a string of given length from bytearray. </p>
-<pre class="fragment">Arguments:
-    data -- bytes-like object starting with a UTF-16-BE encoded string
-    length -- the number of code points in the string
+<p>Arguments: data &ndash; bytes-like object starting with a UTF-16-BE encoded string length &ndash; the number of code points in the string</p>
+<p>Returns: the extracted string </p>
 
-Returns:
-    the extracted string
-</pre> 
 </div>
 </div>
 <a id="abbc2c85b70e427f0b75383debc71d378"></a>
@@ -268,10 +264,8 @@ Returns:
 </div><div class="memdoc">
 
 <p>Read an integer from bytearray. </p>
-<pre class="fragment">b -- bytearray
-i -- starting index
-size -- number of bytes to read
-</pre> 
+<p>b &ndash; bytearray i &ndash; starting index size &ndash; number of bytes to read </p>
+
 </div>
 </div>
 <a id="ab9db991a03666438e9e6faa788fddc61"></a>
@@ -313,14 +307,9 @@ size -- number of bytes to read
 </div><div class="memdoc">
 
 <p>Write an integer into bytearray. </p>
-<pre class="fragment">b -- bytearray
-pos -- position (starting index) of writing
-i -- integer to be written
-size -- number of bytes of converted integer
+<p>b &ndash; bytearray pos &ndash; position (starting index) of writing i &ndash; integer to be written size &ndash; number of bytes of converted integer</p>
+<p>The bytearray is changed inplace. Nothing is returned. </p>
 
-The bytearray is changed inplace.
-Nothing is returned.
-</pre> 
 </div>
 </div>
 <a id="a232b534362a4f13c9209bfc37c2f73f0"></a>
@@ -368,24 +357,9 @@ Nothing is returned.
 </div><div class="memdoc">
 
 <p>Write a numpy array into a buffer. </p>
-<pre class="fragment">b -- buffer (e.g. bytearray, memoryview)
-off -- offset in buffer
-arr -- values to be written
-dtype -- format to write as defined by `struct` module
-size -- bit-width for signed integer
+<p>b &ndash; buffer (e.g. bytearray, memoryview) off &ndash; offset in buffer arr &ndash; values to be written dtype &ndash; format to write as defined by <code>struct</code> module size &ndash; bit-width for signed integer</p>
+<p>Formats for typical (signed) integer bitwidths are: b &ndash; 1 byte h &ndash; 2 bytes i &ndash; 4 bytes q &ndash; 8 bytes Use a capital letter for the corresponding unsigned data type. Formats for floating point data types: f &ndash; 4 bytes d &ndash; 8 bytes If <code>size</code> is given, the value of <code>dtype</code> is ignored and an signed integer data type with <code>size</code> bytes is used. </p>
 
-Formats for typical (signed) integer bitwidths are:
-    b -- 1 byte
-    h -- 2 bytes
-    i -- 4 bytes
-    q -- 8 bytes
-Use a capital letter for the corresponding unsigned data type.
-Formats for floating point data types:
-    f -- 4 bytes
-    d -- 8 bytes
-If `size` is given, the value of `dtype` is ignored and an
-signed integer data type with `size` bytes is used.
-</pre> 
 </div>
 </div>
 </div><!-- contents -->

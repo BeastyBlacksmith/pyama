@@ -163,14 +163,11 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>channel_order</b> (sel
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class provides all necessary data and methods for associating multiple stacks and ROIs with each other. </p>
 <p>Data structures of this class:</p>
-<p>__stacks dict of loaded stacks key: stack ID 'name': str, user-specified display name of stack 'ref': reference to stack object 'listener_id': listener ID for events of the stack</p>
-<p>__channels dict of loaded channels key: channel ID 'name': str, user-specified display name of channel 'categrory': categrory of channel 'description': str, user-specified description of the channel 'position': int, index in __channel_order 'stack': stack ID of corresponding stack 'index': str, index of channel in corresponding stack</p>
-<pre class="fragment">__channel_order
-    list of IDs of loaded channels
-    Defines the order of channels in this ChannelCollection
-
-TODO: describe events fired by this class
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<p>__stacks dict of loaded stacks key: stack ID <code>name</code>: str, user-specified display name of stack <code>ref</code>: reference to stack object <code>listener_id</code>: listener ID for events of the stack</p>
+<p>__channels dict of loaded channels key: channel ID <code>name</code>: str, user-specified display name of channel <code>categrory</code>: categrory of channel <code>description</code>: str, user-specified description of the channel <code>position</code>: int, index in __channel_order <code>stack</code>: stack ID of corresponding stack <code>index</code>: str, index of channel in corresponding stack</p>
+<p>__channel_order list of IDs of loaded channels Defines the order of channels in this <a class="el" href="classpyama_1_1session_1_1channel__collection_1_1ChannelCollection.html" title="This class provides all necessary data and methods for associating multiple stacks and ROIs with each...">ChannelCollection</a></p>
+<p>TODO: describe events fired by this class </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4d50c2766064ac46b13c1ae8dd775147"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d50c2766064ac46b13c1ae8dd775147">&#9670;&nbsp;</a></span>add_channel()</h2>
 
@@ -228,15 +225,8 @@ TODO: describe events fired by this class
 </div><div class="memdoc">
 
 <p>Add a channel to the active channel collection. </p>
-<pre class="fragment">    Arguments:
-        stack_id -- str, ID of the associated stack of the new channel
-        index -- int, (zero-based) index of the new channel in the associated stack
-        position -- int, (zero-based) position in active channel collection to insert channel
-                    (default: append channel)
-        name -- str, display name of the channel; if not given, default name will be assigned
-        category -- str, channel category; one of `const.CH_CAT_LIST`
-        description -- str, human-readable description of channel
-</pre> 
+<p>Arguments: stack_id &ndash; str, ID of the associated stack of the new channel index &ndash; int, (zero-based) index of the new channel in the associated stack position &ndash; int, (zero-based) position in active channel collection to insert channel (default: append channel) name &ndash; str, display name of the channel; if not given, default name will be assigned category &ndash; str, channel category; one of <code>const.CH_CAT_LIST</code> description &ndash; str, human-readable description of channel </p>
+
 </div>
 </div>
 <a id="a074e49d213f97dbb843a53ab00d91c31"></a>
@@ -278,11 +268,8 @@ TODO: describe events fired by this class
 </div><div class="memdoc">
 
 <p>Insert new stack into <a class="el" href="classpyama_1_1session_1_1channel__collection_1_1ChannelCollection.html" title="This class provides all necessary data and methods for associating multiple stacks and ROIs with each...">ChannelCollection</a>. </p>
-<pre class="fragment">    'stack': either path to stack file or reference to existing stack object
-    'name': display name of stack
-    'kwargs': keyword arguments that will be passed to stack constructor
-             if 'stack' is a path
-</pre> 
+<p><code>stack</code>: either path to stack file or reference to existing stack object <code>name</code>: display name of stack <code>kwargs</code>: keyword arguments that will be passed to stack constructor if <code>stack</code> is a path </p>
+
 </div>
 </div>
 <a id="a0c8fe7544426d5c7d81f61b45077c1c7"></a>
@@ -312,11 +299,8 @@ TODO: describe events fired by this class
 </div><div class="memdoc">
 
 <p>Change order of active channel collection. </p>
-<pre class="fragment">    `new_order` is the new sequence of channel IDs.
-    The channel order must only be permuted.
-    Use 'add_channel' or 'drop_channel' to add or
-    remove channels from the active channel collection.
-</pre> 
+<p><code>new_order</code> is the new sequence of channel IDs. The channel order must only be permuted. Use <code>add_channel</code> or <code>drop_channel</code> to add or remove channels from the active channel collection. </p>
+
 </div>
 </div>
 <a id="a01a8405bd1ed1cfcc1bf9b259769a607"></a>
@@ -352,10 +336,8 @@ TODO: describe events fired by this class
 </div><div class="memdoc">
 
 <p>Change specification of channel with id <code>channel_id</code>. </p>
-<pre class="fragment">    `new_specs` are the properties to be changed and the new values.
-    Changeable properties are: 'name', 'category', 'description'.
-    See 'add_channel' for details.
-</pre> 
+<p><code>new_specs</code> are the properties to be changed and the new values. Changeable properties are: <code>name</code>, <code>category</code>, <code>description</code>. See <code>add_channel</code> for details. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

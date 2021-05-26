@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Provides a GUI for displaying a TIFF stack.">
+<g id="a_node1"><a xlink:title="a GUI for displaying a TIFF stack.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-321.5 141,-321.5 141,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">pyama.stackviewer_tk.Stack</text>
 <text text-anchor="middle" x="70.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">Viewer</text>

@@ -268,53 +268,24 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>X</b> = 1</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Holds information of a ROI. </p>
-<pre class="fragment">@param polygon corner coordinates (in pixels) of the ROI
-&lt;!-- :type polygon: --&gt; 4-by-2 &lt;!-- :py:class: --&gt;`numpy.array`, where ``coords[i,0]`` is the x-coordinate and ``coords[i,1]`` the y-coordinate of corner ``i``
-@param props parameters for spanning the grid
-&lt;!-- :type props: --&gt; dict
-@param inverted flag whether the columns of ``polygon`` are interchanged, so that ``coords[i,0]`` is the y-coordinate and ``coords[i,1]`` the x-coordinate of corner ``i``
-&lt;!-- :type inverted: --&gt; bool
-
-The following properties are exposed:
-
-``corners``
-    The corners of the ROI, given as a 4-by-2 &lt;!-- :py:class: --&gt;`numpy.array`,
-    where ``coords[i,0]`` is the y-coordinate and ``coords[i,1]`` the
-    x-coordinate of corner ``i`` (note the different ordering than for
-    the constructor argument).
-
-``props``
-    A dictionary of grid parameters; can be used to reproduce the grid.
-    The underlying object may be shared by multiple instances of
-    ``RectRoi`` and should not be changed.
-
-``coords``
-    The coordinates of all pixels within the ROI, represented as a
-    N-by-2 &lt;!-- :py:class: --&gt;`numpy.array` with row indices at ``[:,0]`` and
-    column indices at ``[:,0]``.
-    The coordinates are calculated in a lazy manner since this may
-    take comparably long. Results are cached.
-
-``size``
-    The number of pixels in the ROI. Querying this value involves
-    calculating the ``coords``.
-
-``area``
-    The area of the rectangle. This value need not be an integer.
-
-``perimeter``
-    see Roi
-
-``rows``
-    A one-dimensional &lt;!-- :py:class: --&gt;`numpy.array` of the row indices of
-    the ``coords``. Querying this value involves calculating
-    the ``coords``.
-
-``columns``
-    A one-dimensional &lt;!-- :py:class: --&gt;`numpy.array` of the colulmn indices
-    of the ``coords``. Querying this value involves calculating
-    the ``coords``.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">polygon</td><td>corner coordinates (in pixels) of the ROI 4-by-2 <code>numpy.array</code>, where <code>coords[i,0]</code> is the x-coordinate and <code>coords[i,1]</code> the y-coordinate of corner <code>i</code> </td></tr>
+    <tr><td class="paramname">props</td><td>parameters for spanning the grid dict </td></tr>
+    <tr><td class="paramname">inverted</td><td>flag whether the columns of <code>polygon</code> are interchanged, so that <code>coords[i,0]</code> is the y-coordinate and <code>coords[i,1]</code> the x-coordinate of corner <code>i</code> bool</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The following properties are exposed:</p>
+<p><code>corners</code> The corners of the ROI, given as a 4-by-2 <code>numpy.array</code>, where <code>coords[i,0]</code> is the y-coordinate and <code>coords[i,1]</code> the x-coordinate of corner <code>i</code> (note the different ordering than for the constructor argument).</p>
+<p><code>props</code> A dictionary of grid parameters; can be used to reproduce the grid. The underlying object may be shared by multiple instances of <code><a class="el" href="classpyama_1_1roi_1_1rect_1_1RectRoi.html" title="Holds information of a ROI.">RectRoi</a></code> and should not be changed.</p>
+<p><code>coords</code> The coordinates of all pixels within the ROI, represented as a N-by-2 <code>numpy.array</code> with row indices at <code>[:,0]</code> and column indices at <code>[:,0]</code>. The coordinates are calculated in a lazy manner since this may take comparably long. Results are cached.</p>
+<p><code>size</code> The number of pixels in the ROI. Querying this value involves calculating the <code>coords</code>.</p>
+<p><code>area</code> The area of the rectangle. This value need not be an integer.</p>
+<p><code>perimeter</code> see Roi</p>
+<p><code>rows</code> A one-dimensional <code>numpy.array</code> of the row indices of the <code>coords</code>. Querying this value involves calculating the <code>coords</code>.</p>
+<p><code>columns</code> A one-dimensional <code>numpy.array</code> of the colulmn indices of the <code>coords</code>. Querying this value involves calculating the <code>coords</code>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeabc2b00471590510abc1442ce282b52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeabc2b00471590510abc1442ce282b52">&#9670;&nbsp;</a></span>corners()</h2>
 
@@ -332,13 +303,9 @@ The following properties are exposed:
 </div><div class="memdoc">
 
 <p>Return the coordinates of the ROI corners. </p>
-<pre class="fragment">    The returned coordinates correspond to the pixel centers
-    of the corner pixels of the ROI. Connecting the coordinates
-    in the returned order with straight lines gives the
-    outermost pixels of the ROI.
+<p>The returned coordinates correspond to the pixel centers of the corner pixels of the ROI. Connecting the coordinates in the returned order with straight lines gives the outermost pixels of the ROI.</p>
+<p>See also: <a class="el" href="classpyama_1_1roi_1_1base_1_1Roi.html#a3b4cafb889159ba3142ceec6a0592afb" title="Return the surrounding polygon.">Roi.perimeter</a> </p>
 
-    See also: Roi.perimeter
-</pre> 
 <p>Reimplemented from <a class="el" href="classpyama_1_1roi_1_1base_1_1Roi.html#ae91176e135f53b00a0015e5bf04493db">pyama.roi.base.Roi</a>.</p>
 
 </div>

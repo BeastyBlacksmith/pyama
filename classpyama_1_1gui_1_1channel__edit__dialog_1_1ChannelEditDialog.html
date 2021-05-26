@@ -149,11 +149,9 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dialog to change channel properties. </p>
-<pre class="fragment">This class is intended to be used only through the
-classmethod 'run'.
-
-Currently, editing the channel description is not supported.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<p>This class is intended to be used only through the classmethod <code>run</code>.</p>
+<p>Currently, editing the channel description is not supported. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5f1fa375da1d136efe019f1d50fe60d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f1fa375da1d136efe019f1d50fe60d9">&#9670;&nbsp;</a></span>run()</h2>
 
@@ -193,17 +191,10 @@ Currently, editing the channel description is not supported.
 </div><div class="memdoc">
 
 <p>Display channel editing dialog and return editions. </p>
-<pre class="fragment">    Arguments:
-        parent -- parent tkinter widget
-        name -- current name of the channel
-        category -- current category of the channel
+<p>Arguments: parent &ndash; parent tkinter widget name &ndash; current name of the channel category &ndash; current category of the channel</p>
+<p>A tuple (name, category) is returned.</p>
+<p>If the user changed the name or category to a non-empty value different from the initial value and clicked OK, the new value is returned, else None. </p>
 
-    A tuple (name, category) is returned.
-
-    If the user changed the name or category to a
-    non-empty value different from the initial value
-    and clicked OK, the new value is returned, else None.
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

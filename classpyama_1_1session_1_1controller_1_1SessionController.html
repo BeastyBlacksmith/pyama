@@ -220,8 +220,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close a stack. </p>
-<pre class="fragment">    This method must be called from the control thread.
-</pre> 
+<p>This method must be called from the control thread. </p>
+
 </div>
 </div>
 <a id="a57751aeb7b2daabc23f099ab836d29a0"></a>
@@ -263,13 +263,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prepare session for display. </p>
-<pre class="fragment">    Arguments:
-        session_id -- ID of the session to be configured
-        stacks -- information about stacks to be opened, passed to SessionModel.config
-        do_track -- boolean whether to perform tracking of cells
+<p>Arguments: session_id &ndash; ID of the session to be configured stacks &ndash; information about stacks to be opened, passed to <a class="el" href="classpyama_1_1session_1_1model_1_1SessionModel.html#afad0eb8c7cb3e60ed8e10864873e5bc9" title="Configure the session for display.">SessionModel.config</a> do_track &ndash; boolean whether to perform tracking of cells</p>
+<p>This method must be called from the control thread. </p>
 
-    This method must be called from the control thread.
-</pre> 
 </div>
 </div>
 <a id="abdbf4fd39d140601bb9a48c02b1be6a4"></a>
@@ -289,8 +285,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Consume events from control queue. </p>
-<pre class="fragment">    This method spawns the control thread.
-</pre> 
+<p>This method spawns the control thread. </p>
+
 </div>
 </div>
 <a id="a23a8afc2b9b818d49d5a29219acc65b5"></a>
@@ -320,8 +316,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close a session. </p>
-<pre class="fragment">    This method must be called from the control thread.
-</pre> 
+<p>This method must be called from the control thread. </p>
+
 </div>
 </div>
 <a id="a3f3fecf613713830292774027b271899"></a>
@@ -351,9 +347,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get stack IDs of all open sessions. </p>
-<pre class="fragment">    Sessions whose session ID is in 'exclude_sessions' are ignored.
-    This method must be called from the control thread.
-</pre> 
+<p>Sessions whose session ID is in <code>exclude_sessions</code> are ignored. This method must be called from the control thread. </p>
+
 </div>
 </div>
 <a id="a5905f32276f26c132488ec1fece1f39c"></a>
@@ -373,8 +368,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new, empty SessionModel instance. </p>
-<pre class="fragment">    This method must be called from the control thread.
-</pre> 
+<p>This method must be called from the control thread. </p>
+
 </div>
 </div>
 <a id="ae1c26c7d933ca2203871ab9b33b1d964"></a>
@@ -410,8 +405,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Open a new stack in a SessionModel. </p>
-<pre class="fragment">    This method must be called from the control thread.
-</pre> 
+<p>This method must be called from the control thread. </p>
+
 </div>
 </div>
 <a id="a849d51461d59f40db364c0c81121e0be"></a>
@@ -441,9 +436,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read a saved session from disk and display it. </p>
-<pre class="fragment">    `fn` is a string holding the path of the saved session.
-    This method is thread-safe. It is executed in a worker thread.
-</pre> 
+<p><code>fn</code> is a string holding the path of the saved session. This method is thread-safe. It is executed in a worker thread. </p>
+
 </div>
 </div>
 <a id="a19ceb5b87ad06d96fe2c2725da0540ea"></a>
@@ -491,17 +485,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Update microscope info. </p>
-<pre class="fragment">    The microscope name and resolution of the given session `session`
-    is updated in a new thread. `name` and `resolution` are directly
-    passed to `SessionModel.set_microscope`.
-    `status` is a `Status` instance for displaying the progress when
-    re-reading the traces. If None, it is set to the status object
-    of the `SessionController` instance.
-    After the update, an event is fired to update the traces in the
-    viewer, including updating the microscope information.
+<p>The microscope name and resolution of the given session <code>session</code> is updated in a new thread. <code>name</code> and <code>resolution</code> are directly passed to <code><a class="el" href="classpyama_1_1session_1_1model_1_1SessionModel.html#a26bbaa74bbeb4d209d7909d31af05c31" title="Set a microscope.">SessionModel.set_microscope</a></code>. <code>status</code> is a <code>Status</code> instance for displaying the progress when re-reading the traces. If None, it is set to the status object of the <code><a class="el" href="classpyama_1_1session_1_1controller_1_1SessionController.html">SessionController</a></code> instance. After the update, an event is fired to update the traces in the viewer, including updating the microscope information.</p>
+<p>This method is thread-safe. </p>
 
-    This method is thread-safe.
-</pre> 
 </div>
 </div>
 <a id="ab5795899108d42a36511d386b34bb1c5"></a>
@@ -521,8 +507,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Start control thread and run GUI mainloop. </p>
-<pre class="fragment">    This method must be run in the main thread.
-</pre> 
+<p>This method must be run in the main thread. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

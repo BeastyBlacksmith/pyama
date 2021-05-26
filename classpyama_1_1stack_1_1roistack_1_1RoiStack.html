@@ -186,11 +186,15 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get ROIs, optionally at a specified position. </p>
-<pre class="fragment">    @param name RoiCollection display name
-    &lt;!-- :type name: --&gt; tuple (len 2) of str
-    @param frame frame identifier
-    @return  ROI set
-</pre> 
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>RoiCollection display name tuple (len 2) of str </td></tr>
+    <tr><td class="paramname">frame</td><td>frame identifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ROI set </dd></dl>
+
 </div>
 </div>
 <a id="ab7dad269bd6b1219883d6b015f6f102b"></a>
@@ -259,16 +263,16 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the ROI set of the stack. </p>
-<pre class="fragment">    @param rois The ROIs to be set
-    &lt;!-- :type rois: --&gt; iterable of Roi
-    @param name The name of the RoiCollection as displayed (use Ellipsis as default)
-    &lt;!-- :type name: --&gt; str
-    @param frame index of the frame to which the ROI belongs.
-        Use ``Ellipsis`` to specify ROIs valid in all frames.
-    &lt;!-- :type frame: --&gt; int or Ellipsis
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rois</td><td>The ROIs to be set iterable of Roi </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the RoiCollection as displayed (use Ellipsis as default) str </td></tr>
+    <tr><td class="paramname">frame</td><td>index of the frame to which the ROI belongs. Use <code>Ellipsis</code> to specify ROIs valid in all frames. int or Ellipsis</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>For details, see <code>RoiCollection</code>. </p>
 
-    For details, see &lt;!-- :py:class: --&gt;`RoiCollection`.
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

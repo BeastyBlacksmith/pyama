@@ -280,11 +280,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Insert a new stack. </p>
-<pre class="fragment">    `new_stack` is either a string of the path of a TIFF stack
-    or a `Stack` object.
-    If `overwrite` is False, the method silently returns when
-    a stack with `name` is already registered.
-</pre> 
+<p><code>new_stack</code> is either a string of the path of a TIFF stack or a <code>Stack</code> object. If <code>overwrite</code> is False, the method silently returns when a stack with <code>name</code> is already registered. </p>
+
 </div>
 </div>
 <a id="a13b8d95c069652d81d686cca9f947fa7"></a>
@@ -314,10 +311,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Specify the channel arrangement. </p>
-<pre class="fragment">    `order` is an iterable of tuples. The first element
-    of the tuple is the name of a stack, and the second
-    element of the tuple is a channel index.
-</pre> 
+<p><code>order</code> is an iterable of tuples. The first element of the tuple is the name of a stack, and the second element of the tuple is a channel index. </p>
+
 </div>
 </div>
 <a id="ac3ffc723a26064967b45b1ca086de208"></a>
@@ -419,12 +414,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Scales an image. </p>
-<pre class="fragment">    `img` -- the image (ndarray) to be scaled
-    `scale` -- if scalar, a scaling factor passed to `skimage.resize`,
-            if multiple values, a shape passed to `skimage.rescale`
-    `anti_aliasing`, `anti_aliasing_sigma` -- anit-aliasing settings,
-            see `skimage.rescale` and `skimage.resize`
-</pre> 
+<p><code>img</code> &ndash; the image (ndarray) to be scaled <code>scale</code> &ndash; if scalar, a scaling factor passed to <code>skimage.resize</code>, if multiple values, a shape passed to <code>skimage.rescale</code> <code>anti_aliasing</code>, <code>anti_aliasing_sigma</code> &ndash; anit-aliasing settings, see <code>skimage.rescale</code> and <code>skimage.resize</code> </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

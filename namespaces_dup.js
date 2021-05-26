@@ -77,24 +77,7 @@ var namespaces_dup =
         [ "__version__", "main_8py.html#aafbc9787057f6f30bf036f1f175b3bcd", null ],
         [ "PACKAGE_NAME", "main_8py.html#a7a6cc9b0ca9b8cda50595baae1991937", null ]
       ] ],
-      [ "modules", null, [
-        [ "ModuleManager", "classpyama_1_1modules_1_1ModuleManager.html", "classpyama_1_1modules_1_1ModuleManager" ],
-        [ "ModuleMetadata", "classpyama_1_1modules_1_1ModuleMetadata.html", "classpyama_1_1modules_1_1ModuleMetadata" ],
-        [ "ModuleOrder", "classpyama_1_1modules_1_1ModuleOrder.html", "classpyama_1_1modules_1_1ModuleOrder" ],
-        [ "_check_versions", "modules_8py.html#a9b59665d3c005e4ab049ba1c4f96579a", null ],
-        [ "_load_module", "modules_8py.html#a4596fe4d4ff2825f70031804b085c252", null ],
-        [ "_parse_dep", "modules_8py.html#a045fbc131eeb833ce5c31515a5f237f5", null ],
-        [ "_parse_version", "modules_8py.html#a51f2626d80a1583fa213101806f91840", null ],
-        [ "_print_exception_string", "modules_8py.html#a47df6fe5f98bfa1a0b4f80741052459a", null ],
-        [ "_search_modules", "modules_8py.html#abaedcd6737bb6b7fec2f7a5b0b1c0ec1", null ],
-        [ "filter_global_names", "modules_8py.html#a273286ba1ce06c06612ca1f440fef9df", null ],
-        [ "is_global_name", "modules_8py.html#a10788bf887f8d85474b2dbddce51ebb4", null ],
-        [ "GLOBAL_NS", "modules_8py.html#acd0733ca9c410c4f2278f80ede128ffe", null ],
-        [ "LISTENER_KINDS", "modules_8py.html#a99fd602ec0820ef663baf9c761848a7e", null ],
-        [ "PERFORM_KINDS", "modules_8py.html#aa4563c9204a262a0fca12622f77c090d", null ],
-        [ "PLUGINS_PATH", "modules_8py.html#acb24c68b2d44a7a752f6bca56250b563", null ],
-        [ "RETURN_KINDS", "modules_8py.html#a1d8d918799022d547ba8b81ce9e71ff3", null ]
-      ] ],
+      [ "modules", "namespacepyama_1_1modules.html", "namespacepyama_1_1modules" ],
       [ "recursive_tree_comparer", null, [
         [ "RecursiveComparer", "classpyama_1_1recursive__tree__comparer_1_1RecursiveComparer.html", "classpyama_1_1recursive__tree__comparer_1_1RecursiveComparer" ],
         [ "ModuleOrderIterator", "classpyama_1_1recursive__tree__comparer_1_1ModuleOrderIterator.html", "classpyama_1_1recursive__tree__comparer_1_1ModuleOrderIterator" ]

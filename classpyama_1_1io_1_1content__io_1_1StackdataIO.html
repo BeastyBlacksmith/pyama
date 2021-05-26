@@ -179,21 +179,10 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides an interface for standardized export and import of stack data. </p>
-<pre class="fragment">Arguments:
-    traces -- traces such as Main_Tk.traces
-    rois -- ROIs such as Main_Tk.rois
-    status -- status instance for displaying loading progress
-
-In addition to traces and ROIs, which may be inserted using the constructor or
-the methods `load_traces` (all traces) / `insert_trace` (one trace) and `load_rois`
-(all ROIs) / `insert_roi` (single ROI), also the following fields should be filled:
-    `n_frames`: number of frames in the stack
-    `channels`: information about channels, to be added with the method `add_channel`
-    `microscope_name`: display name of the used microscope
-    `microscope_resolution`: resolution of the microscope, float value in [µm/px]
-
-When all fields are filled, the data can be written with the method `dump`.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<p>Arguments: traces &ndash; traces such as Main_Tk.traces rois &ndash; ROIs such as Main_Tk.rois status &ndash; status instance for displaying loading progress</p>
+<p>In addition to traces and ROIs, which may be inserted using the constructor or the methods <code>load_traces</code> (all traces) / <code>insert_trace</code> (one trace) and <code>load_rois</code> (all ROIs) / <code>insert_roi</code> (single ROI), also the following fields should be filled: <code>n_frames</code>: number of frames in the stack <code>channels</code>: information about channels, to be added with the method <code>add_channel</code> <code>microscope_name</code>: display name of the used microscope <code>microscope_resolution</code>: resolution of the microscope, float value in [µm/px]</p>
+<p>When all fields are filled, the data can be written with the method <code>dump</code>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeb78a5d3c2283a6ec0aabe073a8519d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb78a5d3c2283a6ec0aabe073a8519d1">&#9670;&nbsp;</a></span>add_channel()</h2>
 
@@ -245,13 +234,8 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Insert information about a new channel. </p>
-<pre class="fragment">    Arguments:
-        path -- str, path of the stack containing the channel, may be used for re-opening the stack
-        type_ -- str, type of the channel, one of MetaStack.TYPE_{FLUORESCENCE,PHASECONTRAST,SEGMENTATION}
-        i_channel -- int, index of the channel in the MetaStack
-        name -- str, name of the stack containing the channel
-        label -- str, additional label describing the channel
-</pre> 
+<p>Arguments: path &ndash; str, path of the stack containing the channel, may be used for re-opening the stack type_ &ndash; str, type of the channel, one of MetaStack.TYPE_{FLUORESCENCE,PHASECONTRAST,SEGMENTATION} i_channel &ndash; int, index of the channel in the MetaStack name &ndash; str, name of the stack containing the channel label &ndash; str, additional label describing the channel </p>
+
 </div>
 </div>
 <a id="a6d060ca89fdf91623fac05ab7bb99076"></a>
@@ -281,11 +265,9 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Write the stack data to JSON. </p>
-<pre class="fragment">    If `out` is a str or file-like object, the session data and ROIs are written there.
-    If `out` is None, a tuple (session data, ROIs) is returned.
+<p>If <code>out</code> is a str or file-like object, the session data and ROIs are written there. If <code>out</code> is None, a tuple (session data, ROIs) is returned.</p>
+<p>The session data is JSON formatted, the ROIs are in ImageJ ROI format. </p>
 
-    The session data is JSON formatted, the ROIs are in ImageJ ROI format.
-</pre> 
 </div>
 </div>
 <a id="aeffa6a60c0f6b049b1ed4ea2254a9d4a"></a>
@@ -313,9 +295,8 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Read base64-encoded array. </p>
-<pre class="fragment">    `data` must be a base64-encoded array in the format described for `to_list64`.
-    It is returned as 1-dim numpy array.
-</pre> 
+<p><code>data</code> must be a base64-encoded array in the format described for <code>to_list64</code>. It is returned as 1-dim numpy array. </p>
+
 </div>
 </div>
 <a id="aad77dea591c961022063a5bc8aae5a95"></a>
@@ -357,11 +338,8 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Inserts a ROI. </p>
-<pre class="fragment">    Arguments:
-        roi -- the ContourRoi instance
-        frame -- int, the 0-based index of the frame the ROI belongs to
-        label -- int, the label of the ROI
-</pre> 
+<p>Arguments: roi &ndash; the ContourRoi instance frame &ndash; int, the 0-based index of the frame the ROI belongs to label &ndash; int, the label of the ROI </p>
+
 </div>
 </div>
 <a id="afd70293f3e4741201196104508b67fda"></a>
@@ -403,11 +381,8 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Inserts a trace/cell. </p>
-<pre class="fragment">    Arguments:
-        name -- str, name of the trace/cell, e.g. based on its position in the image
-        rois -- list of str, indicating the ROIs of the cell in all frames
-        is_selected -- bool, indicating whether the trace/cell is selected
-</pre> 
+<p>Arguments: name &ndash; str, name of the trace/cell, e.g. based on its position in the image rois &ndash; list of str, indicating the ROIs of the cell in all frames is_selected &ndash; bool, indicating whether the trace/cell is selected </p>
+
 </div>
 </div>
 <a id="acbfcce2b8d4d7b3c5ddc414a959f47ed"></a>
@@ -449,21 +424,10 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Loads stack information and ROI information from JSON. </p>
-<pre class="fragment">    Arguments:
-        fin -- file-like or str holding a filename of ZIP file to be read
-        s -- string holding JSON data
-        rois -- list of dicts, holding ContourRoi instances
+<p>Arguments: fin &ndash; file-like or str holding a filename of ZIP file to be read s &ndash; string holding JSON data rois &ndash; list of dicts, holding ContourRoi instances</p>
+<p>If <code>fin</code> is given, <code>s</code> and <code>rois</code> are ignored. <code>fin</code> should be a ZIP file containing a file named <code>session.json</code> that holds the session information, and <code>*.roi</code> files that hold the ROI information in ImageJ ROI format. Note that if <code>rois</code> is given, the ROI labels must comply with the cell-to-ROI assignment in <code>s</code>.</p>
+<p>The content of the ZIP file is loaded and can be accessed via the fields of this object. </p>
 
-    If `fin` is given, `s` and `rois` are ignored.
-    `fin` should be a ZIP file containing a file named 'session.json' that holds
-    the session information, and '*.roi' files that hold the ROI information
-    in ImageJ ROI format.
-    Note that if `rois` is given, the ROI labels must comply with the
-    cell-to-ROI assignment in `s`.
-
-    The content of the ZIP file is loaded and can be accessed
-    via the fields of this object.
-</pre> 
 </div>
 </div>
 <a id="a1a620be64b9fd2e5658352a94b11b3af"></a>
@@ -491,9 +455,8 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Parse the ROI name generated wth _unique_roi_name. </p>
-<pre class="fragment">    Returns a dict with the fields 'cell', 'frame', 'label',
-    any of which may point to None.
-</pre> 
+<p>Returns a dict with the fields <code>cell</code>, <code>frame</code>, <code>label</code>, any of which may point to None. </p>
+
 </div>
 </div>
 <a id="ab6f5d6da3c3e0d4c02e9f4b5e2e96d74"></a>
@@ -531,17 +494,10 @@ When all fields are filled, the data can be written with the method `dump`.
 </div><div class="memdoc">
 
 <p>Write array content to base64. </p>
-<pre class="fragment">    Arguments:
-        arr -- the numpy-array to encode
-        fmt -- the format for byte conversion
+<p>Arguments: arr &ndash; the numpy-array to encode fmt &ndash; the format for byte conversion</p>
+<p>The flattened <code>arr</code> is converted to a bytes holding a sequence of numbers encoded according to <code>fmt</code>. <code>fmt</code> must be a two-element str, wherein the first element indicates the endianness and the second element indicates a byte length and sign. See the <code>struct</code> package for possible options.</p>
+<p>The resulting bytes object is prepended with fmt and returned as string. </p>
 
-    The flattened `arr` is converted to a bytes holding a sequence of numbers
-    encoded according to `fmt`. `fmt` must be a two-element str, wherein the
-    first element indicates the endianness and the second element indicates
-    a byte length and sign. See the `struct` package for possible options.
-
-    The resulting bytes object is prepended with fmt and returned as string.
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

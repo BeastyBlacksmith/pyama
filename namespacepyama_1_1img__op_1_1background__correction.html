@@ -108,7 +108,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Perform a background correction on a fluorescence channel. </p>
-<p>The background correction is based on Schwarzfischer et al.: “Efficient fluorescence image normalization for time lapse movies” <a href="https://push-zb.helmholtz-muenchen.de/frontdoor.php?source_opus=6773">https://push-zb.helmholtz-muenchen.de/frontdoor.php?source_opus=6773</a> </p>
+<p>background correction is based on Schwarzfischer et al.: fluorescence image normalization for time lapse movies” ://push-zb.helmholtz-muenchen.de/frontdoor.php?source_opus=6773 </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a84b15224d00130b822e9af1c1595a056"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84b15224d00130b822e9af1c1595a056">&#9670;&nbsp;</a></span>background_schwarzfischer()</h2>
@@ -161,19 +161,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Perform background correction according to Schwarzfischer et al. </p>
-<pre class="fragment">Arguments:
-    fluor_chan -- (frames x height x width) numpy array; the fluorescence channel to be corrected
-    bin_chan -- boolean numpy array of same shape as `fluor_chan`; segmentation map (background=False, cell=True)
-    div_horiz -- int; number of (non-overlapping) tiles in horizontal direction
-    div_vert -- int; number of (non-overlapping) tiles in vertical direction
-    mem_lim -- max number of bytes for temporary data before switching to memmap;
-            if in (0,1], max percentage of free memory to be used;
-            if non-positive, always use memory; if None, decide automatically
-    memmap_dir -- str; directory for creating memmap
+<p>Arguments: fluor_chan &ndash; (frames x height x width) numpy array; the fluorescence channel to be corrected bin_chan &ndash; boolean numpy array of same shape as <code>fluor_chan</code>; segmentation map (background=False, cell=True) div_horiz &ndash; int; number of (non-overlapping) tiles in horizontal direction div_vert &ndash; int; number of (non-overlapping) tiles in vertical direction mem_lim &ndash; max number of bytes for temporary data before switching to memmap; if in (0,1], max percentage of free memory to be used; if non-positive, always use memory; if None, decide automatically memmap_dir &ndash; str; directory for creating memmap</p>
+<p>Returns: Background-corrected fluorescence channel as numpy array (dtype single) of same shape as <code>fluor_chan</code> </p>
 
-Returns:
-    Background-corrected fluorescence channel as numpy array (dtype single) of same shape as `fluor_chan`
-</pre> 
 </div>
 </div>
 </div><!-- contents -->

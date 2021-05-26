@@ -211,11 +211,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> as a binary array. </p>
-<pre class="fragment">    Arguments:
-        dtype -- the desired dtype of the returned array (default: np.bool_)
-        val -- the value of pixels indicating the Roi (default: 1)
-        shape -- the desired shape of the returned array (default: largest coordinates + 1)
-</pre> 
+<p>Arguments: dtype &ndash; the desired dtype of the returned array (default: np.bool_) val &ndash; the value of pixels indicating the <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> (default: 1) shape &ndash; the desired shape of the returned array (default: largest coordinates + 1) </p>
+
 </div>
 </div>
 <a id="a8001a9aad695c026dd76bf7543a943ec"></a>
@@ -251,12 +248,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return a TIFF file illustrating the <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a>. </p>
-<pre class="fragment">    Arguments:
-        fn -- a file name (default: &lt;Roi.name&gt;.tiff)
-        shape -- shape of the TIFF file (default: see Roi.asarray)
-    Returns:
-        file name of the TIFF file as str
-</pre> 
+<p>Arguments: fn &ndash; a file name (default: &lt;Roi.name&gt;.tiff) shape &ndash; shape of the TIFF file (default: see <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html#a82cc824857ea88f1068d10e920afc636" title="Return the Roi as a binary array.">Roi.asarray</a>) Returns: file name of the TIFF file as str </p>
+
 </div>
 </div>
 <a id="a5f57e3ede1b195e4fc826a2ddd63df68"></a>
@@ -286,11 +279,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> object. </p>
-<pre class="fragment">    `f` must either be the path of a .roi file as string
-    or its content as a bytes object.
+<p><code>f</code> must either be the path of a .roi file as string or its content as a bytes object.</p>
+<p>The created <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> object is returned. </p>
 
-    The created Roi object is returned.
-</pre> 
 </div>
 </div>
 <a id="a97d46187e5375b21e1d7e504aa18a3e3"></a>
@@ -326,14 +317,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Load multiple <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> objects. </p>
-<pre class="fragment">    `fn` is a path name of a file holding Roi information.
-    '.roi' and '.zip' files are allowed.
-    If `fn` is a file-like object, only opened ZIP files are allowed.
-    If `as_dict` is false (default), a list of the
-    loaded Roi objects is returned.
-    If `as_dict` is true, the Roi objects are returned as
-    dictionary with the Roi names as keys.
-</pre> 
+<p><code>fn</code> is a path name of a file holding <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> information. <code>.roi</code> and <code>.zip</code> files are allowed. If <code>fn</code> is a file-like object, only opened ZIP files are allowed. If <code>as_dict</code> is false (default), a list of the loaded <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> objects is returned. If <code>as_dict</code> is true, the <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> objects are returned as dictionary with the <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> names as keys. </p>
+
 </div>
 </div>
 <a id="a926eaf00630646249cb0f422ad49331c"></a>
@@ -363,12 +348,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write the ROI in ImageJ format. </p>
-<pre class="fragment">    Arguments:
-        out -- buffer or string of file path
+<p>Arguments: out &ndash; buffer or string of file path</p>
+<p>The ROI is written to <code>out</code>, if given. Else, a bytearray with the ROI is returned. </p>
 
-    The ROI is written to `out`, if given.
-    Else, a bytearray with the ROI is returned.
-</pre> 
 </div>
 </div>
 <a id="a47116f3999f59f9d8be8fa16408af0b7"></a>
@@ -404,18 +386,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write multiple ROIs. </p>
-<pre class="fragment">    Arguments:
-        out -- target to write the targets. Either str giving the
-               file path or a binary buffer of a ZIP file
+<p>Arguments: out &ndash; target to write the targets. Either str giving the file path or a binary buffer of a ZIP file</p>
+<p>Arguments: out &ndash; target to write the targets. Either str giving the file path or a writable binary buffer of a ZIP file. If None, return a list of ROIs. rois &ndash; Iterable of <a class="el" href="classpyama_1_1io_1_1roi_1_1Roi.html">Roi</a> instances to write. Returns: If out is None, return dict of formatted ROIs. </p>
 
-               Arguments:
-                out -- target to write the targets. Either str giving the
-                       file path or a writable binary buffer of a ZIP file.
-                       If None, return a list of ROIs.
-                rois -- Iterable of Roi instances to write.
-    Returns:
-        If out is None, return dict of formatted ROIs.
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

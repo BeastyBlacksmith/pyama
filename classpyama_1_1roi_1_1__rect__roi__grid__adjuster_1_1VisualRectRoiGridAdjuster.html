@@ -178,11 +178,14 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Allow for interactive grid adjustment by mouse. </p>
-<pre class="fragment">@param sv The stack viewer to connect
-:type: &lt;!-- :py:class: --&gt;`StackViewer`
-@param ra The roi adjuster to connect
-:type: &lt;!-- :py:class: --&gt;`RectRoiGridAdjuster`
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sv</td><td>The stack viewer to connect :type: <code>StackViewer</code> </td></tr>
+    <tr><td class="paramname">ra</td><td>The roi adjuster to connect :type: <code><a class="el" href="classpyama_1_1roi_1_1__rect__roi__grid__adjuster_1_1RectRoiGridAdjuster.html">RectRoiGridAdjuster</a></code> </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a20c129d6ad34ed0ce6d6d06d11da60c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20c129d6ad34ed0ce6d6d06d11da60c0">&#9670;&nbsp;</a></span>mouse_cursor_inside()</h2>
 
@@ -210,25 +213,18 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set cursor appearance according to position inside grid site. </p>
-<pre class="fragment">    @param position The position as status byte.
-        The meaning of set bits is:
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position as status byte. The meaning of set bits is:</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><code>POS_LEFT</code> The cursor is close to a grid site edge left of the cursor.</p>
+<p><code>POS_RIGHT</code> The cursor is close to a grid site edge right of the cursor.</p>
+<p><code>POS_TOP</code> The cursor is close to a grid site edge above the cursor.</p>
+<p><code>POS_BOTTOM</code> The cursor is close to a grid site edge below the cursor.</p>
+<p><code>POS_MIDDLE</code> The cursor is not close to a grid site edge. int </p>
 
-        ``POS_LEFT``
-            The cursor is close to a grid site edge left of the cursor.
-
-        ``POS_RIGHT``
-            The cursor is close to a grid site edge right of the cursor.
-
-        ``POS_TOP``
-            The cursor is close to a grid site edge above the cursor.
-
-        ``POS_BOTTOM``
-            The cursor is close to a grid site edge below the cursor.
-
-        ``POS_MIDDLE``
-            The cursor is not close to a grid site edge.
-    &lt;!-- :type position: --&gt; int
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
