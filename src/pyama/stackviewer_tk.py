@@ -361,7 +361,7 @@ from another thread.
 
     def open_stack(self, fn=None):
         """
-Open a <! -- :py:class: -->`Stack` and display it.
+Open a <!-- :py:class: -->`Stack` and display it.
 
 @param fn The path to the stack to be opened.
 <!-- :type fn: --> str or None.
