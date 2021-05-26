@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['unregister_5froi_5fclick_282',['unregister_roi_click',['../classpyama_1_1stackviewer__tk_1_1StackViewer.html#a5203e55a0d25009d2e3ef7c04d6c4751',1,'pyama::stackviewer_tk::StackViewer']]],
   ['unregister_5fviewer_283',['unregister_viewer',['../classpyama_1_1util_1_1status_1_1Status.html#a4a971481fe076f7c3f027a4ca27df875',1,'pyama::util::status::Status']]],
   ['update_5fbboxes_284',['update_bboxes',['../classpyama_1_1tracking_1_1Tracker.html#ae4c6c4041bff1907d9714fa43f6d54a3',1,'pyama::tracking::Tracker']]],
   ['update_5fhighlight_285',['update_highlight',['../classpyama_1_1session_1_1view__tk_1_1SessionView__Tk.html#a6fd010e9d565735712f47b62f3c92f25',1,'pyama::session::view_tk::SessionView_Tk']]],

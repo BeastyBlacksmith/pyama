@@ -13,13 +13,12 @@ var searchData=
   ['register_523',['register',['../classpyama_1_1util_1_1listener_1_1Listeners.html#af7c20f2f247ac3a185df1dc24222ebfa',1,'pyama::util::listener::Listeners']]],
   ['register_5fbuiltin_5fdata_524',['register_builtin_data',['../classpyama_1_1modules_1_1ModuleManager.html#a365e04c6023feef85cacef84b551a14a',1,'pyama::modules::ModuleManager']]],
   ['register_5flistener_525',['register_listener',['../classpyama_1_1modules_1_1ModuleManager.html#a4a22ba01f09e4e35a0be0140e5c20cd0',1,'pyama.modules.ModuleManager.register_listener()'],['../classpyama_1_1roi_1_1__rect__roi__grid__adjuster_1_1RectRoiGridAdjuster.html#ae0619d5d4c323b0ef25b86f4a4c872e5',1,'pyama.roi._rect_roi_grid_adjuster.RectRoiGridAdjuster.register_listener()']]],
-  ['register_5froi_5fclick_526',['register_roi_click',['../classpyama_1_1stackviewer__tk_1_1StackViewer.html#a069b99702ac7c775160666d863c9538f',1,'pyama::stackviewer_tk::StackViewer']]],
-  ['register_5fviewer_527',['register_viewer',['../classpyama_1_1util_1_1status_1_1Status.html#a32dc8c45f393dc7a422c35502dccbb37',1,'pyama::util::status::Status']]],
-  ['remove_5fmod_528',['remove_mod',['../classpyama_1_1workflow__tk_1_1WorkflowGUI.html#a638b927722713c103699b5f006fbb338',1,'pyama::workflow_tk::WorkflowGUI']]],
-  ['remove_5fstack_529',['remove_stack',['../classpyama_1_1session_1_1sessionopener__tk_1_1SessionOpener.html#a8af2752d737d31a34c9e7e0e78dc2cb7',1,'pyama::session::sessionopener_tk::SessionOpener']]],
-  ['rename_5fstack_530',['rename_stack',['../classpyama_1_1session_1_1channel__collection_1_1ChannelCollection.html#af849549197b4908c65cac74f6f3f7262',1,'pyama::session::channel_collection::ChannelCollection']]],
-  ['render_5fsegmentation_531',['render_segmentation',['../classpyama_1_1session_1_1model_1_1SessionModel.html#a374064abdce4d0a001e0b178f5412484',1,'pyama::session::model::SessionModel']]],
-  ['reshape_532',['reshape',['../classpyama_1_1stack_1_1base_1_1BaseStack.html#ad4ff47ef7146b407191c3d69fca205cf',1,'pyama::stack::base::BaseStack']]],
-  ['root_5ftk_533',['root_tk',['../classpyama_1_1workflow__tk_1_1WorkflowGUI.html#a95660e70901e7e673ecd4076e29fddce',1,'pyama::workflow_tk::WorkflowGUI']]],
-  ['run_534',['run',['../classpyama_1_1gui_1_1channel__edit__dialog_1_1ChannelEditDialog.html#a5f1fa375da1d136efe019f1d50fe60d9',1,'pyama::gui::channel_edit_dialog::ChannelEditDialog']]]
+  ['register_5fviewer_526',['register_viewer',['../classpyama_1_1util_1_1status_1_1Status.html#a32dc8c45f393dc7a422c35502dccbb37',1,'pyama::util::status::Status']]],
+  ['remove_5fmod_527',['remove_mod',['../classpyama_1_1workflow__tk_1_1WorkflowGUI.html#a638b927722713c103699b5f006fbb338',1,'pyama::workflow_tk::WorkflowGUI']]],
+  ['remove_5fstack_528',['remove_stack',['../classpyama_1_1session_1_1sessionopener__tk_1_1SessionOpener.html#a8af2752d737d31a34c9e7e0e78dc2cb7',1,'pyama::session::sessionopener_tk::SessionOpener']]],
+  ['rename_5fstack_529',['rename_stack',['../classpyama_1_1session_1_1channel__collection_1_1ChannelCollection.html#af849549197b4908c65cac74f6f3f7262',1,'pyama::session::channel_collection::ChannelCollection']]],
+  ['render_5fsegmentation_530',['render_segmentation',['../classpyama_1_1session_1_1model_1_1SessionModel.html#a374064abdce4d0a001e0b178f5412484',1,'pyama::session::model::SessionModel']]],
+  ['reshape_531',['reshape',['../classpyama_1_1stack_1_1base_1_1BaseStack.html#ad4ff47ef7146b407191c3d69fca205cf',1,'pyama::stack::base::BaseStack']]],
+  ['root_5ftk_532',['root_tk',['../classpyama_1_1workflow__tk_1_1WorkflowGUI.html#a95660e70901e7e673ecd4076e29fddce',1,'pyama::workflow_tk::WorkflowGUI']]],
+  ['run_533',['run',['../classpyama_1_1gui_1_1channel__edit__dialog_1_1ChannelEditDialog.html#a5f1fa375da1d136efe019f1d50fe60d9',1,'pyama::gui::channel_edit_dialog::ChannelEditDialog']]]
 ];

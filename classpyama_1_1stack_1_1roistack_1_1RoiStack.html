@@ -186,10 +186,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get ROIs, optionally at a specified position. </p>
-<pre class="fragment">    \param name RoiCollection display name
+<pre class="fragment">    @param name RoiCollection display name
     &lt;!-- :type name: --&gt; tuple (len 2) of str
-    \param frame frame identifier
-    \return  ROI set
+    @param frame frame identifier
+    @return  ROI set
 </pre> 
 </div>
 </div>
@@ -259,11 +259,11 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the ROI set of the stack. </p>
-<pre class="fragment">    \param rois The ROIs to be set
+<pre class="fragment">    @param rois The ROIs to be set
     &lt;!-- :type rois: --&gt; iterable of Roi
-    \param name The name of the RoiCollection as displayed (use Ellipsis as default)
+    @param name The name of the RoiCollection as displayed (use Ellipsis as default)
     &lt;!-- :type name: --&gt; str
-    \param frame index of the frame to which the ROI belongs.
+    @param frame index of the frame to which the ROI belongs.
         Use ``Ellipsis`` to specify ROIs valid in all frames.
     &lt;!-- :type frame: --&gt; int or Ellipsis
 
