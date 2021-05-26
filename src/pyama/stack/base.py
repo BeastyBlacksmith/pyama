@@ -15,33 +15,33 @@ This class not intended for direct instantiation, but only for subclassing.
 Implementing classes should provide this API:
 * A numpy array of one frame can be obtained by the `get_image` method.
 * If the shape of the stack may be changed, the `reshape` method should
-  be used. Upon reshape, the listeners should be notified.
-  Else, `reshape` should throw a NotImplementedError.
+be used. Upon reshape, the listeners should be notified.
+Else, `reshape` should throw a NotImplementedError.
 * If the stack corresponds to a file, the path should be accessible
-  under `_path`.
+under `_path`.
 * If the stack is a virtual stack (frames are calculated just in time
-  when `get_image` is called), the constructor of this class should be
-  called with `virtual=True`.
+when `get_image` is called), the constructor of this class should be
+called with `virtual=True`.
 * If an implementing class has special requirements for listeners
-  (e.g. require queue, enforce other Listeners implementaiton), an existing
-  Listeners instance should be passed via the `listeners` keyword or Listeners
-  options should be passed via the `listeners_opt` keyword of the constructor.
-  The Listeners must at least have the kinds `reshape` and `close`.
-  If only more listener kinds are required, the additional kinds can be
-  passed via the `listeners_kinds` keyword argument.
+(e.g. require queue, enforce other Listeners implementaiton), an existing
+Listeners instance should be passed via the `listeners` keyword or Listeners
+options should be passed via the `listeners_opt` keyword of the constructor.
+The Listeners must at least have the kinds `reshape` and `close`.
+If only more listener kinds are required, the additional kinds can be
+passed via the `listeners_kinds` keyword argument.
 
 This class fires these event kinds with a dict as keyword argument `message`:
-    * Event `const.EVT_RESHAPE` with `message` containing these fields:
-        - `event`: const.EVT_RESHAPE
-        - `id`: ID of the calling stack
-        - `old`: an OrderedDict of the previous shape
-        - `new`: an OrderedDict of the newly established shape
-    * Event `const.EVT_CLOSE` with `message` containing these fields:
-        - `event`: const.EVT_CLOSE
-        - `id`: ID of the calling stack
-      A stack emitting this event is being closed and should not send any
-      events after this event has been sent.
-      Listeners may/should clean up references to the stack upon this event.
+* Event `const.EVT_RESHAPE` with `message` containing these fields:
+- `event`: const.EVT_RESHAPE
+- `id`: ID of the calling stack
+- `old`: an OrderedDict of the previous shape
+- `new`: an OrderedDict of the newly established shape
+* Event `const.EVT_CLOSE` with `message` containing these fields:
+- `event`: const.EVT_CLOSE
+- `id`: ID of the calling stack
+A stack emitting this event is being closed and should not send any
+events after this event has been sent.
+Listeners may/should clean up references to the stack upon this event.
 Additionally, all events contain the keyword argument `stack_id` holding the
 ID of this stack, which can also be retrieved with the `id` property.
     """
