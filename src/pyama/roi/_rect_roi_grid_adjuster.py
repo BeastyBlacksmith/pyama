@@ -37,7 +37,7 @@ def float2str(f, var=None):
     <!-- :type f: --> float
     @param var (optional) tkinter.StringVar to write value to
     <!-- :type var: --> None or tkinter.StringVar
-    \return  string with nicely formatted float, or None
+    @return  string with nicely formatted float, or None
     <!-- :rtype: --> str or None
     """
     s = "{:f}".format(f)
@@ -63,7 +63,7 @@ def str2float(s, mustPositive=True, mustNonNegative=False):
     <!-- :type mustPositive: --> bool
     @param mustNonNegative flag if value must not be smaller than 0
     <!-- :type mustNonNegative: --> bool
-    \return  the float value or None for invalid string
+    @return  the float value or None for invalid string
     <!-- :rtype: --> float or None
     """
     if type(s) != str:
@@ -843,7 +843,7 @@ def span_rois(width, height, pad_x, pad_y, max_x, max_y, angle=0, pivot_x=0, piv
     <!-- :type off_y: --> float
     @param canvas (only for debugging) canvas for drawing debug information
     <!-- :type canvas: --> <!-- :py:class: -->`tkinter.Canvas`
-    \return  the generated ROIs
+    @return  the generated ROIs
     <!-- :rtype: --> list of 4-to-2 <!-- :py:class: -->`np.array`
     """
     # Set up function for ROI rotation
@@ -899,7 +899,7 @@ def initial_value(unit, limit=0., offset=0.):
     <!-- :type limit: --> float
     @param offset grid offset w.r.t. origin
     <!-- :type offset: --> float
-    \return  Minimum allowed grid site
+    @return  Minimum allowed grid site
     <!-- :rtype: --> float
 
     The returned value is the smallest grid site larger or equal to
@@ -937,7 +937,7 @@ def make_transformation(angle, x_new=0, y_new=0):
     <!-- :type x_new: --> float
     @param y_new y-coordinate of the new origin (=pivot)
     <!-- :type y_new: --> float
-    \return  transformation function
+    @return  transformation function
     <!-- :rtype: --> function(coords0, inverse=False)
 
     A closure for coordinate transformation will be returned.
@@ -988,7 +988,7 @@ def transform(coords, angle, x_new=0, y_new=0, inverse=False):
     <!-- :type y_new: --> float
     @param inverse flag whether to perform inverse transformation
     <!-- :type inverse: --> boolean
-    \return  transformed coordinates
+    @return  transformed coordinates
     <!-- :rtype: --> n-by-2 numpy array
     """
     return make_transformation(angle, x_new, y_new)(coords, inverse)
@@ -1002,7 +1002,7 @@ def make_limit_check(limits):
         The rectangle may be rotated. The first column must be the x-values
         and the second column must be the y-values of the corners.
     <!-- :type limits: --> numpy array of shape (4,2)
-    \return  function for checking if bounding box is inside limits
+    @return  function for checking if bounding box is inside limits
     <!-- :rtype: --> function(x0, x1, y0, y1)
 
     The signature of the returned function is ``function(x0, x1, y0, y1)``.
@@ -1387,7 +1387,7 @@ def nearest_grid_position(z, length, pad, offset=0, delta=0.15):
     <!-- :type offset: --> float
     @param delta The relative tolerance for detecting edge proximity (percentage of ``length``). Should be ``0 < delta < 1``.
     <!-- :type delta: --> float
-    \return  ``(is_inside, nearest_before, nearest_after, position)``
+    @return  ``(is_inside, nearest_before, nearest_after, position)``
     <!-- :rtype: --> tuple (bool, float, float, int)
 
     A tuple of the following values is returned:

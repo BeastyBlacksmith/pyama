@@ -37,7 +37,7 @@ def _load_module(name, path):
     For loading a package, give the path of the package’s
     ``__init__.py`` file as path.
 
-    \return  Metadata of the module, or ``None`` if module couldn’t be loaded. If ``return_init_ret`` is ``True``, a tuple of module metadata and ``register`` return value is returned.
+    @return  Metadata of the module, or ``None`` if module couldn’t be loaded. If ``return_init_ret`` is ``True``, a tuple of module metadata and ``register`` return value is returned.
     """
     RETURN_BAD = ((),())
 
@@ -181,7 +181,7 @@ def _parse_version(ver, isComparison=False):
     @param isComparison boolean flag whether ver is a comparison
     <!-- :type isComparison: --> bool
 
-    \return  A tuple of subversion strings, obtained by splitting
+    @return  A tuple of subversion strings, obtained by splitting
         the version string at dots.
 
         If ``isComparison`` is ``True``, the comparison mode is returned
@@ -233,7 +233,7 @@ def _check_versions(version_present, comp_mode, version_required):
     @param comp_mode The comparison mode
     @param version_required The required version
 
-    \return  ``True`` if version fulfills requirement, else ``False``.
+    @return  ``True`` if version fulfills requirement, else ``False``.
     """
     # TODO: correct for strings with different lengths
     # TODO: add optional dependency ('?')
@@ -301,7 +301,7 @@ def _parse_dep(dep):
     Parse the dependency data inserted by the plugin.
 
     @param dep The dependency data provided by the plugin
-    \return  A (possibly empty) tuple of dependencies,
+    @return  A (possibly empty) tuple of dependencies,
         or ``None`` if dependency data is invalid
 
     The expected dependency data is::
@@ -366,7 +366,7 @@ def is_global_name(name):
 
     @param name the name to check
     <!-- :type name: --> str
-    \return  `True` if `name` is global, else `False`
+    @return  `True` if `name` is global, else `False`
     <!-- :rtype: --> bool
     """
     return not name.startswith('_')
@@ -377,7 +377,7 @@ def filter_global_names(names):
 
     @param names names from which non-global names shall be removed
     <!-- :type names: --> iterable
-    \return  global names (possibly empty set)
+    @return  global names (possibly empty set)
     <!-- :rtype: --> set
     """
     return {n for n in names if is_global_name(n)}
@@ -802,7 +802,7 @@ class ModuleManager:
         <!-- :type mod_id: --> str
         @param kind Indicator what dependency is needed; one of: "conf", "run", "loop_first", "loop_next", "loop_end".
         <!-- :type kind: --> str
-        \return
+        @return
             * Dictionary {DP: {DN: DV}}, where:
 
                 * the keys DP are the identifiers of the plugins whose return values are required,
@@ -981,7 +981,7 @@ class ModuleManager:
 
         Note that if ``fun`` raises an exception, it will not be called anymore.
 
-        \return  a listener ID or None
+        @return  a listener ID or None
         <!-- :rtype: --> str or None
         """
         self._listeners.register(fun, kind)
@@ -1616,7 +1616,7 @@ class ModuleOrder:
 
         @param idx the current module, the next module of which is sought, or None for getting the index of the first module
         <!-- :type idx: --> int, list of int or None
-        \return  index of next module or None
+        @return  index of next module or None
         <!-- :rtype: --> list of int or None
         """
         if not self.order:

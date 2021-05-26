@@ -35,7 +35,7 @@ class CornerFinder:
         @param simplify Flag whether to omit unnecessary (non-corner) coordinates from the output (default: True)
         <!-- :type simplify: --> bool
 
-        \return  corner coordinates or index array, depending on setting of ``indices``
+        @return  corner coordinates or index array, depending on setting of ``indices``
         """
         cf = cls(contour, metric)
         cf.make_dist()
@@ -85,7 +85,7 @@ class CornerFinder:
         <!-- :type i: --> int
         @param mode The search mode
         @param allow Iterable of indices to be allowed
-        \return  The index of the nearest neighbor node of ``i``, or ``None`` if there is no neighbor for this search mode
+        @return  The index of the nearest neighbor node of ``i``, or ``None`` if there is no neighbor for this search mode
         """
         # Process mode
         if mode is None:
@@ -197,7 +197,7 @@ class CornerFinder:
         @param simplify Flag wheter to omit redundant coordinates (default: True)
         <!-- :type simplify: --> bool
 
-        \return  A sorted array of indices
+        @return  A sorted array of indices
         <!-- :rtype: --> (M,)-shaped numpy array of dtype ``intp``
         """
         while (self.chain[j0, None].view(dtype=np.intp) < 0).any():

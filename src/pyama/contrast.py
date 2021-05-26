@@ -170,7 +170,7 @@ class ContrastAdjuster:
         <!-- :type y: --> scalar numerical
         @param height Height of histogram canvas (optional)
         <!-- :type height: --> int
-        \return  The determined movement action
+        @return  The determined movement action
         <!-- :rtype: --> str
         """
         # Get histogram height
@@ -371,7 +371,7 @@ class ContrastAdjuster:
         @param img The image to be scaled
         <!-- :type img: --> 2-dim numpy array
 
-        \return  The converted image
+        @return  The converted image
         <!-- :rtype: --> 2-dim numpy array with dtype uint8
         """
         pmin, pmax, img_between, (mask_min, mask_max, mask_between) = self.image_in_limits(img)
