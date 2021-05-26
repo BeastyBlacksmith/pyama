@@ -228,8 +228,8 @@ s -- string holding JSON data
 rois -- list of dicts, holding ContourRoi instances
 
 If `fin` is given, `s` and `rois` are ignored.
-`fin` should be a ZIP file containing a file named 'session.json' that holds
-the session information, and '*.roi' files that hold the ROI information
+`fin` should be a ZIP file containing a file named `session.json` that holds
+the session information, and `*.roi` files that hold the ROI information
 in ImageJ ROI format.
 Note that if `rois` is given, the ROI labels must comply with the
 cell-to-ROI assignment in `s`.
@@ -306,10 +306,10 @@ via the fields of this object.
 The name has the format:
 cNAME_tFRAME_lLABEL
 wherein NAME is the name of the cell the ROI belongs to,
-FRAME is the frame number of the ROI (one-based, possibly with leading '0's),
+FRAME is the frame number of the ROI (one-based, possibly with leading `0`s),
 and LABEL is the numerical label assigned to this ROI
 by skimage.measure.label.
-If the ROI does not belong to a cell, the part 'cNAME' is
+If the ROI does not belong to a cell, the part `cNAME` is
 left away, and the returned ROI name starts with an underscore.
         """
         if isinstance(roi.label, str):
@@ -325,7 +325,7 @@ left away, and the returned ROI name starts with an underscore.
     def parse_roi_name(name):
         """Parse the ROI name generated wth _unique_roi_name
 
-Returns a dict with the fields 'cell', 'frame', 'label',
+Returns a dict with the fields `cell`, `frame`, `label`,
 any of which may point to None.
         """
         info = dict(cell=None, frame=None, label=None)

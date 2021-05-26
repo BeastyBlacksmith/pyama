@@ -18,7 +18,7 @@ The unique identifier is returned as string and is technically unique
 during the lifetime of the process.
 
 Implementation detail: The unique identifier is a base64-encoded string
-(trailing '=' are stripped) of memory address and time.
+(trailing `=` are stripped) of memory address and time.
     """
     b = bytearray(16)
     b[:8] = id(obj).to_bytes(8, 'little')

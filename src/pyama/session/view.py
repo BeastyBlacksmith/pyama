@@ -11,13 +11,13 @@ and implementing the necessary methods.
         """Create a new SessionView instance and return it.
 
 This method is the preferred way to instantiate a session view.
-It calls the (optional) 'prepare' method to perform all
+It calls the (optional) `prepare` method to perform all
 necessary preparation that must be run in the
 GUI thread before creating the SessionView.
 Then, the class is instantiated, and the new instance is returned.
 
 The arguments (args, kwargs) are provided to both the
-'prepare' and '__init__' method.
+`prepare` and `__init__` method.
         """
         cls.prepare(*args, **kwargs)
         return cls(*args, **kwargs)
@@ -26,7 +26,7 @@ The arguments (args, kwargs) are provided to both the
     def prepare(cls, *args, **kwargs):
         """Run all preparation tasks.
 
-For details, see the 'create' method.
+For details, see the `create` method.
         """
         pass
 

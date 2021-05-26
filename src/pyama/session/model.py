@@ -30,11 +30,11 @@ list of dict
 The list items correspond to the channels of
 `self.display_stack` with the same index. The dict
 holds information of the selection widgets:
-'type'      str of the channel type; one of those in:
+`type`      str of the channel type; one of those in:
 `const.CH_CAT_LIST`
-'val'       boolean; indicates whether this channel is
+`val`       boolean; indicates whether this channel is
 currently displayed (True) or not (False).
-'button'    tk.Button instance for displaying the channel
+`button`    tk.Button instance for displaying the channel
 
 self.channel_order
 list of int
@@ -47,24 +47,24 @@ dict of dict
 The keys of the outer dict are the trace names (as str),
 each trace corresponding to one tracked cell.
 The inner dict holds information of the trace:
-'roi'       list with frame index as index and corresponding
+`roi`       list with frame index as index and corresponding
 ROI name as value. The ContourRoi instance can
 be retrieved from `self.rois` using the frame
 index and the ROI name.
-'select'    boolean; if True, cell trace is read and displayed.
-'highlight' boolean; if True, cell/trace is highlighted in
+`select`    boolean; if True, cell trace is read and displayed.
+`highlight` boolean; if True, cell/trace is highlighted in
 stackviewer and in plot. Only meaningful if
-the 'select' option is True.
-'val'       dict of values read for the cell. The dict keys are
+the `select` option is True.
+`val`       dict of values read for the cell. The dict keys are
 the name of the quantity, the dict values are the
 corresponding values of the quantity. For most quantities
 (currently for all), the values are 1-dim numpy arrays
 with each element being to the value in the
 corresponding frame. Cell size is automatically present
-with the key 'Area'. Integrated fluorescence intensities
+with the key `Area`. Integrated fluorescence intensities
 are read for each fluorescence channel.
-'plot'      dict of plot objects (e.g. Line2D instance). The dict keys
-are the plotted quantities (as in 'val'), the values
+`plot`      dict of plot objects (e.g. Line2D instance). The dict keys
+are the plotted quantities (as in `val`), the values
 are the plot objects. Useful for plot manipulations
 like highlighting traces.
 
@@ -72,23 +72,23 @@ self.trace_info
 dict of dict
 Holds information about the present data.
 The keys of the outer dict are names of the quantities
-('Area' predefined), the inner dict contains:
-'label'     (optional) str with additional information
-about the trace, e.g. 'Fluorescence 1'
-'channel'   int, index of the corresponding channel
+(`Area` predefined), the inner dict contains:
+`label`     (optional) str with additional information
+about the trace, e.g. `Fluorescence 1`
+`channel`   int, index of the corresponding channel
 in `self.stack`. May be None.
-'unit'      str, unit of the quantity. Used for proper
+`unit`      str, unit of the quantity. Used for proper
 axes labels in the plot, in later versions
 possibly also for unit conversions.
-Default: 'a.u.'
-'factor'    float, factor to multiply values to yield 'unit'. Default: None
-'type'      str, one of the contents of `const.DT_CAT_LIST`.
+Default: `a.u.`
+`factor`    float, factor to multiply values to yield `unit`. Default: None
+`type`      str, one of the contents of `const.DT_CAT_LIST`.
 Indicates the type of quantity of the trace.
-'order'     int, indicates in which order to display the plots.
-'button'    tk.Button, the button instance for controlling 'plot'
-'var'       tk.BooleanVar associated with 'button'
-'plot'      boolean, indicates whether to plot the quantity or not.
-'quantity'  str, name of the value used in plot for y-label
+`order`     int, indicates in which order to display the plots.
+`button`    tk.Button, the button instance for controlling `plot`
+`var`       tk.BooleanVar associated with `button`
+`plot`      boolean, indicates whether to plot the quantity or not.
+`quantity`  str, name of the value used in plot for y-label
 The outer dict should only be changed using the methods
 `self.add_trace_info` or `self.clear_trace_info`.
 
@@ -184,7 +184,7 @@ Returns the stack_id (key to the SessionModel.stacks dictionary).
     def get_stack_info(self, stack_id=None):
         """Get a stack info dict
 
-If 'stack_id' is None, return the whole 'stacks' dictionary.
+If `stack_id` is None, return the whole `stacks` dictionary.
 Else, return the stack info dict for the given stack ID.
 Returns None for non-existent stack ID.
 
@@ -201,7 +201,7 @@ This method is thread-safe. The returned object must not be altered.
     def get_stack(self, stack_id=None):
         """Get a stack
 
-If 'stack_id' is None, return the whole stack dictionary.
+If `stack_id` is None, return the whole stack dictionary.
 Else, return the stack info for the given stack ID.
 Returns None for non-existent stack ID.
 
@@ -218,16 +218,16 @@ This method is thread-safe. The returned object must not be altered.
     def config(self, chan_info, render_factory, status=None, do_track=True):
         """Configure the session for display.
 
-'chan_info' is a list holding dictionaries with these fields, defining the channels to be displayed:
+`chan_info` is a list holding dictionaries with these fields, defining the channels to be displayed:
 stack_id -- stack ID, key of `SessionModel.stacks` #DEBUG: Attention, changed behaviour
 name -- str, name of the stack
 dir -- str, directory where the stack file is saved
 i_channel -- int, index of stack to be used
 label -- str, optional user-defined description
 type -- str, stack type (phasecontrast, fluorescence, binary)
-'render_factory' is a factory function for the display_stack rendering function
-'status' is a Status instance for updating the status display.
-'do_track' is a flag whether to perform tracking or not.
+`render_factory` is a factory function for the display_stack rendering function
+`status` is a Status instance for updating the status display.
+`do_track` is a flag whether to perform tracking or not.
 
 Returns True in case of success, else False.
         """

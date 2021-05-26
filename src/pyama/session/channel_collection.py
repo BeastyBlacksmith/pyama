@@ -18,19 +18,19 @@ Data structures of this class:
 __stacks
 dict of loaded stacks
 key: stack ID
-'name': str, user-specified display name of stack
-'ref': reference to stack object
-'listener_id': listener ID for events of the stack
+`name`: str, user-specified display name of stack
+`ref`: reference to stack object
+`listener_id`: listener ID for events of the stack
 
 __channels
 dict of loaded channels
 key: channel ID
-'name': str, user-specified display name of channel
-'categrory': categrory of channel
-'description': str, user-specified description of the channel
-'position': int, index in __channel_order
-'stack': stack ID of corresponding stack
-'index': str, index of channel in corresponding stack
+`name`: str, user-specified display name of channel
+`categrory`: categrory of channel
+`description`: str, user-specified description of the channel
+`position`: int, index in __channel_order
+`stack`: stack ID of corresponding stack
+`index`: str, index of channel in corresponding stack
 
 
 __channel_order
@@ -68,10 +68,10 @@ TODO: describe events fired by this class
     def add_stack(self, stack, name=None, **kwargs):
         """Insert new stack into ChannelCollection.
 
-'stack': either path to stack file or reference to existing stack object
-'name': display name of stack
-'kwargs': keyword arguments that will be passed to stack constructor
-if 'stack' is a path
+`stack`: either path to stack file or reference to existing stack object
+`name`: display name of stack
+`kwargs`: keyword arguments that will be passed to stack constructor
+if `stack` is a path
         """
         if isinstance(stack, (str, os.PathLike)):
             stack = open_stack(stack, **kwargs)
@@ -173,8 +173,8 @@ description -- str, human-readable description of channel
         """Change specification of channel with id `channel_id`.
 
 `new_specs` are the properties to be changed and the new values.
-Changeable properties are: 'name', 'category', 'description'.
-See 'add_channel' for details.
+Changeable properties are: `name`, `category`, `description`.
+See `add_channel` for details.
         """
         old_spec = {}
         with self.lock:
@@ -206,7 +206,7 @@ See 'add_channel' for details.
 
 `new_order` is the new sequence of channel IDs.
 The channel order must only be permuted.
-Use 'add_channel' or 'drop_channel' to add or
+Use `add_channel` or `drop_channel` to add or
 remove channels from the active channel collection.
         """
         with self.lock:

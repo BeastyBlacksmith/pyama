@@ -8,12 +8,12 @@ from ..util import make_uid
 class BaseRoi:
     """Base class for representing a region-of-interest (ROI).
 
-'group' is None or a group. Will be stored as weakref.
-'color' is None or a string of a hex RGB color ('#rrggbb')
-'visible' is a boolean flag whether to display the ROI.
+`group` is None or a group. Will be stored as weakref.
+`color` is None or a string of a hex RGB color (`#rrggbb`)
+`visible` is a boolean flag whether to display the ROI.
 
-If the 'color' or 'visible' properties are None, their values
-are inherited from the 'group'.
+If the `color` or `visible` properties are None, their values
+are inherited from the `group`.
     """
     __slots__ = ('__lock', '__id', '__weakref__', '__name', '__group_ref', '__visible', '__color')
 
@@ -100,10 +100,10 @@ are inherited from the 'group'.
 class Roi(BaseRoi):
     """Representation of a region-of-interest (ROI).
 
-'params' is a RoiParameters object.
-'par_ind' is a dict with individual parameters.
+`params` is a RoiParameters object.
+`par_ind` is a dict with individual parameters.
 
-'props' is a RoiProperties instance corresponding to the
+`props` is a RoiProperties instance corresponding to the
 individual parameters and the RoiParameters. It is created
 just-in-time and will be cached.
     """

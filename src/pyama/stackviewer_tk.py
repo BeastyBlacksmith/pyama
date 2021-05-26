@@ -567,10 +567,10 @@ i_channel or i_frame is None, it is not changed.
 """Callback for frame Spinbox.
 
 values for `direction` are:
-up' -- go to next frame
-down' -- go to previous frame
-up10' -- jump 10 frames forward
-down10' -- jump 10 frames backward
+`up` -- go to next frame
+`down` -- go to previous frame
+`up10` -- jump 10 frames forward
+`down10` -- jump 10 frames backward
         """
         if not self.n_frames:
             return
@@ -590,7 +590,7 @@ down10' -- jump 10 frames backward
     def i_frame_jump(self, i_frame):
 """Jump to given frame
 
-i_frame` -- zero-based frame index (-1 for last frame)
+`i_frame` -- zero-based frame index (-1 for last frame)
         """
         if i_frame == -1:
             i_frame = self.n_frames - 1
@@ -799,11 +799,11 @@ return  Canvas height and canvas width, in pixels
     def register_roi_click(self, func, seq='<Button-1>'):
     """Register a callback for click on ROIs.
 
-func` is the function called when one or more ROIs are clicked.
+`func` is the function called when one or more ROIs are clicked.
 is called with the keyword `event` holding the event instance
 with the keyword `names` holding a set of names of the
 ROIs.
-seq` is the event to be registered.
+`seq` is the event to be registered.
 
 function returns the binding ID, which may be used to
 the callback using the method `unregister_roi_click`.
@@ -816,7 +816,7 @@ the callback using the method `unregister_roi_click`.
     def unregister_roi_click(self, bind_id=None):
     """Unregister a ROI callback.
 
-bind_id` is the binding ID as returned by `register_roi_callback`.
+`bind_id` is the binding ID as returned by `register_roi_callback`.
 `bind_id` is not given, all ROI callbacks are unregistered.
         """
         if bind_id is None:
