@@ -64,11 +64,11 @@ total -- None or numeric value indicating maximum progress
 of a progress bar.
 
 Use the return value of this method as a context manager; e.g.:
->>> status = Status()
->>> # Share `status` with other threads
->>> for x in range(10):
->>>     with status("Processing items", current=x+1, total=10):
->>>         # do something with `x`
+    status = Status()
+    # Share `status` with other threads
+    for x in range(10):
+        with status("Processing items", current=x+1, total=10):
+            # do something with `x`
         """
         return StatusMessage(msg, current=current, total=total,
                 enter_cb=self._enter_status, exit_cb=self._exit_status)
