@@ -68,7 +68,7 @@ class RoiStack:
         @param name RoiCollection display name
         <!-- :type name: --> tuple (len 2) of str
         @param frame frame identifier
-        \return  ROI set
+        @return  ROI set
         """
         with self.roi_lock:
             rois = self.__rois.get(name)

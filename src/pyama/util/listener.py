@@ -62,7 +62,7 @@ class Listeners:
         @param queue Queue object to feed an event as notification
         <!-- :type queue: --> None or Queue
 
-        \return  a listener ID or None
+        @return  a listener ID or None
         <!-- :rtype: --> str or None
         """
         if self.__kinds is not None:

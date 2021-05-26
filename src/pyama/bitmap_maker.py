@@ -12,7 +12,7 @@ def coords2xbm(coords, returnOffset=False, joinstr=', '):
     <!-- :type returnOffset: --> bool
     @param joinstr The string to be used for joining the byte values; defaults to ", "
     <!-- :type joinstr: --> str
-    \return  if ``returnOffset``, a tuple of a tuple of the x- and y-offset and the image string, else only the image string
+    @return  if ``returnOffset``, a tuple of a tuple of the x- and y-offset and the image string, else only the image string
     """
     # Assess coordinate range
     x_min = coords[:,0].min()

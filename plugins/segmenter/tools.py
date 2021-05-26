@@ -40,7 +40,7 @@ def interpolate_background(frame,
     @param debug if ``True``, return dict of internal variables
     <!-- :type degub: --> bool
 
-    \return  interpolated background
+    @return  interpolated background
     <!-- :rtype: --> same as ``frame``
     """
     # Get frame shape
@@ -169,7 +169,7 @@ def get_regions(frame):
 
     @param frame the grayscale frame in which to find regions
     :type: 2D numpy array
-    \return  regions found
+    @return  regions found
     <!-- :rtype: --> list of ContourRoi
     """
     bg = interpolate_background(frame)

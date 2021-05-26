@@ -241,7 +241,7 @@ class MetaStack(RoiStack):
         image (typically 8 or 16 bit per pixel), and must return
         a (n_rows, n_columns)-shaped numpy array of ``uint8`` type.
 
-        \return  the image at the requested stack position
+        @return  the image at the requested stack position
         <!-- :rtype: --> <!-- :py:class: -->`tkinter.PhotoImage`
         """
         #TODO
