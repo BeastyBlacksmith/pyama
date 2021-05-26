@@ -307,8 +307,11 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reshape the stack. </p>
-<pre class="fragment">    The new shape must be passed as a dict-like object with preserved order.
-</pre><p> When reshaping is finished, listeners of the event const.EVT_RESHAPE are notified with the keyword argument <code>message</code> holding a namedtuple with fields: <code>event</code>: const.EVT_RESHAPE <code>old</code>: OrderedDict of shape before reshape <code>new</code>: OrderedDict of shape after reshape </p>
+<p>The new shape must be passed as a dict-like object with preserved order.</p>
+<p>When reshaping is finished, listeners of the event const.EVT_RESHAPE are notified with the keyword argument <code>message</code> holding a namedtuple with fields:</p>
+<p><code>event</code>: const.EVT_RESHAPE</p>
+<p><code>old</code>: OrderedDict of shape before reshape</p>
+<p><code>new</code>: OrderedDict of shape after reshape </p>
 
 </div>
 </div>
