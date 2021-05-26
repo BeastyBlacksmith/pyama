@@ -151,10 +151,10 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container for sharing callable events between threads. </p>
-<p>Constructor arguments: cmd &ndash; str indicating a command for consumer, or function to be called by consumer args, kwargs &ndash; arguments and keyword arguments with which command/function is called One of <code>cmd</code> and <code>fun</code> must be given. If <code>fun</code> is given, <code>cmd</code> is ignored.</p>
-<p>Properties: cmd &ndash; the <code>cmd</code> as received by constructor time &ndash; monotonic time of instantiation called &ndash; boolean flag; True iff this instance has been called already</p>
-<p>To execute the event, call the event like a function. If the constructor argument <code>cmd</code> is not callable, the call requires a callable as <code>fun</code> argument.</p>
-<p>The <code><a class="el" href="classpyama_1_1util_1_1events_1_1Event.html" title="Container for sharing callable events between threads.">Event</a></code> class provides a mechanism to prevent unnecessary calls of events that have been deprecated by a more recent event. To use the mechanism, simply provide the latest allowed time as <code>not_after</code> argument to the call. The time must be compatible to the value returned by the <code>now</code> method. The call returns False if it would have been unnecessary, else True.</p>
+<p>Constructor arguments: cmd &ndash; str indicating a command for consumer, or function to be called by consumer args, kwargs &ndash; arguments and keyword arguments with which command/function is called One of 'cmd' and 'fun' must be given. If 'fun' is given, 'cmd' is ignored.</p>
+<p>Properties: cmd &ndash; the 'cmd' as received by constructor time &ndash; monotonic time of instantiation called &ndash; boolean flag; True iff this instance has been called already</p>
+<p>To execute the event, call the event like a function. If the constructor argument 'cmd' is not callable, the call requires a callable as 'fun' argument.</p>
+<p>The '<a class="el" href="classpyama_1_1util_1_1events_1_1Event.html" title="Container for sharing callable events between threads.">Event</a>' class provides a mechanism to prevent unnecessary calls of events that have been deprecated by a more recent event. To use the mechanism, simply provide the latest allowed time as 'not_after' argument to the call. The time must be compatible to the value returned by the 'now' method. The call returns False if it would have been unnecessary, else True.</p>
 <p>This class is not thread-safe. Once fed into a queue, it should not be modified by the producer anymore. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8e50a1295b6c798e335e80ecd75eeae5"></a>

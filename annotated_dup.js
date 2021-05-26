@@ -27,7 +27,7 @@ var annotated_dup =
           [ "Roi", "classpyama_1_1io_1_1roi_1_1Roi.html", "classpyama_1_1io_1_1roi_1_1Roi" ]
         ] ]
       ] ],
-      [ "modules", "namespacepyama_1_1modules.html", [
+      [ "modules", null, [
         [ "ModuleManager", "classpyama_1_1modules_1_1ModuleManager.html", "classpyama_1_1modules_1_1ModuleManager" ],
         [ "ModuleMetadata", "classpyama_1_1modules_1_1ModuleMetadata.html", "classpyama_1_1modules_1_1ModuleMetadata" ],
         [ "ModuleOrder", "classpyama_1_1modules_1_1ModuleOrder.html", "classpyama_1_1modules_1_1ModuleOrder" ]

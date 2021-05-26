@@ -140,7 +140,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpyama_1_1util_1_1status_1_1Status.html" title="Status message handler for propagating status messages beyond threads.">Status</a> message handler for propagating status messages beyond threads. </p>
-<p><a class="el" href="classpyama_1_1util_1_1status_1_1Status.html" title="Status message handler for propagating status messages beyond threads.">Status</a> message viewers are registered with the method <code>register_viewer</code>. Call the object as a context manager to set a status. All registered viewers receive an Event for calling the registered function. </p>
+<p><a class="el" href="classpyama_1_1util_1_1status_1_1Status.html" title="Status message handler for propagating status messages beyond threads.">Status</a> message viewers are registered with the method 'register_viewer'. Call the object as a context manager to set a status. All registered viewers receive an Event for calling the registered function. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0c7b86a25ee5cbb0e08fdf4b8fed2b0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c7b86a25ee5cbb0e08fdf4b8fed2b0a">&#9670;&nbsp;</a></span>__call__()</h2>
@@ -182,13 +182,22 @@ Public Attributes</h2></td></tr>
 
 <p>Set a status message. </p>
 <p>Arguments: msg &ndash; str with the message; may be an empty string current &ndash; None or numeric value indicating current progress total &ndash; None or numeric value indicating maximum progress</p>
-<p><code>current</code> and <code>total</code> are intended for calculating a position of a progress bar.</p>
-<p>Use the return value of this method as a context manager; e.g.: </p><pre class="fragment">status = Status()
-# Share `status` with other threads
-for x in range(10):
-    with status("Processing items", current=x+1, total=10):
-        # do something with `x`
-</pre> 
+<p>'current' and 'total' are intended for calculating a position of a progress bar.</p>
+<p>Use the return value of this method as a context manager; e.g.: </p><blockquote class="doxtable">
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<p>status = Status() </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Share 'status' with other threads</h1>
+<p>for x in range(10): with status("Processing items", current=x+1, total=10): </p>
+<h1><a class="anchor" id="autotoc_md10"></a>
+do something with 'x'</h1>
+<p><br  />
+ </p>
+
 </div>
 </div>
 <a id="a32dc8c45f393dc7a422c35502dccbb37"></a>
@@ -224,8 +233,8 @@ for x in range(10):
 </div><div class="memdoc">
 
 <p>Register a new status message viewer. </p>
-<p>The viewer must be a callable that takes the keyword arguments <code>msg</code>, <code>current</code> and <code>total</code>. While <code>msg</code> is a string that will always be set (but may be empty), <code>current</code> and <code>total</code> may be None. If the message is a progress, <code>current</code> is a numeric value indicating the current progress, and <code>total</code> is either a numeric value indicating the maximum value or None if no maximum value is known.</p>
-<p>This method returns a viewer ID that can be used to unregister the viewer with the <code>unregister_viewer</code> method. </p>
+<p>The viewer must be a callable that takes the keyword arguments 'msg', 'current' and 'total'. While 'msg' is a string that will always be set (but may be empty), 'current' and 'total' may be None. If the message is a progress, 'current' is a numeric value indicating the current progress, and 'total' is either a numeric value indicating the maximum value or None if no maximum value is known.</p>
+<p>This method returns a viewer ID that can be used to unregister the viewer with the 'unregister_viewer' method. </p>
 
 </div>
 </div>
@@ -256,7 +265,7 @@ for x in range(10):
 </div><div class="memdoc">
 
 <p>Unregister a status message viewer. </p>
-<p>The <code>viewer_id</code> is the ID returned by <code>register_viewer</code>. </p>
+<p>The 'viewer_id' is the ID returned by 'register_viewer'. </p>
 
 </div>
 </div>

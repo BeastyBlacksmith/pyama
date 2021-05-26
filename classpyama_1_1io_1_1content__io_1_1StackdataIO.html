@@ -425,7 +425,7 @@ Public Attributes</h2></td></tr>
 
 <p>Loads stack information and ROI information from JSON. </p>
 <p>Arguments: fin &ndash; file-like or str holding a filename of ZIP file to be read s &ndash; string holding JSON data rois &ndash; list of dicts, holding ContourRoi instances</p>
-<p>If <code>fin</code> is given, <code>s</code> and <code>rois</code> are ignored. <code>fin</code> should be a ZIP file containing a file named <code>session.json</code> that holds the session information, and <code>*.roi</code> files that hold the ROI information in ImageJ ROI format. Note that if <code>rois</code> is given, the ROI labels must comply with the cell-to-ROI assignment in <code>s</code>.</p>
+<p>If <code>fin</code> is given, <code>s</code> and <code>rois</code> are ignored. <code>fin</code> should be a ZIP file containing a file named 'session.json' that holds the session information, and '*.roi' files that hold the ROI information in ImageJ ROI format. Note that if <code>rois</code> is given, the ROI labels must comply with the cell-to-ROI assignment in <code>s</code>.</p>
 <p>The content of the ZIP file is loaded and can be accessed via the fields of this object. </p>
 
 </div>
@@ -455,7 +455,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Parse the ROI name generated wth _unique_roi_name. </p>
-<p>Returns a dict with the fields <code>cell</code>, <code>frame</code>, <code>label</code>, any of which may point to None. </p>
+<p>Returns a dict with the fields 'cell', 'frame', 'label', any of which may point to None. </p>
 
 </div>
 </div>

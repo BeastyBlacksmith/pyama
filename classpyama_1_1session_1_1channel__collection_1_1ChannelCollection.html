@@ -163,8 +163,8 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>channel_order</b> (sel
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class provides all necessary data and methods for associating multiple stacks and ROIs with each other. </p>
 <p>Data structures of this class:</p>
-<p>__stacks dict of loaded stacks key: stack ID <code>name</code>: str, user-specified display name of stack <code>ref</code>: reference to stack object <code>listener_id</code>: listener ID for events of the stack</p>
-<p>__channels dict of loaded channels key: channel ID <code>name</code>: str, user-specified display name of channel <code>categrory</code>: categrory of channel <code>description</code>: str, user-specified description of the channel <code>position</code>: int, index in __channel_order <code>stack</code>: stack ID of corresponding stack <code>index</code>: str, index of channel in corresponding stack</p>
+<p>__stacks dict of loaded stacks key: stack ID 'name': str, user-specified display name of stack 'ref': reference to stack object 'listener_id': listener ID for events of the stack</p>
+<p>__channels dict of loaded channels key: channel ID 'name': str, user-specified display name of channel 'categrory': categrory of channel 'description': str, user-specified description of the channel 'position': int, index in __channel_order 'stack': stack ID of corresponding stack 'index': str, index of channel in corresponding stack</p>
 <p>__channel_order list of IDs of loaded channels Defines the order of channels in this <a class="el" href="classpyama_1_1session_1_1channel__collection_1_1ChannelCollection.html" title="This class provides all necessary data and methods for associating multiple stacks and ROIs with each...">ChannelCollection</a></p>
 <p>TODO: describe events fired by this class </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -268,7 +268,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>channel_order</b> (sel
 </div><div class="memdoc">
 
 <p>Insert new stack into <a class="el" href="classpyama_1_1session_1_1channel__collection_1_1ChannelCollection.html" title="This class provides all necessary data and methods for associating multiple stacks and ROIs with each...">ChannelCollection</a>. </p>
-<p><code>stack</code>: either path to stack file or reference to existing stack object <code>name</code>: display name of stack <code>kwargs</code>: keyword arguments that will be passed to stack constructor if <code>stack</code> is a path </p>
+<p>'stack': either path to stack file or reference to existing stack object 'name': display name of stack 'kwargs': keyword arguments that will be passed to stack constructor if 'stack' is a path </p>
 
 </div>
 </div>
@@ -299,7 +299,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>channel_order</b> (sel
 </div><div class="memdoc">
 
 <p>Change order of active channel collection. </p>
-<p><code>new_order</code> is the new sequence of channel IDs. The channel order must only be permuted. Use <code>add_channel</code> or <code>drop_channel</code> to add or remove channels from the active channel collection. </p>
+<p><code>new_order</code> is the new sequence of channel IDs. The channel order must only be permuted. Use 'add_channel' or 'drop_channel' to add or remove channels from the active channel collection. </p>
 
 </div>
 </div>
@@ -336,7 +336,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>channel_order</b> (sel
 </div><div class="memdoc">
 
 <p>Change specification of channel with id <code>channel_id</code>. </p>
-<p><code>new_specs</code> are the properties to be changed and the new values. Changeable properties are: <code>name</code>, <code>category</code>, <code>description</code>. See <code>add_channel</code> for details. </p>
+<p><code>new_specs</code> are the properties to be changed and the new values. Changeable properties are: 'name', 'category', 'description'. See 'add_channel' for details. </p>
 
 </div>
 </div>
