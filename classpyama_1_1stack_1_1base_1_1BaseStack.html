@@ -231,10 +231,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close the TIFF file. </p>
-<pre class="fragment">    This method may be implemented/overwritten by a subclass.
-    Closing a stack should always fire a 'const.EVT_CLOSE' event
-    to its listeners to allow for cleanup.
-</pre> 
+<p>This method may be implemented/overwritten by a subclass. Closing a stack should always fire a <code>const.EVT_CLOSE</code> event to its listeners to allow for cleanup. </p>
+
 <p>Reimplemented in <a class="el" href="classpyama_1_1stack_1_1tiffstack_1_1TiffStack.html#a446d26da6e5437b8e107d71d4ad11b85">pyama.stack.tiffstack.TiffStack</a>.</p>
 
 </div>
@@ -278,10 +276,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get index of an image in a linear sequence of images. </p>
-<pre class="fragment">    Indices are zero-based.
-    All indices of existing dimensions are required.
-    Slicing is not supported.
-</pre> 
+<p>Indices are zero-based. All indices of existing dimensions are required. Slicing is not supported. </p>
+
 </div>
 </div>
 <a id="ad4ff47ef7146b407191c3d69fca205cf"></a>
@@ -312,13 +308,8 @@ Public Attributes</h2></td></tr>
 
 <p>Reshape the stack. </p>
 <pre class="fragment">    The new shape must be passed as a dict-like object with preserved order.
+</pre><p> When reshaping is finished, listeners of the event const.EVT_RESHAPE are notified with the keyword argument <code>message</code> holding a namedtuple with fields: <code>event</code>: const.EVT_RESHAPE <code>old</code>: OrderedDict of shape before reshape <code>new</code>: OrderedDict of shape after reshape </p>
 
-    When reshaping is finished, listeners of the event const.EVT_RESHAPE are
-    notified with the keyword argument 'message' holding a namedtuple with fields:
-        'event': const.EVT_RESHAPE
-        'old': OrderedDict of shape before reshape
-        'new': OrderedDict of shape after reshape
-</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
