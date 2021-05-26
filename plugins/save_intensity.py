@@ -1,5 +1,5 @@
 """
-Plugin to save intensity to CSV.
+to save intensity to CSV.
 """
 import numpy as np
 import os
@@ -51,5 +51,5 @@ def get_out_path():
             print("Cannot create directory: {}".format(e))
             path = os.getcwd()
     return path
-    
+
 

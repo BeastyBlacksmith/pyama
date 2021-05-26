@@ -1,5 +1,5 @@
 """
-This module is intended to provide general GUI-related functions.
+module is intended to provide general GUI-related functions.
 """
 import tkinter as tk
 from tkinter import filedialog
