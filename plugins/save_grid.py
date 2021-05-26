@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Plugin to save grid parameters 
+to save grid parameters
 """
 
 
@@ -8,7 +8,7 @@ import numpy as np
 import os
 import sys
 import time
-import json 
+import json
 
 from ..roi import RectRoi
 from ..roi import ContourRoi

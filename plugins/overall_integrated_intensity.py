@@ -1,5 +1,5 @@
 """
-Calculates the integrated intensity per frame and channel of a stack.
+the integrated intensity per frame and channel of a stack.
 """
 import numpy as np
 from ..roi import RectRoi, ContourRoi

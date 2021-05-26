@@ -1,6 +1,6 @@
 """
-This plug-in displays a file selection dialog and opens the
-stack from the file.
+plug-in displays a file selection dialog and opens the
+from the file.
 """
 #print("__name__ of 'load_single_stack':", __name__) #DEBUG
 from .. import gui_tk
