@@ -180,7 +180,7 @@ class ChannelControlPane_Tk(tk.PanedWindow):
 
 
     def close_stack(self):
-        """Close the stack selected in 'stack_tree'"""
+        """Close the stack selected in `stack_tree`"""
         sel = self.stack_tree.selection()
         if not sel:
             return
@@ -241,7 +241,7 @@ class ChannelControlPane_Tk(tk.PanedWindow):
 
 
     def stack_opened(self, msg):
-        """Callback for 'stack_const.EVT_STACK_ADDED'"""
+        """Callback for `stack_const.EVT_STACK_ADDED`"""
         stack_id = msg['stack_id']
         n = str(len(self.stack_tree.get_children()) + 1)
         stack = self.channel_collection.stacks[stack_id]

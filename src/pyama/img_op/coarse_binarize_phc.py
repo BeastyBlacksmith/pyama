@@ -8,7 +8,7 @@ STRUCT5[[0,0,-1,-1], [0,-1,0,-1]] = False
 
 @nb.njit
 def window_std(img):
-    """Calculate unnormed variance of 'img'"""
+    """Calculate unnormed variance of `img`"""
     return np.sum((img - np.mean(img))**2)
 
 
