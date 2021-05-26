@@ -76,9 +76,9 @@ ID of this stack, which can also be retrieved with the `id` property.
     def close(self):
         """Close the TIFF file.
 
-        This method may be implemented/overwritten by a subclass.
-        Closing a stack should always fire a 'const.EVT_CLOSE' event
-        to its listeners to allow for cleanup.
+This method may be implemented/overwritten by a subclass.
+Closing a stack should always fire a `const.EVT_CLOSE` event
+to its listeners to allow for cleanup.
         """
         msg = dict(event=const.EVT_CLOSE, id=self._id)
         self.listeners.notify(const.EVT_CLOSE, message=msg)
@@ -92,9 +92,9 @@ ID of this stack, which can also be retrieved with the `id` property.
     def get_linear_index(self, *, frame=None, z=None, channel=None):
         """Get index of an image in a linear sequence of images.
 
-        Indices are zero-based.
-        All indices of existing dimensions are required.
-        Slicing is not supported.
+Indices are zero-based.
+All indices of existing dimensions are required.
+Slicing is not supported.
         """
         i_request = {const.T:frame, const.Z:z, const.C:channel}
         i = 0
@@ -121,11 +121,11 @@ ID of this stack, which can also be retrieved with the `id` property.
 
         The new shape must be passed as a dict-like object with preserved order.
 
-        When reshaping is finished, listeners of the event const.EVT_RESHAPE are
-        notified with the keyword argument 'message' holding a namedtuple with fields:
-            'event': const.EVT_RESHAPE
-            'old': OrderedDict of shape before reshape
-            'new': OrderedDict of shape after reshape
+When reshaping is finished, listeners of the event const.EVT_RESHAPE are
+notified with the keyword argument `message` holding a namedtuple with fields:
+    `event`: const.EVT_RESHAPE
+    `old`: OrderedDict of shape before reshape
+    `new`: OrderedDict of shape after reshape
         """
         new_shape = OrderedDict()
         n_img = 1
