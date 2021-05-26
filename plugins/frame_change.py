@@ -1,6 +1,6 @@
 """
-plugin measures the time needed for scrolling through
-frames of a stack.
+This plugin measures the time needed for scrolling through
+all frames of a stack.
 """
 import time
 

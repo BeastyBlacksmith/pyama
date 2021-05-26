@@ -21,8 +21,8 @@ SUPPORTED_DTYPES = ('bool', 'uint8', 'uint16', 'uint32', 'uint64', 'float16', 'f
 class Stack(RoiStack):
     """Represents an image stack.
 
-param path (optional) path to a file holding a TIFF stack
-:type path: --> str
+@param path (optional) path to a file holding a TIFF stack
+<!-- :type path: --> str
     """
 
     def __init__(self, path=None, arr=None, width=None, height=None, n_frames=None, n_channels=None, dtype=None, status=None, channels=None):
@@ -109,15 +109,15 @@ param path (optional) path to a file holding a TIFF stack
 
 `path` -- path to a stack file
 `loader` -- str, name of a stack loader.
-supported loaders: tiff, npy, hdf5
-not given, loader is determined from file extension.
+Currently supported loaders: tiff, npy, hdf5
+If not given, loader is determined from file extension.
 `status` -- Status instance for displaying progress
 `channels` -- index of channels to be loaded. Default is to load all channels.
-value for indexing into a dimension of a numpy array
-be given.
+Any value for indexing into a dimension of a numpy array
+may be given.
 `h5_key` -- str, key of the dataset in a HDF5 file.
-, only HDF5 files created by Ilastik are supported.
-be omitted if file contains only one dataset.
+Currently, only HDF5 files created by Ilastik are supported.
+May be omitted if file contains only one dataset.
         """
         self._path = path
         if loader is None:
@@ -429,12 +429,12 @@ be omitted if file contains only one dataset.
 
     def convert_position(self, channel=None, frame=None, image=None):
         """
-stack position between (channel, frame) and image.
+Convert stack position between (channel, frame) and image.
 
-give "channel" and "frame" to obtain the corresponding
-index, or give "image" to obtain the corresponding indices
-channel and frame as tuple.
-other combinations will return None.
+Either give "channel" and "frame" to obtain the corresponding
+image index, or give "image" to obtain the corresponding indices
+of channel and frame as tuple.
+All other combinations will return None.
         """
         # Check arguments
         if channel is None and frame is None:

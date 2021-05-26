@@ -43,63 +43,63 @@ SHOW_BROWSE = 'browse'
 
 class StackViewer:
     """
-a GUI for displaying a TIFF stack.
+Provides a GUI for displaying a TIFF stack.
 
-param root The frame in which to create the <!-- :py:class: -->`StackViewer`.
-:type root: --> None or <!-- :py:class: -->`tkinter.Toplevel`
-param image_file Path of a TIFF file to open
-:type image_file: --> None or str
+@param root The frame in which to create the <!-- :py:class: -->`StackViewer`.
+<!-- :type root: --> None or <!-- :py:class: -->`tkinter.Toplevel`
+@param image_file Path of a TIFF file to open
+<!-- :type image_file: --> None or str
 
-<!-- :py:class: -->`StackViewer` is the TIFF stack display tool in PyAMA.
+The <!-- :py:class: -->`StackViewer` is the TIFF stack display tool in PyAMA.
 
-provides a <!-- :py:class: -->`ContrastAdjuster`, a utility for adjusting
-displayed color map.
-the displayed color map only affects display, not the
-values in the underlying <!-- :py:class: -->`Stack`.
+It provides a <!-- :py:class: -->`ContrastAdjuster`, a utility for adjusting
+the displayed color map.
+Changing the displayed color map only affects display, not the
+color values in the underlying <!-- :py:class: -->`Stack`.
 
-<!-- :py:class: -->`StackViewer` is thread-safe and can display concurrent
-of the stack or of the ROIs via listeners.
+The <!-- :py:class: -->`StackViewer` is thread-safe and can display concurrent
+changes of the stack or of the ROIs via listeners.
 
-, the <!-- :py:class: -->`StackViewer` implements a set of functions
-interacting with a ROI adjuster:
+Moreover, the <!-- :py:class: -->`StackViewer` implements a set of functions
+for interacting with a ROI adjuster:
 
-<!-- :py:meth: -->`StackViewer.start_roi_adjustment` creates, if necessary,
-new ROI adjuster instance and invokes the ``start_adjustment``
-of the ROI adjuster to start the ROI adjustment process.
+* <!-- :py:meth: -->`StackViewer.start_roi_adjustment` creates, if necessary,
+a new ROI adjuster instance and invokes the ``start_adjustment``
+method of the ROI adjuster to start the ROI adjustment process.
 
-ROI adjuster should now start ROI adjustment.
+The ROI adjuster should now start ROI adjustment.
 
-<!-- :py:meth: -->`StackViewer.stop_roi_adjustment` aborts the ROI adjustment
-by calling the ``stop_adjustment`` method of the ROI adjuster.
+* <!-- :py:meth: -->`StackViewer.stop_roi_adjustment` aborts the ROI adjustment
+process by calling the ``stop_adjustment`` method of the ROI adjuster.
 
-ROI adjuster should now abort ROI adjustment and call
-:py:meth: -->`StackViewer.notify_roi_adjustment_finished`.
+The ROI adjuster should now abort ROI adjustment and call
+<!-- :py:meth: -->`StackViewer.notify_roi_adjustment_finished`.
 
-ROI adjuster should leave the Stack, the StackViewer and the
-in a clean state.
+The ROI adjuster should leave the Stack, the StackViewer and the
+canvas in a clean state.
 
-<!-- :py:meth: -->`StackViewer.notify_roi_adjustment_finished` notifies the
-:py:class: -->`StackViewer` that ROI adjustment has finished.
+* <!-- :py:meth: -->`StackViewer.notify_roi_adjustment_finished` notifies the
+<!-- :py:class: -->`StackViewer` that ROI adjustment has finished.
 
-ROI adjuster should call this method when ROI adjustment is
-.
+The ROI adjuster should call this method when ROI adjustment is
+finished.
 
-<!-- :py:meth: -->`StackViewer.forget_roi_adjuster` aborts ROI adjustment
-calling <!-- :py:meth: -->`StackViewer.stop_roi_adjustment` if the
-is not finished yet.
+* <!-- :py:meth: -->`StackViewer.forget_roi_adjuster` aborts ROI adjustment
+by calling <!-- :py:meth: -->`StackViewer.stop_roi_adjustment` if the
+adjustment is not finished yet.
 
-it calls the ``close`` method of the ROI adjuster, if present,
-preferably causes the ROI adjuster to close its window.
+Then it calls the ``close`` method of the ROI adjuster, if present,
+which preferably causes the ROI adjuster to close its window.
 
-, the internal reference of the <!-- :py:class: -->`StackViewer`
-the ROI adjuster is cleared.
+Finally, the internal reference of the <!-- :py:class: -->`StackViewer`
+to the ROI adjuster is cleared.
 
-optimal compliance with these functions, a ROI adjuster should
-the following methods, which, however, are optional:
+For optimal compliance with these functions, a ROI adjuster should
+implement the following methods, which, however, are optional:
 
-``start_adjustment``
-``stop_adjustment``
-``close``
+* ``start_adjustment``
+* ``stop_adjustment``
+* ``close``
     """
     CMD_UPDATE_STACK = 'CMD_UPDATE_STACK'
     CMD_UPDATE_ROIS = 'CMD_UPDATE_ROIS'
@@ -278,9 +278,9 @@ the following methods, which, however, are optional:
 
     def _update(self):
         """
-jobs in queue.
+Execute jobs in queue.
 
-this method only from whithin the Tkinter main thread.
+Call this method only from whithin the Tkinter main thread.
         """
         while True:
             try:
@@ -311,20 +311,20 @@ this method only from whithin the Tkinter main thread.
 
     def schedule(self, func, *args, **kwargs):
         """
-new job into queue.
+Feed new job into queue.
 
-function can be used to change the GUI from another thread.
-also <!-- :py:meth: -->`schedule_and_wait`.
+This function can be used to change the GUI from another thread.
+See also <!-- :py:meth: -->`schedule_and_wait`.
         """
         Event.fire(self._update_queue, func, *args, **kwargs)
 
 
     def schedule_and_wait(self, func, *args, **kwargs):
         """
-new job into queue and wait until it is finished.
+Feed new job into queue and wait until it is finished.
 
-function can be used to change the GUI from another thread.
-also <!-- :py:meth: -->`schedule`.
+This function can be used to change the GUI from another thread.
+See also <!-- :py:meth: -->`schedule`.
         """
         cv = Condition()
         with cv:
@@ -334,10 +334,10 @@ also <!-- :py:meth: -->`schedule`.
     def _awaited_execution(self, func, args, kwargs, cv):
     """Execute avaited function.
 
-a function and notify another thread waiting for the execution.
-method should be called by the Tkinter control thread.
+Execute a function and notify another thread waiting for the execution.
+This method should be called by the Tkinter control thread.
 
-`schedule_and_wait` for more details.
+See `schedule_and_wait` for more details.
         """
         func(*args, **kwargs)
         with cv:
@@ -346,27 +346,27 @@ method should be called by the Tkinter control thread.
     def update_stack_properties(self):
     """Trigger stack property update.
 
-this function to trigger an update of stack properties
-another thread.
+Use this function to trigger an update of stack properties
+from another thread.
         """
         Event.fire(self._update_queue, self.CMD_UPDATE_STACK)
 
     def draw_rois(self):
     """Trigger ROIs update.
 
-this function to trigger an update of ROIs
-another thread.
+Use this function to trigger an update of ROIs
+from another thread.
         """
         Event.fire(self._update_queue, self.CMD_UPDATE_ROIS)
 
     def open_stack(self, fn=None):
         """
-a <!-- :py:class: -->`Stack` and display it.
+Open a <!-- :py:class: -->`Stack` and display it.
 
-param fn The path to the stack to be opened.
-:type fn: --> str or None.
+@param fn The path to the stack to be opened.
+<!-- :type fn: --> str or None.
 
-``None``, show a file selection dialog.
+If ``None``, show a file selection dialog.
         """
         if fn is None:
             self.open_button.configure(state=tk.DISABLED)
@@ -521,13 +521,13 @@ param fn The path to the stack to be opened.
 
     def _change_stack_position(self, i_channel=None, i_frame=None, force=False):
         """
-the shown image.
+Change the shown image.
 
-param i_channel channel to be shown, integer in [0,n_channels)
-param i_frame frame to be shown, integer in [0,n_frames)
-param force if `True`, redraw image even without change
+@param i_channel channel to be shown, integer in [0,n_channels)
+@param i_frame frame to be shown, integer in [0,n_frames)
+@param force if `True`, redraw image even without change
 
-i_channel or i_frame is None, it is not changed.
+If i_channel or i_frame is None, it is not changed.
         """
         if self.stack is None:
             return
@@ -566,11 +566,11 @@ i_channel or i_frame is None, it is not changed.
     def _i_frame_step(self, direction):
 """Callback for frame Spinbox.
 
-values for `direction` are:
-`up` -- go to next frame
-`down` -- go to previous frame
-`up10` -- jump 10 frames forward
-`down10` -- jump 10 frames backward
+Possible values for `direction` are:
+'up' -- go to next frame
+'down' -- go to previous frame
+'up10' -- jump 10 frames forward
+'down10' -- jump 10 frames backward
         """
         if not self.n_frames:
             return
@@ -674,9 +674,9 @@ values for `direction` are:
 
     def canvas_bbox(self):
         """
-bounding box size of image in canvas.
+Get bounding box size of image in canvas.
 
-return  Canvas height and canvas width, in pixels
+@return  Canvas height and canvas width, in pixels
 <!-- :rtype: --> tuple ``(width, height)``"""
         cbb = self.canvas.bbox(TAG_IMAGE)
         if cbb is None:
@@ -800,13 +800,13 @@ return  Canvas height and canvas width, in pixels
     """Register a callback for click on ROIs.
 
 `func` is the function called when one or more ROIs are clicked.
-is called with the keyword `event` holding the event instance
-with the keyword `names` holding a set of names of the
-ROIs.
+It is called with the keyword `event` holding the event instance
+and with the keyword `names` holding a set of names of the
+affected ROIs.
 `seq` is the event to be registered.
 
-function returns the binding ID, which may be used to
-the callback using the method `unregister_roi_click`.
+This function returns the binding ID, which may be used to
+unregister the callback using the method `unregister_roi_click`.
         """
         func = self._build_roi_click_callback(func)
         bind_id = self.canvas.bind(seq, func, add=True)
@@ -817,7 +817,7 @@ the callback using the method `unregister_roi_click`.
     """Unregister a ROI callback.
 
 `bind_id` is the binding ID as returned by `register_roi_callback`.
-`bind_id` is not given, all ROI callbacks are unregistered.
+If `bind_id` is not given, all ROI callbacks are unregistered.
         """
         if bind_id is None:
             while self._roi_click_bindings:

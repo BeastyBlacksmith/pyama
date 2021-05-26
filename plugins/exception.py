@@ -1,5 +1,5 @@
 """
-is a test plug-in that raises exceptions.
+This is a test plug-in that raises exceptions.
 """
 
 def raise_exc(caller='unknown function'):

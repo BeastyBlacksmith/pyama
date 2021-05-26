@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-to load saved grid parameters
+Plugin to load saved grid parameters 
 """
 
 
@@ -27,7 +27,7 @@ def register(meta):
         )
 #    meta.run_ret = ("stack", "_StackViewer")
 
-
+    
 def conf(d, *_, **__):
     print("Configuring 'grid_loader'...")
     f = gui_tk.askopenfilename(parent=gui_tk.root)
@@ -46,7 +46,7 @@ def run(d, *_, **__):
     newkey = (loaded[0]["Type"],loaded[0]["Version"])
     newparam = loaded[0]["parameters"]
 #    newins = RoiCollection(key=newkey, type_=newkey[0], version=newkey[1], parameters=newparam, name="RectRoi",color="yellow")
-
+    
     roilist = []
     for i in range(len(loaded[0]["rois"]["Ellipsis"])):
         roilist.append(RectRoi(loaded[0]["rois"]["Ellipsis"]["None_%s"%(i+1)], newparam, inverted=True))
