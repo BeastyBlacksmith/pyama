@@ -119,13 +119,16 @@ Slicing is not supported.
     def reshape(self, shape):
         """Reshape the stack.
 
-        The new shape must be passed as a dict-like object with preserved order.
+The new shape must be passed as a dict-like object with preserved order.
 
 When reshaping is finished, listeners of the event const.EVT_RESHAPE are
 notified with the keyword argument `message` holding a namedtuple with fields:
-    `event`: const.EVT_RESHAPE
-    `old`: OrderedDict of shape before reshape
-    `new`: OrderedDict of shape after reshape
+
+`event`: const.EVT_RESHAPE
+
+`old`: OrderedDict of shape before reshape
+
+`new`: OrderedDict of shape after reshape
         """
         new_shape = OrderedDict()
         n_img = 1
