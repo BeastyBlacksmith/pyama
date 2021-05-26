@@ -332,7 +332,7 @@ See also <!-- :py:meth: -->`schedule`.
             cv.wait()
 
     def _awaited_execution(self, func, args, kwargs, cv):
-"""Execute avaited function.
+    """Execute avaited function.
 
 Execute a function and notify another thread waiting for the execution.
 This method should be called by the Tkinter control thread.
@@ -344,7 +344,7 @@ See `schedule_and_wait` for more details.
             cv.notify_all()
 
     def update_stack_properties(self):
-"""Trigger stack property update.
+    """Trigger stack property update.
 
 Use this function to trigger an update of stack properties
 from another thread.
@@ -352,7 +352,7 @@ from another thread.
         Event.fire(self._update_queue, self.CMD_UPDATE_STACK)
 
     def draw_rois(self):
-"""Trigger ROIs update.
+    """Trigger ROIs update.
 
 Use this function to trigger an update of ROIs
 from another thread.
