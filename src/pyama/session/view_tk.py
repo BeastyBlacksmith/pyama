@@ -195,6 +195,8 @@ class SessionView_Tk(SessionView):
         self.plotsellbl.grid(row=3, column=0, sticky='ESW', padx=10, pady=(20, 5))
         self.plotselframe = tk.Frame(self.chanframe)
         self.plotselframe.grid(row=4, column=0, sticky='ESW')
+        self.clear_btn = tk.Button(self.chanframe, text="Clear", anchor=tk.W, command=self.clear_session)
+        self.clear_btn.grid(row=5, column=0, sticky='NEW', padx=10, pady=(20, 5))
 
         ## Stack frame
         self.stackframe = tk.Frame(self.paned)
@@ -392,6 +394,8 @@ class SessionView_Tk(SessionView):
             self._change_channel_selection()
             self.update_roi_display(notify_listeners=False)
         self.stackviewer.set_stack(self.display_stack, wait=False)
+    def clear_session(self):
+        pass
 
     def save(self):
         """Save data to files"""
@@ -1069,7 +1073,7 @@ class SessionView_Tk(SessionView):
                    outfile=outfile,
                    status=self.status,
                   )
-                
+
 
     def _pickle_max_bbox(self):
         """Export bounding box of maximum extension of each selected cell"""
