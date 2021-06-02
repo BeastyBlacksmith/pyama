@@ -3,6 +3,7 @@ import queue
 import re
 import time
 import tkinter as tk
+from tkinter.constants import DISABLED
 import tkinter.filedialog as tkfd
 import tkinter.simpledialog as tksd
 
@@ -394,8 +395,19 @@ class SessionView_Tk(SessionView):
             self._change_channel_selection()
             self.update_roi_display(notify_listeners=False)
         self.stackviewer.set_stack(self.display_stack, wait=False)
+
     def clear_session(self):
-        pass
+        self.stackviewer.__init__(parent=self.stackviewer.root)
+        self.chansellbl['state'] = DISABLED
+        for child in self.chanselframe.winfo_children():
+            child.destroy()
+        # TODO: this errors
+        # self._session_opener.disable_channel_selection()
+        self.plotsellbl['state'] = DISABLED
+        for child in self.plotselframe.winfo_children():
+            child.destroy()
+        self.session.__init__()
+        # TODO: close old session
 
     def save(self):
         """Save data to files"""
