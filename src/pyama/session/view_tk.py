@@ -406,6 +406,7 @@ class SessionView_Tk(SessionView):
         self.plotsellbl['state'] = DISABLED
         for child in self.plotselframe.winfo_children():
             child.destroy()
+        self.session_opener.cancel()
         self.session.__init__()
         # TODO: close old session
 
