@@ -93,7 +93,7 @@ class SessionController:
         """
         with self.lock:
             sess_id = Event.now()
-            self.sessions[sess_id] = SessionModel()
+            self.sessions[sess_id] = SessionModel(sess_id)
             Event.fire(self.view.queue, const.RESP_NEW_SESSION_ID, sess_id)
 
     def discard_session(self, session_id):
@@ -177,7 +177,7 @@ class SessionController:
         """
         with self.lock, self.status("Reading session from disk …"):
             sess_id = Event.now()
-            session = SessionModel()
+            session = SessionModel(sess_id)
             self.sessions[sess_id] = session
             chan_info = session.from_stackio(fn, status=self.status)
             Event.fire(self.control_queue, self.config_session, sess_id, chan_info, do_track=False)
