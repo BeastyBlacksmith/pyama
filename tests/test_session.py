@@ -14,9 +14,9 @@ class TestSession:
         return view
     @pytest.fixture
     def Session(self, View, Controller):
-        View._session_opener = pyssotk.SessionOpener(View.root, control_queue=View.control_queue, status=View.status)
+        View._session_opener = pyssotk.SessionOpener(View.root, control_queue=View.control_queue)
         Controller.initialize_session()
-        return Controller.sessions[Controller.view._session_opener.session_id]
+        return Controller.sessions[list(Controller.sessions)[0]] # FIXME: This only works reliably of there is only one session
 
     def test_controller_initialization(self, Controller):
         assert isinstance(Controller, pysc.SessionController)
