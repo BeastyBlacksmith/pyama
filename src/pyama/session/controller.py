@@ -23,7 +23,6 @@ class SessionController:
         self.lock = threading.RLock()
         self.view = None
         self.sessions = {}
-        self.current_session = None
         self.status = Status()
         self.cmd_map = {
             const.CMD_INIT_SESSION: self.initialize_session,
@@ -138,7 +137,7 @@ class SessionController:
         with self.lock:
             stack_ids.update(*(s.stack_ids for sid, s in self.sessions.items() if sid not in exclude_sessions))
         return stack_ids
-            
+
 
     def config_session(self, session_id, stacks, do_track=True):
         """Prepare session for display.
@@ -202,7 +201,7 @@ class SessionController:
             status = self.status
         session.set_microscope(name=name, resolution=resolution, status=status)
         Event.fire(self.view.queue, const.CMD_UPDATE_TRACES)
-        
+
     @threaded
     def save_session_to_disk(self, session, save_dir, status=None):
         session.save_session(save_dir, status=status)
