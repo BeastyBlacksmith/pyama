@@ -182,7 +182,7 @@ class SessionView_Tk(SessionView):
 
         ## Channels frame
         self.chanframe = tk.Frame(self.paned)
-        self.paned.add(self.chanframe, sticky='NESW', width=150)
+        self.paned.add(self.chanframe, sticky='NESW')
         self.chanframe.grid_columnconfigure(0, weight=1)
 
         self.open_btn = tk.Button(self.chanframe, text="Open stack...", command=self.open_stack)
