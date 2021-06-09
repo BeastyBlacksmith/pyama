@@ -15,8 +15,14 @@ class TestSession:
     @pytest.fixture
     def Session(self, View, Controller):
         View._session_opener = pyssotk.SessionOpener(View.root, control_queue=View.control_queue)
+        control_thread = Controller.control_loop()
         Controller.initialize_session()
-        return Controller.sessions[list(Controller.sessions)[0]] # FIXME: This only works reliably of there is only one session
+        View.poll_event_queue()
+            # assert View._session_opener.session_id == Controller.sessions[list(Controller.sessions)[0]].id # FIXME: why does this fail?
+        yield Controller.sessions[View._session_opener.session_id]
+        Controller.control_queue.put_nowait(None)
+        control_thread.join()
+        Controller.sessions.clear()
 
     def test_controller_initialization(self, Controller):
         assert isinstance(Controller, pysc.SessionController)
