@@ -400,13 +400,13 @@ class SessionView_Tk(SessionView):
         self.chansellbl['state'] = DISABLED
         for child in self.chanselframe.winfo_children():
             child.destroy()
-        # TODO: this errors
-        # self._session_opener.disable_channel_selection()
         self.plotsellbl['state'] = DISABLED
         for child in self.plotselframe.winfo_children():
             child.destroy()
+        if self.session == None:
+            return
         Event.fire(self.control_queue, const.CMD_DISCARD_SESSION, self.session.id)
-        # self.stackviewer.__init__(parent=self.stackviewer.root)
+        self.stackviewer.__init__(parent=self.stackviewer.root)
         self.session.__init__(Event.now())
         # TODO: clear stack view, release stacks from memory
 

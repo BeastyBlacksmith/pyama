@@ -103,7 +103,7 @@ class SessionController:
         """
         with self.lock:
             session = self.sessions[session_id]
-            session.close_stacks(keep_open=self.get_stack_ids(session_id))
+            session.close_stacks() # TODO: this errors
             del self.sessions[session_id]
             print(f"Deleted session with ID '{session_id}'.") #DEBUG
 
