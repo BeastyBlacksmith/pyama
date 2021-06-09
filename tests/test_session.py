@@ -1,3 +1,4 @@
+from typing import Set
 import pytest
 import pyama.session.model as pysm
 import pyama.session.controller as pysc
@@ -14,20 +15,25 @@ class TestSession:
         return view
     @pytest.fixture
     def Session(self, View, Controller):
-        View._session_opener = pyssotk.SessionOpener(View.root, control_queue=View.control_queue)
+        View._session_opener = pyssotk.SessionOpener(View.root, control_queue=Controller.control_queue)
         control_thread = Controller.control_loop()
-        Controller.initialize_session()
         View.poll_event_queue()
-            # assert View._session_opener.session_id == Controller.sessions[list(Controller.sessions)[0]].id # FIXME: why does this fail?
-        yield Controller.sessions[View._session_opener.session_id]
+        assert len(Controller.sessions) == 1
+        assert View._session_opener.session_id == Controller.sessions[list(Controller.sessions)[0]].id
+        Controller.view.session = Controller.sessions[View._session_opener.session_id]
+        yield Controller.view.session
         Controller.control_queue.put_nowait(None)
         control_thread.join()
-        Controller.sessions.clear()
 
     def test_controller_initialization(self, Controller):
         assert isinstance(Controller, pysc.SessionController)
     def test_view_initialization(self, Controller, View):
         assert isinstance(View, pysvtk.SessionView_Tk)
         assert Controller.view == View
-    def test_session_initialization(self, Session):
+    def test_session_initialization(self, Controller, View, Session):
+        assert Controller.view == View
+        assert View.session == Session
         assert isinstance(Session, pysm.SessionModel)
+        assert Session.stacks == {}
+        assert Session.stack == None
+        assert Session.display_stack == None
