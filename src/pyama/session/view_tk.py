@@ -397,7 +397,6 @@ class SessionView_Tk(SessionView):
         self.stackviewer.set_stack(self.display_stack, wait=False)
 
     def clear_session(self):
-        self.stackviewer.__init__(parent=self.stackviewer.root)
         self.chansellbl['state'] = DISABLED
         for child in self.chanselframe.winfo_children():
             child.destroy()
@@ -406,9 +405,10 @@ class SessionView_Tk(SessionView):
         self.plotsellbl['state'] = DISABLED
         for child in self.plotselframe.winfo_children():
             child.destroy()
-        self.session_opener.cancel()
-        self.session.__init__()
-        # TODO: close old session
+        Event.fire(self.control_queue, const.CMD_DISCARD_SESSION, self.session.id)
+        # self.stackviewer.__init__(parent=self.stackviewer.root)
+        self.session.__init__(Event.now())
+        # TODO: clear stack view, release stacks from memory
 
     def save(self):
         """Save data to files"""
