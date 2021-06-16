@@ -8,7 +8,7 @@ from ..util.events import Event
 from ..stack import Stack
 from ..stack import metastack as ms
 
-class SessionOpener:
+    class SessionOpener:
     """Ask the user for stacks.
 
     Arguments:
@@ -352,9 +352,8 @@ class SessionOpener:
             self.cancel()
             return
         self.active = False
-        session_stacks = []
+        chan_info = []
         self.frame.destroy()
-        used_stacks = set()
         for ch in self.channels:
             x = {}
             stack = self.stack_getter(ch['stack_id'])
@@ -366,6 +365,6 @@ class SessionOpener:
             x['i_channel'] = ch['i_channel']
             x['label'] = ch['label']
             x['type'] = ch['type']
-            session_stacks.append(x)
+            chan_info.append(x)
         Event.fire(self.control_queue, const.CMD_CONFIG_SESSION,
-                session_id=self.session_id, stacks=session_stacks)
+                session_id=self.session_id, stacks=chan_info)

@@ -139,7 +139,7 @@ class SessionController:
         return stack_ids
 
 
-    def config_session(self, session_id, stacks, do_track=True):
+    def config_session(self, session_id, chan_info, do_track=True):
         """Prepare session for display.
 
         Arguments:
@@ -156,7 +156,7 @@ class SessionController:
                 return
             Event.fire(self.view.queue, self.view.set_session)
             try:
-                session.config(stacks,
+                session.config(chan_info,
                                status=self.status,
                                render_factory=self.view.make_display_render_function,
                                do_track=do_track
