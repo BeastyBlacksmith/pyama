@@ -59,5 +59,5 @@ class TestSession:
         Controller.config_session(Session.id, chan_info)
         assert isinstance(Session.stack, MetaStack)
         assert isinstance(Session.display_stack, MetaStack)
-        assert Session.stack == Session.display_stack
+        assert Session.stack == Session.display_stack # not quite sure when this holds
 
