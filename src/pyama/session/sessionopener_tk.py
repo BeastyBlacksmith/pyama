@@ -8,7 +8,7 @@ from ..util.events import Event
 from ..stack import Stack
 from ..stack import metastack as ms
 
-    class SessionOpener:
+class SessionOpener:
     """Ask the user for stacks.
 
     Arguments:

@@ -4,6 +4,9 @@ import pyama.session.model as pysm
 import pyama.session.controller as pysc
 import pyama.session.view_tk as pysvtk
 import pyama.session.sessionopener_tk as pyssotk
+import pyama.session.const as const
+from pyama.stack.metastack import MetaStack
+
 class TestSession:
     @pytest.fixture
     def Controller(self):
@@ -37,3 +40,24 @@ class TestSession:
         assert Session.stacks == {}
         assert Session.stack == None
         assert Session.display_stack == None
+    def test_session_open_stack(self, Controller, View, Session):
+        View
+        stid = Session.open_stack("tests/data/test.tif")
+        assert Session.stacks[stid]['id'] == stid
+        assert Session.stack == None
+        assert Session.display_stack == None
+        chan_info = [
+            {
+                'stack_id': stid,
+                'name': Session.stacks[stid]['name'],
+                'dir': Session.stacks[stid]['dir'],
+                'i_channel': 0,
+                'label': "Test",
+                'type': const.CH_CAT_PHC
+            }
+        ]
+        Controller.config_session(Session.id, chan_info)
+        assert isinstance(Session.stack, MetaStack)
+        assert isinstance(Session.display_stack, MetaStack)
+        assert Session.stack == Session.display_stack
+
